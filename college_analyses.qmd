@@ -1,0 +1,106 @@
+---
+title: "College - All India"
+format: html
+---
+
+```{r}
+library(dplyr)
+library(stringr)
+library(stargazer)
+
+
+ 
+
+college_pc= read.csv("/Users/najah/work/cpr/data/college_pc_ag.csv")
+tcdp_dyn = read.csv("/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv")
+##head(tcpd_dyn)
+```
+
+
+```{r}
+tcpd_dyn = tcpd_dyn %>%
+  mutate(state_name = str_replace(state_name,  "&", "and")
+         ,state_name = tolower(state_name),
+
+
+         state_name= str_trim(state_name))
+
+
+dyn_1 = tcpd_dyn %>% filter(position==1)
+
+
+dyn_college<- left_join( dyn_1,college_pc, by = c( "state_name"="state",   "year"="year_el",
+                                                     "constituency_no"="pc_no"))
+
+#filling constituencies with NA vlaue to zero - since there was no college established during this time
+
+dyn_college$n_college = ifelse(is.na(dyn_college$n_college),0,dyn_college$n_college)
+
+
+
+
+```
+
+This df contains number of colleges established in each year for every constituency from 1989-2019 along with the information about the winner of the constituency
+
+### distribution of the number of colleges
+
+
+```{r}
+hist(dyn_college$n_college)
+
+```
+
+- a huge number of constituencies have zero number of constituncies established for some of the years
+- not normal distribution
+
+
+### unserstanding the dynast data
+
+
+```{r}
+
+table(dyn_college$dyn)
+
+# recoding empty ones and recheck as dyn
+
+dyn_college$dynast = ifelse(dyn_college$dyn==1,1,0)
+table(dyn_college$dynast)
+
+
+```
+
+### average number of colleges for dynast constituenices
+
+
+```{r}
+mean(dyn_college$n_college)
+
+dyn_college %>% group_by(dynast) %>% 
+  summarise(mean(n_college))
+
+```
+
+```{r}
+dyn_college %>% group_by(year,dynast) %>% 
+  summarise(mean(n_college))
+```
+
+
+
+## running a simple poisson regression
+
+
+```{r}
+
+model <- glm(n_college~dynast+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+#summary(model)
+
+
+addlines <- list(c('Fixed effects - Year' ,"TRUE" ), c("Fixed Effects - State", "TRUE"))
+stargazer::stargazer(model,type = "text",keep = c("dynast", "(Intercept)"), add.lines = addlines)
+
+
+```
+
+

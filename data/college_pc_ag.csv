@@ -1,0 +1,3568 @@
+"","year_el","state","pc_no","n_college"
+"1",1989,"andaman and nicobar islands",1,1
+"2",1989,"assam",1,1
+"3",1989,"assam",2,1
+"4",1989,"assam",5,4
+"5",1989,"assam",6,2
+"6",1989,"assam",7,2
+"7",1989,"assam",8,1
+"8",1989,"assam",9,2
+"9",1989,"assam",10,5
+"10",1989,"assam",11,4
+"11",1989,"assam",12,2
+"12",1989,"assam",13,2
+"13",1989,"assam",14,2
+"14",1989,"bihar",15,1
+"15",1989,"chandigarh",1,1
+"16",1989,"chhattisgarh",1,2
+"17",1989,"chhattisgarh",2,1
+"18",1989,"chhattisgarh",3,1
+"19",1989,"chhattisgarh",4,5
+"20",1989,"chhattisgarh",5,1
+"21",1989,"chhattisgarh",6,9
+"22",1989,"chhattisgarh",7,2
+"23",1989,"chhattisgarh",8,1
+"24",1989,"chhattisgarh",9,1
+"25",1989,"chhattisgarh",10,6
+"26",1989,"chhattisgarh",11,8
+"27",1989,"daman and diu",1,1
+"28",1989,"delhi",2,1
+"29",1989,"delhi",3,1
+"30",1989,"delhi",7,1
+"31",1989,"goa",1,2
+"32",1989,"goa",2,2
+"33",1989,"gujarat",1,2
+"34",1989,"gujarat",3,1
+"35",1989,"gujarat",4,3
+"36",1989,"gujarat",9,1
+"37",1989,"gujarat",10,1
+"38",1989,"gujarat",11,2
+"39",1989,"gujarat",13,1
+"40",1989,"gujarat",15,4
+"41",1989,"gujarat",17,2
+"42",1989,"gujarat",18,2
+"43",1989,"gujarat",23,2
+"44",1989,"gujarat",25,1
+"45",1989,"gujarat",26,2
+"46",1989,"haryana",4,1
+"47",1989,"haryana",5,1
+"48",1989,"haryana",6,2
+"49",1989,"haryana",7,1
+"50",1989,"himachal pradesh",3,2
+"51",1989,"jammu and kashmir",5,2
+"52",1989,"jammu and kashmir",6,1
+"53",1989,"jharkhand",2,1
+"54",1989,"jharkhand",8,1
+"55",1989,"jharkhand",10,1
+"56",1989,"karnataka",1,4
+"57",1989,"karnataka",2,4
+"58",1989,"karnataka",5,1
+"59",1989,"karnataka",6,3
+"60",1989,"karnataka",7,1
+"61",1989,"karnataka",8,2
+"62",1989,"karnataka",9,1
+"63",1989,"karnataka",11,2
+"64",1989,"karnataka",13,8
+"65",1989,"karnataka",16,1
+"66",1989,"karnataka",17,2
+"67",1989,"karnataka",18,3
+"68",1989,"karnataka",20,1
+"69",1989,"karnataka",23,1
+"70",1989,"karnataka",25,2
+"71",1989,"karnataka",27,1
+"72",1989,"karnataka",28,3
+"73",1989,"kerala",4,2
+"74",1989,"kerala",9,1
+"75",1989,"kerala",11,1
+"76",1989,"madhya pradesh",1,1
+"77",1989,"madhya pradesh",2,4
+"78",1989,"madhya pradesh",3,3
+"79",1989,"madhya pradesh",4,1
+"80",1989,"madhya pradesh",5,2
+"81",1989,"madhya pradesh",6,4
+"82",1989,"madhya pradesh",7,7
+"83",1989,"madhya pradesh",8,3
+"84",1989,"madhya pradesh",9,4
+"85",1989,"madhya pradesh",10,4
+"86",1989,"madhya pradesh",11,2
+"87",1989,"madhya pradesh",12,3
+"88",1989,"madhya pradesh",14,3
+"89",1989,"madhya pradesh",15,2
+"90",1989,"madhya pradesh",16,3
+"91",1989,"madhya pradesh",17,1
+"92",1989,"madhya pradesh",18,4
+"93",1989,"madhya pradesh",19,4
+"94",1989,"madhya pradesh",20,2
+"95",1989,"madhya pradesh",22,2
+"96",1989,"madhya pradesh",25,1
+"97",1989,"madhya pradesh",26,2
+"98",1989,"madhya pradesh",27,2
+"99",1989,"madhya pradesh",28,1
+"100",1989,"madhya pradesh",29,1
+"101",1989,"maharashtra",1,1
+"102",1989,"maharashtra",2,2
+"103",1989,"maharashtra",3,12
+"104",1989,"maharashtra",5,3
+"105",1989,"maharashtra",6,5
+"106",1989,"maharashtra",7,4
+"107",1989,"maharashtra",8,2
+"108",1989,"maharashtra",9,2
+"109",1989,"maharashtra",10,10
+"110",1989,"maharashtra",11,3
+"111",1989,"maharashtra",12,4
+"112",1989,"maharashtra",13,8
+"113",1989,"maharashtra",14,6
+"114",1989,"maharashtra",15,7
+"115",1989,"maharashtra",16,5
+"116",1989,"maharashtra",17,5
+"117",1989,"maharashtra",18,3
+"118",1989,"maharashtra",19,3
+"119",1989,"maharashtra",20,5
+"120",1989,"maharashtra",21,4
+"121",1989,"maharashtra",22,3
+"122",1989,"maharashtra",23,17
+"123",1989,"maharashtra",24,5
+"124",1989,"maharashtra",25,3
+"125",1989,"maharashtra",26,6
+"126",1989,"maharashtra",27,7
+"127",1989,"maharashtra",28,3
+"128",1989,"maharashtra",29,6
+"129",1989,"maharashtra",30,8
+"130",1989,"maharashtra",31,2
+"131",1989,"maharashtra",32,1
+"132",1989,"maharashtra",33,14
+"133",1989,"maharashtra",34,6
+"134",1989,"maharashtra",35,6
+"135",1989,"maharashtra",36,8
+"136",1989,"maharashtra",37,7
+"137",1989,"maharashtra",38,3
+"138",1989,"maharashtra",39,8
+"139",1989,"maharashtra",40,4
+"140",1989,"maharashtra",41,4
+"141",1989,"maharashtra",42,9
+"142",1989,"maharashtra",43,7
+"143",1989,"maharashtra",44,2
+"144",1989,"maharashtra",45,7
+"145",1989,"maharashtra",46,4
+"146",1989,"maharashtra",47,5
+"147",1989,"maharashtra",48,13
+"148",1989,"manipur",2,1
+"149",1989,"meghalaya",2,1
+"150",1989,"mizoram",1,1
+"151",1989,"odisha",1,8
+"152",1989,"odisha",2,3
+"153",1989,"odisha",3,3
+"154",1989,"odisha",4,12
+"155",1989,"odisha",5,2
+"156",1989,"odisha",6,2
+"157",1989,"odisha",7,1
+"158",1989,"odisha",8,5
+"159",1989,"odisha",9,5
+"160",1989,"odisha",10,1
+"161",1989,"odisha",11,3
+"162",1989,"odisha",13,1
+"163",1989,"odisha",14,1
+"164",1989,"odisha",15,4
+"165",1989,"odisha",16,1
+"166",1989,"odisha",17,7
+"167",1989,"odisha",18,2
+"168",1989,"odisha",19,3
+"169",1989,"odisha",20,1
+"170",1989,"odisha",21,3
+"171",1989,"puducherry",1,2
+"172",1989,"punjab",1,2
+"173",1989,"punjab",3,2
+"174",1989,"punjab",5,1
+"175",1989,"punjab",7,1
+"176",1989,"punjab",9,4
+"177",1989,"punjab",11,2
+"178",1989,"punjab",12,2
+"179",1989,"punjab",13,1
+"180",1989,"rajasthan",2,2
+"181",1989,"rajasthan",3,1
+"182",1989,"rajasthan",5,1
+"183",1989,"rajasthan",6,7
+"184",1989,"rajasthan",9,3
+"185",1989,"rajasthan",11,2
+"186",1989,"rajasthan",13,2
+"187",1989,"rajasthan",14,2
+"188",1989,"rajasthan",16,4
+"189",1989,"rajasthan",19,1
+"190",1989,"rajasthan",20,1
+"191",1989,"rajasthan",21,1
+"192",1989,"rajasthan",22,1
+"193",1989,"rajasthan",23,2
+"194",1989,"rajasthan",24,2
+"195",1989,"rajasthan",25,2
+"196",1989,"sikkim",1,3
+"197",1989,"tamil nadu",1,1
+"198",1989,"tamil nadu",7,2
+"199",1989,"tamil nadu",10,1
+"200",1989,"tamil nadu",16,2
+"201",1989,"tamil nadu",17,2
+"202",1989,"tamil nadu",18,1
+"203",1989,"tamil nadu",20,3
+"204",1989,"tamil nadu",24,1
+"205",1989,"tamil nadu",26,1
+"206",1989,"tamil nadu",31,1
+"207",1989,"tamil nadu",35,2
+"208",1989,"tamil nadu",36,1
+"209",1989,"telangana",28,1
+"210",1989,"telangana",29,1
+"211",1989,"telangana",30,4
+"212",1989,"telangana",31,16
+"213",1989,"telangana",33,1
+"214",1989,"telangana",34,1
+"215",1989,"telangana",35,1
+"216",1989,"telangana",36,1
+"217",1989,"telangana",37,1
+"218",1989,"telangana",38,2
+"219",1989,"telangana",40,2
+"220",1989,"telangana",41,2
+"221",1989,"telangana",42,2
+"222",1989,"uttar pradesh",1,1
+"223",1989,"uttar pradesh",7,1
+"224",1989,"uttar pradesh",9,2
+"225",1989,"uttar pradesh",13,1
+"226",1989,"uttar pradesh",16,3
+"227",1989,"uttar pradesh",18,1
+"228",1989,"uttar pradesh",23,1
+"229",1989,"uttar pradesh",25,2
+"230",1989,"uttar pradesh",34,1
+"231",1989,"uttar pradesh",36,1
+"232",1989,"uttar pradesh",43,1
+"233",1989,"uttar pradesh",46,1
+"234",1989,"uttar pradesh",47,1
+"235",1989,"uttar pradesh",49,2
+"236",1989,"uttar pradesh",52,1
+"237",1989,"uttar pradesh",53,1
+"238",1989,"uttar pradesh",54,1
+"239",1989,"uttar pradesh",57,2
+"240",1989,"uttar pradesh",59,1
+"241",1989,"uttar pradesh",60,1
+"242",1989,"uttar pradesh",62,1
+"243",1989,"uttar pradesh",63,1
+"244",1989,"uttar pradesh",65,1
+"245",1989,"uttar pradesh",75,2
+"246",1989,"uttar pradesh",77,1
+"247",1989,"uttar pradesh",78,1
+"248",1989,"uttar pradesh",79,1
+"249",1989,"uttarakhand",1,1
+"250",1989,"uttarakhand",2,1
+"251",1989,"uttarakhand",3,3
+"252",1989,"uttarakhand",4,1
+"253",1989,"uttarakhand",5,1
+"254",1989,"west bengal",4,2
+"255",1989,"west bengal",7,1
+"256",1989,"west bengal",18,1
+"257",1989,"west bengal",23,1
+"258",1989,"west bengal",27,1
+"259",1989,"west bengal",31,1
+"260",1991,"assam",1,5
+"261",1991,"assam",2,4
+"262",1991,"assam",3,6
+"263",1991,"assam",4,8
+"264",1991,"assam",5,6
+"265",1991,"assam",6,15
+"266",1991,"assam",7,16
+"267",1991,"assam",8,6
+"268",1991,"assam",9,4
+"269",1991,"assam",10,10
+"270",1991,"assam",11,2
+"271",1991,"assam",12,5
+"272",1991,"assam",13,3
+"273",1991,"assam",14,9
+"274",1991,"assam",42,1
+"275",1991,"bihar",4,1
+"276",1991,"bihar",6,1
+"277",1991,"bihar",7,1
+"278",1991,"bihar",30,1
+"279",1991,"bihar",32,1
+"280",1991,"chandigarh",1,2
+"281",1991,"chhattisgarh",3,2
+"282",1991,"chhattisgarh",6,7
+"283",1991,"chhattisgarh",7,2
+"284",1991,"chhattisgarh",10,1
+"285",1991,"dadra and nagar haveli",1,1
+"286",1991,"daman and diu",1,1
+"287",1991,"delhi",1,3
+"288",1991,"delhi",2,3
+"289",1991,"delhi",3,10
+"290",1991,"delhi",4,7
+"291",1991,"goa",1,3
+"292",1991,"goa",2,7
+"293",1991,"gujarat",1,2
+"294",1991,"gujarat",2,1
+"295",1991,"gujarat",3,4
+"296",1991,"gujarat",4,6
+"297",1991,"gujarat",5,3
+"298",1991,"gujarat",6,6
+"299",1991,"gujarat",7,5
+"300",1991,"gujarat",8,2
+"301",1991,"gujarat",9,2
+"302",1991,"gujarat",10,8
+"303",1991,"gujarat",11,13
+"304",1991,"gujarat",12,3
+"305",1991,"gujarat",13,2
+"306",1991,"gujarat",14,2
+"307",1991,"gujarat",15,7
+"308",1991,"gujarat",16,3
+"309",1991,"gujarat",17,2
+"310",1991,"gujarat",18,4
+"311",1991,"gujarat",19,1
+"312",1991,"gujarat",20,2
+"313",1991,"gujarat",21,4
+"314",1991,"gujarat",22,3
+"315",1991,"gujarat",23,3
+"316",1991,"gujarat",24,9
+"317",1991,"gujarat",25,2
+"318",1991,"gujarat",26,2
+"319",1991,"haryana",1,2
+"320",1991,"haryana",2,4
+"321",1991,"haryana",3,1
+"322",1991,"haryana",4,4
+"323",1991,"haryana",5,3
+"324",1991,"haryana",6,5
+"325",1991,"haryana",7,2
+"326",1991,"haryana",8,5
+"327",1991,"haryana",9,2
+"328",1991,"haryana",10,1
+"329",1991,"himachal pradesh",1,7
+"330",1991,"himachal pradesh",2,7
+"331",1991,"himachal pradesh",3,8
+"332",1991,"himachal pradesh",4,5
+"333",1991,"himachal pradesh",13,1
+"334",1991,"jammu and kashmir",1,2
+"335",1991,"jammu and kashmir",2,7
+"336",1991,"jammu and kashmir",3,1
+"337",1991,"jammu and kashmir",5,1
+"338",1991,"jammu and kashmir",6,5
+"339",1991,"jharkhand",4,1
+"340",1991,"jharkhand",7,1
+"341",1991,"karnataka",1,17
+"342",1991,"karnataka",2,19
+"343",1991,"karnataka",3,12
+"344",1991,"karnataka",4,5
+"345",1991,"karnataka",5,8
+"346",1991,"karnataka",6,23
+"347",1991,"karnataka",7,7
+"348",1991,"karnataka",8,13
+"349",1991,"karnataka",9,4
+"350",1991,"karnataka",10,8
+"351",1991,"karnataka",11,33
+"352",1991,"karnataka",12,22
+"353",1991,"karnataka",13,34
+"354",1991,"karnataka",14,7
+"355",1991,"karnataka",15,3
+"356",1991,"karnataka",16,16
+"357",1991,"karnataka",17,13
+"358",1991,"karnataka",18,24
+"359",1991,"karnataka",19,9
+"360",1991,"karnataka",20,7
+"361",1991,"karnataka",21,14
+"362",1991,"karnataka",22,5
+"363",1991,"karnataka",23,10
+"364",1991,"karnataka",24,21
+"365",1991,"karnataka",25,16
+"366",1991,"karnataka",26,4
+"367",1991,"karnataka",27,7
+"368",1991,"karnataka",28,13
+"369",1991,"karnataka",29,1
+"370",1991,"kerala",1,6
+"371",1991,"kerala",2,4
+"372",1991,"kerala",3,2
+"373",1991,"kerala",4,9
+"374",1991,"kerala",5,11
+"375",1991,"kerala",6,5
+"376",1991,"kerala",7,1
+"377",1991,"kerala",8,2
+"378",1991,"kerala",9,4
+"379",1991,"kerala",10,9
+"380",1991,"kerala",11,7
+"381",1991,"kerala",12,8
+"382",1991,"kerala",13,12
+"383",1991,"kerala",14,12
+"384",1991,"kerala",15,3
+"385",1991,"kerala",16,7
+"386",1991,"kerala",17,7
+"387",1991,"kerala",18,3
+"388",1991,"kerala",19,3
+"389",1991,"kerala",20,10
+"390",1991,"kerala",61,1
+"391",1991,"ladakh",4,3
+"392",1991,"madhya pradesh",1,1
+"393",1991,"madhya pradesh",2,1
+"394",1991,"madhya pradesh",3,1
+"395",1991,"madhya pradesh",5,2
+"396",1991,"madhya pradesh",6,1
+"397",1991,"madhya pradesh",9,1
+"398",1991,"madhya pradesh",14,5
+"399",1991,"madhya pradesh",16,2
+"400",1991,"madhya pradesh",17,2
+"401",1991,"madhya pradesh",18,17
+"402",1991,"madhya pradesh",19,3
+"403",1991,"madhya pradesh",22,1
+"404",1991,"madhya pradesh",24,1
+"405",1991,"madhya pradesh",26,15
+"406",1991,"madhya pradesh",29,2
+"407",1991,"madhya pradesh",76,1
+"408",1991,"maharashtra",1,4
+"409",1991,"maharashtra",2,6
+"410",1991,"maharashtra",3,12
+"411",1991,"maharashtra",6,5
+"412",1991,"maharashtra",7,5
+"413",1991,"maharashtra",8,13
+"414",1991,"maharashtra",9,2
+"415",1991,"maharashtra",10,24
+"416",1991,"maharashtra",11,4
+"417",1991,"maharashtra",12,11
+"418",1991,"maharashtra",13,3
+"419",1991,"maharashtra",14,9
+"420",1991,"maharashtra",15,10
+"421",1991,"maharashtra",16,2
+"422",1991,"maharashtra",17,7
+"423",1991,"maharashtra",18,11
+"424",1991,"maharashtra",19,2
+"425",1991,"maharashtra",20,7
+"426",1991,"maharashtra",21,11
+"427",1991,"maharashtra",22,7
+"428",1991,"maharashtra",23,43
+"429",1991,"maharashtra",24,11
+"430",1991,"maharashtra",25,7
+"431",1991,"maharashtra",26,15
+"432",1991,"maharashtra",27,5
+"433",1991,"maharashtra",28,11
+"434",1991,"maharashtra",29,4
+"435",1991,"maharashtra",30,7
+"436",1991,"maharashtra",31,3
+"437",1991,"maharashtra",32,5
+"438",1991,"maharashtra",33,8
+"439",1991,"maharashtra",34,6
+"440",1991,"maharashtra",35,5
+"441",1991,"maharashtra",36,4
+"442",1991,"maharashtra",37,3
+"443",1991,"maharashtra",38,5
+"444",1991,"maharashtra",39,6
+"445",1991,"maharashtra",40,8
+"446",1991,"maharashtra",41,8
+"447",1991,"maharashtra",42,18
+"448",1991,"maharashtra",43,21
+"449",1991,"maharashtra",44,7
+"450",1991,"maharashtra",45,3
+"451",1991,"maharashtra",46,8
+"452",1991,"maharashtra",47,10
+"453",1991,"maharashtra",48,6
+"454",1991,"manipur",1,4
+"455",1991,"manipur",2,6
+"456",1991,"meghalaya",1,7
+"457",1991,"meghalaya",2,3
+"458",1991,"mizoram",1,5
+"459",1991,"nagaland",1,16
+"460",1991,"nagaland",23,1
+"461",1991,"odisha",1,13
+"462",1991,"odisha",2,15
+"463",1991,"odisha",3,16
+"464",1991,"odisha",4,13
+"465",1991,"odisha",5,7
+"466",1991,"odisha",6,10
+"467",1991,"odisha",7,5
+"468",1991,"odisha",8,10
+"469",1991,"odisha",9,21
+"470",1991,"odisha",10,3
+"471",1991,"odisha",11,5
+"472",1991,"odisha",12,3
+"473",1991,"odisha",13,1
+"474",1991,"odisha",14,8
+"475",1991,"odisha",15,7
+"476",1991,"odisha",16,8
+"477",1991,"odisha",17,7
+"478",1991,"odisha",18,14
+"479",1991,"odisha",19,12
+"480",1991,"odisha",20,7
+"481",1991,"odisha",21,10
+"482",1991,"puducherry",1,5
+"483",1991,"puducherry",11,1
+"484",1991,"punjab",1,5
+"485",1991,"punjab",2,3
+"486",1991,"punjab",3,1
+"487",1991,"punjab",4,4
+"488",1991,"punjab",5,3
+"489",1991,"punjab",6,2
+"490",1991,"punjab",7,5
+"491",1991,"punjab",9,5
+"492",1991,"punjab",10,2
+"493",1991,"punjab",11,2
+"494",1991,"punjab",12,6
+"495",1991,"punjab",13,5
+"496",1991,"rajasthan",1,3
+"497",1991,"rajasthan",3,3
+"498",1991,"rajasthan",4,2
+"499",1991,"rajasthan",5,3
+"500",1991,"rajasthan",6,7
+"501",1991,"rajasthan",7,1
+"502",1991,"rajasthan",8,3
+"503",1991,"rajasthan",9,2
+"504",1991,"rajasthan",10,1
+"505",1991,"rajasthan",11,1
+"506",1991,"rajasthan",12,2
+"507",1991,"rajasthan",13,1
+"508",1991,"rajasthan",14,3
+"509",1991,"rajasthan",15,1
+"510",1991,"rajasthan",16,2
+"511",1991,"rajasthan",17,1
+"512",1991,"rajasthan",18,2
+"513",1991,"rajasthan",19,7
+"514",1991,"rajasthan",20,2
+"515",1991,"rajasthan",21,2
+"516",1991,"rajasthan",23,1
+"517",1991,"rajasthan",24,1
+"518",1991,"rajasthan",25,2
+"519",1991,"sikkim",1,4
+"520",1991,"tamil nadu",1,10
+"521",1991,"tamil nadu",2,14
+"522",1991,"tamil nadu",3,15
+"523",1991,"tamil nadu",4,5
+"524",1991,"tamil nadu",5,5
+"525",1991,"tamil nadu",6,2
+"526",1991,"tamil nadu",7,3
+"527",1991,"tamil nadu",8,1
+"528",1991,"tamil nadu",9,6
+"529",1991,"tamil nadu",10,1
+"530",1991,"tamil nadu",11,2
+"531",1991,"tamil nadu",13,3
+"532",1991,"tamil nadu",14,9
+"533",1991,"tamil nadu",15,5
+"534",1991,"tamil nadu",16,6
+"535",1991,"tamil nadu",17,14
+"536",1991,"tamil nadu",18,1
+"537",1991,"tamil nadu",19,9
+"538",1991,"tamil nadu",20,26
+"539",1991,"tamil nadu",21,3
+"540",1991,"tamil nadu",22,2
+"541",1991,"tamil nadu",23,3
+"542",1991,"tamil nadu",24,6
+"543",1991,"tamil nadu",25,2
+"544",1991,"tamil nadu",27,7
+"545",1991,"tamil nadu",28,3
+"546",1991,"tamil nadu",30,3
+"547",1991,"tamil nadu",31,2
+"548",1991,"tamil nadu",32,1
+"549",1991,"tamil nadu",33,3
+"550",1991,"tamil nadu",34,6
+"551",1991,"tamil nadu",35,2
+"552",1991,"tamil nadu",36,2
+"553",1991,"tamil nadu",37,2
+"554",1991,"tamil nadu",38,5
+"555",1991,"tamil nadu",39,3
+"556",1991,"telangana",28,1
+"557",1991,"telangana",29,7
+"558",1991,"telangana",30,18
+"559",1991,"telangana",31,74
+"560",1991,"telangana",33,4
+"561",1991,"telangana",34,5
+"562",1991,"telangana",35,4
+"563",1991,"telangana",37,7
+"564",1991,"telangana",38,20
+"565",1991,"telangana",40,13
+"566",1991,"telangana",41,21
+"567",1991,"telangana",42,13
+"568",1991,"tripura",2,1
+"569",1991,"uttar pradesh",2,2
+"570",1991,"uttar pradesh",3,5
+"571",1991,"uttar pradesh",4,2
+"572",1991,"uttar pradesh",6,1
+"573",1991,"uttar pradesh",7,4
+"574",1991,"uttar pradesh",9,1
+"575",1991,"uttar pradesh",10,2
+"576",1991,"uttar pradesh",13,2
+"577",1991,"uttar pradesh",15,2
+"578",1991,"uttar pradesh",16,7
+"579",1991,"uttar pradesh",18,1
+"580",1991,"uttar pradesh",19,1
+"581",1991,"uttar pradesh",20,1
+"582",1991,"uttar pradesh",22,2
+"583",1991,"uttar pradesh",23,1
+"584",1991,"uttar pradesh",24,3
+"585",1991,"uttar pradesh",25,1
+"586",1991,"uttar pradesh",26,2
+"587",1991,"uttar pradesh",27,2
+"588",1991,"uttar pradesh",28,1
+"589",1991,"uttar pradesh",30,1
+"590",1991,"uttar pradesh",32,2
+"591",1991,"uttar pradesh",33,1
+"592",1991,"uttar pradesh",34,7
+"593",1991,"uttar pradesh",35,1
+"594",1991,"uttar pradesh",37,1
+"595",1991,"uttar pradesh",38,3
+"596",1991,"uttar pradesh",39,1
+"597",1991,"uttar pradesh",40,3
+"598",1991,"uttar pradesh",41,1
+"599",1991,"uttar pradesh",43,3
+"600",1991,"uttar pradesh",44,5
+"601",1991,"uttar pradesh",45,5
+"602",1991,"uttar pradesh",46,5
+"603",1991,"uttar pradesh",47,2
+"604",1991,"uttar pradesh",48,6
+"605",1991,"uttar pradesh",49,1
+"606",1991,"uttar pradesh",50,3
+"607",1991,"uttar pradesh",52,3
+"608",1991,"uttar pradesh",54,1
+"609",1991,"uttar pradesh",55,2
+"610",1991,"uttar pradesh",57,3
+"611",1991,"uttar pradesh",58,2
+"612",1991,"uttar pradesh",59,2
+"613",1991,"uttar pradesh",60,2
+"614",1991,"uttar pradesh",61,7
+"615",1991,"uttar pradesh",62,1
+"616",1991,"uttar pradesh",63,2
+"617",1991,"uttar pradesh",65,1
+"618",1991,"uttar pradesh",66,2
+"619",1991,"uttar pradesh",70,2
+"620",1991,"uttar pradesh",72,4
+"621",1991,"uttar pradesh",73,4
+"622",1991,"uttar pradesh",74,2
+"623",1991,"uttar pradesh",75,3
+"624",1991,"uttar pradesh",76,1
+"625",1991,"uttar pradesh",77,7
+"626",1991,"uttar pradesh",80,4
+"627",1991,"uttarakhand",1,7
+"628",1991,"uttarakhand",3,1
+"629",1991,"uttarakhand",4,2
+"630",1991,"west bengal",4,2
+"631",1991,"west bengal",6,1
+"632",1991,"west bengal",7,2
+"633",1991,"west bengal",8,1
+"634",1991,"west bengal",11,1
+"635",1991,"west bengal",12,1
+"636",1991,"west bengal",17,1
+"637",1991,"west bengal",18,2
+"638",1991,"west bengal",19,1
+"639",1991,"west bengal",20,4
+"640",1991,"west bengal",21,2
+"641",1991,"west bengal",22,3
+"642",1991,"west bengal",23,2
+"643",1991,"west bengal",24,1
+"644",1991,"west bengal",25,1
+"645",1991,"west bengal",27,2
+"646",1991,"west bengal",32,1
+"647",1991,"west bengal",34,1
+"648",1996,"arunachal pradesh",1,1
+"649",1996,"arunachal pradesh",2,2
+"650",1996,"assam",1,3
+"651",1996,"assam",2,1
+"652",1996,"assam",3,1
+"653",1996,"assam",4,1
+"654",1996,"assam",5,4
+"655",1996,"assam",6,1
+"656",1996,"assam",7,3
+"657",1996,"assam",10,2
+"658",1996,"assam",11,2
+"659",1996,"assam",12,1
+"660",1996,"assam",13,2
+"661",1996,"assam",14,8
+"662",1996,"bihar",7,2
+"663",1996,"bihar",8,1
+"664",1996,"bihar",32,2
+"665",1996,"chhattisgarh",2,1
+"666",1996,"chhattisgarh",3,1
+"667",1996,"chhattisgarh",4,1
+"668",1996,"chhattisgarh",5,1
+"669",1996,"chhattisgarh",6,2
+"670",1996,"chhattisgarh",8,1
+"671",1996,"chhattisgarh",10,1
+"672",1996,"delhi",1,1
+"673",1996,"delhi",2,2
+"674",1996,"delhi",3,9
+"675",1996,"goa",1,1
+"676",1996,"goa",2,1
+"677",1996,"gujarat",2,2
+"678",1996,"gujarat",4,2
+"679",1996,"gujarat",6,2
+"680",1996,"gujarat",7,1
+"681",1996,"gujarat",9,1
+"682",1996,"gujarat",10,1
+"683",1996,"gujarat",11,6
+"684",1996,"gujarat",12,3
+"685",1996,"gujarat",13,1
+"686",1996,"gujarat",14,1
+"687",1996,"gujarat",15,2
+"688",1996,"gujarat",19,1
+"689",1996,"gujarat",20,7
+"690",1996,"gujarat",23,1
+"691",1996,"gujarat",25,2
+"692",1996,"gujarat",26,2
+"693",1996,"haryana",1,4
+"694",1996,"haryana",2,1
+"695",1996,"haryana",4,1
+"696",1996,"haryana",5,3
+"697",1996,"haryana",6,3
+"698",1996,"haryana",7,3
+"699",1996,"haryana",8,1
+"700",1996,"haryana",9,2
+"701",1996,"haryana",10,1
+"702",1996,"himachal pradesh",1,3
+"703",1996,"himachal pradesh",2,3
+"704",1996,"himachal pradesh",3,2
+"705",1996,"himachal pradesh",4,2
+"706",1996,"himachal pradesh",18,1
+"707",1996,"jammu and kashmir",1,2
+"708",1996,"jammu and kashmir",2,1
+"709",1996,"jammu and kashmir",6,1
+"710",1996,"jharkhand",8,1
+"711",1996,"karnataka",1,3
+"712",1996,"karnataka",2,3
+"713",1996,"karnataka",3,3
+"714",1996,"karnataka",4,2
+"715",1996,"karnataka",5,3
+"716",1996,"karnataka",6,2
+"717",1996,"karnataka",7,2
+"718",1996,"karnataka",8,4
+"719",1996,"karnataka",9,3
+"720",1996,"karnataka",10,3
+"721",1996,"karnataka",11,24
+"722",1996,"karnataka",12,13
+"723",1996,"karnataka",13,14
+"724",1996,"karnataka",14,3
+"725",1996,"karnataka",15,3
+"726",1996,"karnataka",16,8
+"727",1996,"karnataka",17,4
+"728",1996,"karnataka",18,10
+"729",1996,"karnataka",19,3
+"730",1996,"karnataka",20,3
+"731",1996,"karnataka",21,5
+"732",1996,"karnataka",22,3
+"733",1996,"karnataka",24,7
+"734",1996,"karnataka",25,9
+"735",1996,"karnataka",26,3
+"736",1996,"karnataka",27,7
+"737",1996,"karnataka",28,3
+"738",1996,"kerala",1,2
+"739",1996,"kerala",2,1
+"740",1996,"kerala",4,4
+"741",1996,"kerala",5,2
+"742",1996,"kerala",7,1
+"743",1996,"kerala",9,2
+"744",1996,"kerala",11,1
+"745",1996,"kerala",12,1
+"746",1996,"kerala",14,3
+"747",1996,"kerala",18,3
+"748",1996,"kerala",20,1
+"749",1996,"madhya pradesh",1,3
+"750",1996,"madhya pradesh",2,2
+"751",1996,"madhya pradesh",3,3
+"752",1996,"madhya pradesh",4,1
+"753",1996,"madhya pradesh",6,1
+"754",1996,"madhya pradesh",7,1
+"755",1996,"madhya pradesh",8,4
+"756",1996,"madhya pradesh",13,1
+"757",1996,"madhya pradesh",14,10
+"758",1996,"madhya pradesh",15,1
+"759",1996,"madhya pradesh",16,1
+"760",1996,"madhya pradesh",17,1
+"761",1996,"madhya pradesh",18,13
+"762",1996,"madhya pradesh",20,2
+"763",1996,"madhya pradesh",21,1
+"764",1996,"madhya pradesh",23,2
+"765",1996,"madhya pradesh",24,1
+"766",1996,"madhya pradesh",26,9
+"767",1996,"madhya pradesh",27,2
+"768",1996,"madhya pradesh",28,1
+"769",1996,"maharashtra",1,1
+"770",1996,"maharashtra",2,4
+"771",1996,"maharashtra",3,2
+"772",1996,"maharashtra",5,1
+"773",1996,"maharashtra",7,1
+"774",1996,"maharashtra",8,4
+"775",1996,"maharashtra",9,2
+"776",1996,"maharashtra",10,5
+"777",1996,"maharashtra",12,8
+"778",1996,"maharashtra",14,3
+"779",1996,"maharashtra",15,2
+"780",1996,"maharashtra",17,5
+"781",1996,"maharashtra",18,2
+"782",1996,"maharashtra",21,4
+"783",1996,"maharashtra",22,2
+"784",1996,"maharashtra",23,9
+"785",1996,"maharashtra",24,2
+"786",1996,"maharashtra",25,1
+"787",1996,"maharashtra",26,2
+"788",1996,"maharashtra",27,3
+"789",1996,"maharashtra",28,2
+"790",1996,"maharashtra",29,1
+"791",1996,"maharashtra",30,3
+"792",1996,"maharashtra",31,2
+"793",1996,"maharashtra",32,3
+"794",1996,"maharashtra",33,5
+"795",1996,"maharashtra",34,3
+"796",1996,"maharashtra",35,1
+"797",1996,"maharashtra",36,1
+"798",1996,"maharashtra",37,1
+"799",1996,"maharashtra",38,2
+"800",1996,"maharashtra",39,2
+"801",1996,"maharashtra",40,5
+"802",1996,"maharashtra",41,3
+"803",1996,"maharashtra",42,10
+"804",1996,"maharashtra",43,2
+"805",1996,"maharashtra",44,3
+"806",1996,"maharashtra",46,1
+"807",1996,"maharashtra",48,3
+"808",1996,"manipur",1,2
+"809",1996,"manipur",2,2
+"810",1996,"meghalaya",1,3
+"811",1996,"mizoram",1,1
+"812",1996,"nagaland",1,6
+"813",1996,"odisha",1,2
+"814",1996,"odisha",2,1
+"815",1996,"odisha",3,3
+"816",1996,"odisha",4,3
+"817",1996,"odisha",5,1
+"818",1996,"odisha",6,1
+"819",1996,"odisha",7,1
+"820",1996,"odisha",8,1
+"821",1996,"odisha",9,4
+"822",1996,"odisha",10,3
+"823",1996,"odisha",11,3
+"824",1996,"odisha",12,5
+"825",1996,"odisha",13,1
+"826",1996,"odisha",14,4
+"827",1996,"odisha",15,2
+"828",1996,"odisha",16,1
+"829",1996,"odisha",17,4
+"830",1996,"odisha",18,5
+"831",1996,"odisha",19,2
+"832",1996,"odisha",20,2
+"833",1996,"odisha",21,2
+"834",1996,"puducherry",1,2
+"835",1996,"punjab",1,2
+"836",1996,"punjab",2,2
+"837",1996,"punjab",3,1
+"838",1996,"punjab",4,2
+"839",1996,"punjab",6,1
+"840",1996,"punjab",7,5
+"841",1996,"punjab",8,2
+"842",1996,"punjab",9,3
+"843",1996,"punjab",11,2
+"844",1996,"punjab",12,6
+"845",1996,"punjab",13,1
+"846",1996,"rajasthan",1,3
+"847",1996,"rajasthan",2,3
+"848",1996,"rajasthan",3,1
+"849",1996,"rajasthan",4,2
+"850",1996,"rajasthan",5,1
+"851",1996,"rajasthan",6,4
+"852",1996,"rajasthan",7,3
+"853",1996,"rajasthan",9,3
+"854",1996,"rajasthan",10,1
+"855",1996,"rajasthan",11,4
+"856",1996,"rajasthan",12,2
+"857",1996,"rajasthan",13,1
+"858",1996,"rajasthan",16,2
+"859",1996,"rajasthan",17,1
+"860",1996,"rajasthan",18,2
+"861",1996,"rajasthan",19,1
+"862",1996,"rajasthan",22,1
+"863",1996,"rajasthan",23,2
+"864",1996,"rajasthan",24,2
+"865",1996,"rajasthan",25,2
+"866",1996,"sikkim",1,1
+"867",1996,"tamil nadu",1,6
+"868",1996,"tamil nadu",2,5
+"869",1996,"tamil nadu",3,2
+"870",1996,"tamil nadu",4,8
+"871",1996,"tamil nadu",5,5
+"872",1996,"tamil nadu",6,1
+"873",1996,"tamil nadu",8,2
+"874",1996,"tamil nadu",9,4
+"875",1996,"tamil nadu",10,1
+"876",1996,"tamil nadu",11,3
+"877",1996,"tamil nadu",13,2
+"878",1996,"tamil nadu",14,1
+"879",1996,"tamil nadu",15,5
+"880",1996,"tamil nadu",16,3
+"881",1996,"tamil nadu",17,1
+"882",1996,"tamil nadu",18,2
+"883",1996,"tamil nadu",19,3
+"884",1996,"tamil nadu",20,14
+"885",1996,"tamil nadu",21,3
+"886",1996,"tamil nadu",22,2
+"887",1996,"tamil nadu",24,5
+"888",1996,"tamil nadu",25,2
+"889",1996,"tamil nadu",26,1
+"890",1996,"tamil nadu",27,4
+"891",1996,"tamil nadu",28,2
+"892",1996,"tamil nadu",29,2
+"893",1996,"tamil nadu",30,1
+"894",1996,"tamil nadu",31,3
+"895",1996,"tamil nadu",32,2
+"896",1996,"tamil nadu",33,2
+"897",1996,"tamil nadu",34,3
+"898",1996,"tamil nadu",35,2
+"899",1996,"tamil nadu",36,4
+"900",1996,"tamil nadu",38,1
+"901",1996,"tamil nadu",39,2
+"902",1996,"telangana",5,1
+"903",1996,"telangana",29,1
+"904",1996,"telangana",30,6
+"905",1996,"telangana",31,31
+"906",1996,"telangana",32,2
+"907",1996,"telangana",33,1
+"908",1996,"telangana",34,2
+"909",1996,"telangana",35,1
+"910",1996,"telangana",36,5
+"911",1996,"telangana",37,6
+"912",1996,"telangana",38,7
+"913",1996,"telangana",39,2
+"914",1996,"telangana",40,6
+"915",1996,"telangana",41,2
+"916",1996,"telangana",42,1
+"917",1996,"tripura",1,1
+"918",1996,"uttar pradesh",1,2
+"919",1996,"uttar pradesh",2,1
+"920",1996,"uttar pradesh",3,1
+"921",1996,"uttar pradesh",4,1
+"922",1996,"uttar pradesh",5,1
+"923",1996,"uttar pradesh",6,2
+"924",1996,"uttar pradesh",7,1
+"925",1996,"uttar pradesh",8,1
+"926",1996,"uttar pradesh",9,1
+"927",1996,"uttar pradesh",10,2
+"928",1996,"uttar pradesh",11,1
+"929",1996,"uttar pradesh",12,2
+"930",1996,"uttar pradesh",13,1
+"931",1996,"uttar pradesh",16,10
+"932",1996,"uttar pradesh",17,1
+"933",1996,"uttar pradesh",18,1
+"934",1996,"uttar pradesh",20,2
+"935",1996,"uttar pradesh",22,2
+"936",1996,"uttar pradesh",23,3
+"937",1996,"uttar pradesh",24,4
+"938",1996,"uttar pradesh",25,2
+"939",1996,"uttar pradesh",29,2
+"940",1996,"uttar pradesh",30,1
+"941",1996,"uttar pradesh",31,2
+"942",1996,"uttar pradesh",33,1
+"943",1996,"uttar pradesh",34,2
+"944",1996,"uttar pradesh",36,1
+"945",1996,"uttar pradesh",37,3
+"946",1996,"uttar pradesh",38,2
+"947",1996,"uttar pradesh",39,1
+"948",1996,"uttar pradesh",41,3
+"949",1996,"uttar pradesh",44,2
+"950",1996,"uttar pradesh",46,1
+"951",1996,"uttar pradesh",47,2
+"952",1996,"uttar pradesh",48,4
+"953",1996,"uttar pradesh",49,2
+"954",1996,"uttar pradesh",50,4
+"955",1996,"uttar pradesh",51,2
+"956",1996,"uttar pradesh",52,4
+"957",1996,"uttar pradesh",56,1
+"958",1996,"uttar pradesh",57,1
+"959",1996,"uttar pradesh",58,1
+"960",1996,"uttar pradesh",59,2
+"961",1996,"uttar pradesh",60,1
+"962",1996,"uttar pradesh",61,5
+"963",1996,"uttar pradesh",62,1
+"964",1996,"uttar pradesh",64,1
+"965",1996,"uttar pradesh",66,2
+"966",1996,"uttar pradesh",67,2
+"967",1996,"uttar pradesh",69,2
+"968",1996,"uttar pradesh",70,4
+"969",1996,"uttar pradesh",71,2
+"970",1996,"uttar pradesh",72,4
+"971",1996,"uttar pradesh",73,3
+"972",1996,"uttar pradesh",74,2
+"973",1996,"uttar pradesh",75,5
+"974",1996,"uttar pradesh",76,9
+"975",1996,"uttar pradesh",77,9
+"976",1996,"uttar pradesh",78,2
+"977",1996,"uttar pradesh",79,1
+"978",1996,"uttarakhand",1,3
+"979",1996,"uttarakhand",2,1
+"980",1996,"uttarakhand",3,4
+"981",1996,"uttarakhand",4,2
+"982",1996,"uttarakhand",5,3
+"983",1996,"west bengal",2,1
+"984",1996,"west bengal",3,1
+"985",1996,"west bengal",4,1
+"986",1996,"west bengal",13,1
+"987",1996,"west bengal",17,1
+"988",1996,"west bengal",20,3
+"989",1996,"west bengal",23,1
+"990",1996,"west bengal",30,1
+"991",1996,"west bengal",32,1
+"992",1996,"west bengal",37,2
+"993",1996,"west bengal",39,1
+"994",1998,"andaman and nicobar islands",1,1
+"995",1998,"assam",2,2
+"996",1998,"assam",3,1
+"997",1998,"assam",4,1
+"998",1998,"assam",7,1
+"999",1998,"assam",13,2
+"1000",1998,"bihar",10,1
+"1001",1998,"bihar",11,1
+"1002",1998,"bihar",32,2
+"1003",1998,"bihar",35,1
+"1004",1998,"chhattisgarh",2,2
+"1005",1998,"chhattisgarh",4,1
+"1006",1998,"chhattisgarh",6,1
+"1007",1998,"chhattisgarh",7,1
+"1008",1998,"chhattisgarh",10,1
+"1009",1998,"chhattisgarh",11,2
+"1010",1998,"delhi",1,2
+"1011",1998,"delhi",3,2
+"1012",1998,"delhi",7,1
+"1013",1998,"goa",1,1
+"1014",1998,"gujarat",2,1
+"1015",1998,"gujarat",3,3
+"1016",1998,"gujarat",4,5
+"1017",1998,"gujarat",6,4
+"1018",1998,"gujarat",7,1
+"1019",1998,"gujarat",11,6
+"1020",1998,"gujarat",12,2
+"1021",1998,"gujarat",15,2
+"1022",1998,"gujarat",20,2
+"1023",1998,"gujarat",24,6
+"1024",1998,"gujarat",25,1
+"1025",1998,"haryana",1,2
+"1026",1998,"haryana",3,2
+"1027",1998,"haryana",5,1
+"1028",1998,"haryana",6,2
+"1029",1998,"haryana",7,1
+"1030",1998,"haryana",8,1
+"1031",1998,"haryana",9,1
+"1032",1998,"haryana",10,2
+"1033",1998,"himachal pradesh",1,1
+"1034",1998,"jammu and kashmir",1,1
+"1035",1998,"jammu and kashmir",2,2
+"1036",1998,"jammu and kashmir",5,1
+"1037",1998,"jammu and kashmir",6,2
+"1038",1998,"jharkhand",13,1
+"1039",1998,"karnataka",1,1
+"1040",1998,"karnataka",2,3
+"1041",1998,"karnataka",5,2
+"1042",1998,"karnataka",6,2
+"1043",1998,"karnataka",8,1
+"1044",1998,"karnataka",9,2
+"1045",1998,"karnataka",10,4
+"1046",1998,"karnataka",11,7
+"1047",1998,"karnataka",12,4
+"1048",1998,"karnataka",13,13
+"1049",1998,"karnataka",14,1
+"1050",1998,"karnataka",15,1
+"1051",1998,"karnataka",16,1
+"1052",1998,"karnataka",18,3
+"1053",1998,"karnataka",22,1
+"1054",1998,"karnataka",24,3
+"1055",1998,"karnataka",25,1
+"1056",1998,"karnataka",26,1
+"1057",1998,"karnataka",27,3
+"1058",1998,"karnataka",28,3
+"1059",1998,"kerala",1,1
+"1060",1998,"kerala",8,1
+"1061",1998,"kerala",10,2
+"1062",1998,"kerala",13,1
+"1063",1998,"kerala",14,2
+"1064",1998,"kerala",17,1
+"1065",1998,"kerala",20,1
+"1066",1998,"madhya pradesh",1,3
+"1067",1998,"madhya pradesh",2,1
+"1068",1998,"madhya pradesh",3,3
+"1069",1998,"madhya pradesh",6,2
+"1070",1998,"madhya pradesh",9,4
+"1071",1998,"madhya pradesh",12,2
+"1072",1998,"madhya pradesh",14,2
+"1073",1998,"madhya pradesh",16,1
+"1074",1998,"madhya pradesh",17,1
+"1075",1998,"madhya pradesh",18,6
+"1076",1998,"madhya pradesh",20,1
+"1077",1998,"madhya pradesh",23,1
+"1078",1998,"madhya pradesh",24,1
+"1079",1998,"madhya pradesh",26,1
+"1080",1998,"madhya pradesh",29,1
+"1081",1998,"maharashtra",1,2
+"1082",1998,"maharashtra",3,4
+"1083",1998,"maharashtra",4,1
+"1084",1998,"maharashtra",5,1
+"1085",1998,"maharashtra",8,4
+"1086",1998,"maharashtra",9,2
+"1087",1998,"maharashtra",10,1
+"1088",1998,"maharashtra",12,4
+"1089",1998,"maharashtra",13,1
+"1090",1998,"maharashtra",14,2
+"1091",1998,"maharashtra",16,2
+"1092",1998,"maharashtra",17,1
+"1093",1998,"maharashtra",19,2
+"1094",1998,"maharashtra",20,4
+"1095",1998,"maharashtra",21,1
+"1096",1998,"maharashtra",23,2
+"1097",1998,"maharashtra",25,2
+"1098",1998,"maharashtra",26,1
+"1099",1998,"maharashtra",28,1
+"1100",1998,"maharashtra",29,1
+"1101",1998,"maharashtra",30,4
+"1102",1998,"maharashtra",31,4
+"1103",1998,"maharashtra",32,1
+"1104",1998,"maharashtra",33,3
+"1105",1998,"maharashtra",35,3
+"1106",1998,"maharashtra",36,1
+"1107",1998,"maharashtra",37,1
+"1108",1998,"maharashtra",38,2
+"1109",1998,"maharashtra",40,1
+"1110",1998,"maharashtra",41,2
+"1111",1998,"maharashtra",42,4
+"1112",1998,"maharashtra",43,6
+"1113",1998,"maharashtra",45,1
+"1114",1998,"maharashtra",47,3
+"1115",1998,"maharashtra",48,2
+"1116",1998,"mizoram",1,1
+"1117",1998,"odisha",1,1
+"1118",1998,"odisha",2,1
+"1119",1998,"odisha",4,1
+"1120",1998,"odisha",5,2
+"1121",1998,"odisha",6,3
+"1122",1998,"odisha",9,3
+"1123",1998,"odisha",11,2
+"1124",1998,"odisha",12,1
+"1125",1998,"odisha",13,1
+"1126",1998,"odisha",15,3
+"1127",1998,"odisha",16,1
+"1128",1998,"odisha",17,3
+"1129",1998,"odisha",20,2
+"1130",1998,"puducherry",1,1
+"1131",1998,"punjab",1,2
+"1132",1998,"punjab",6,1
+"1133",1998,"punjab",7,1
+"1134",1998,"punjab",8,4
+"1135",1998,"punjab",9,5
+"1136",1998,"punjab",11,2
+"1137",1998,"punjab",12,6
+"1138",1998,"rajasthan",1,2
+"1139",1998,"rajasthan",2,1
+"1140",1998,"rajasthan",4,1
+"1141",1998,"rajasthan",5,1
+"1142",1998,"rajasthan",6,4
+"1143",1998,"rajasthan",9,2
+"1144",1998,"rajasthan",10,1
+"1145",1998,"rajasthan",11,1
+"1146",1998,"rajasthan",18,2
+"1147",1998,"rajasthan",19,1
+"1148",1998,"rajasthan",23,1
+"1149",1998,"tamil nadu",1,2
+"1150",1998,"tamil nadu",2,1
+"1151",1998,"tamil nadu",3,4
+"1152",1998,"tamil nadu",4,7
+"1153",1998,"tamil nadu",6,1
+"1154",1998,"tamil nadu",7,2
+"1155",1998,"tamil nadu",9,5
+"1156",1998,"tamil nadu",10,5
+"1157",1998,"tamil nadu",11,2
+"1158",1998,"tamil nadu",12,2
+"1159",1998,"tamil nadu",13,3
+"1160",1998,"tamil nadu",15,2
+"1161",1998,"tamil nadu",16,2
+"1162",1998,"tamil nadu",17,1
+"1163",1998,"tamil nadu",18,2
+"1164",1998,"tamil nadu",19,2
+"1165",1998,"tamil nadu",20,9
+"1166",1998,"tamil nadu",21,3
+"1167",1998,"tamil nadu",22,1
+"1168",1998,"tamil nadu",23,3
+"1169",1998,"tamil nadu",24,4
+"1170",1998,"tamil nadu",25,1
+"1171",1998,"tamil nadu",27,8
+"1172",1998,"tamil nadu",28,1
+"1173",1998,"tamil nadu",31,2
+"1174",1998,"tamil nadu",33,2
+"1175",1998,"tamil nadu",34,2
+"1176",1998,"tamil nadu",35,2
+"1177",1998,"tamil nadu",36,5
+"1178",1998,"tamil nadu",39,2
+"1179",1998,"telangana",28,2
+"1180",1998,"telangana",29,4
+"1181",1998,"telangana",30,2
+"1182",1998,"telangana",31,11
+"1183",1998,"telangana",34,2
+"1184",1998,"telangana",35,1
+"1185",1998,"telangana",37,1
+"1186",1998,"telangana",38,5
+"1187",1998,"telangana",39,1
+"1188",1998,"telangana",40,2
+"1189",1998,"telangana",41,6
+"1190",1998,"tripura",1,1
+"1191",1998,"uttar pradesh",7,2
+"1192",1998,"uttar pradesh",13,1
+"1193",1998,"uttar pradesh",16,5
+"1194",1998,"uttar pradesh",20,1
+"1195",1998,"uttar pradesh",22,1
+"1196",1998,"uttar pradesh",23,1
+"1197",1998,"uttar pradesh",24,4
+"1198",1998,"uttar pradesh",25,1
+"1199",1998,"uttar pradesh",31,1
+"1200",1998,"uttar pradesh",34,2
+"1201",1998,"uttar pradesh",37,2
+"1202",1998,"uttar pradesh",39,1
+"1203",1998,"uttar pradesh",41,1
+"1204",1998,"uttar pradesh",42,1
+"1205",1998,"uttar pradesh",44,1
+"1206",1998,"uttar pradesh",49,1
+"1207",1998,"uttar pradesh",50,3
+"1208",1998,"uttar pradesh",52,1
+"1209",1998,"uttar pradesh",57,1
+"1210",1998,"uttar pradesh",59,3
+"1211",1998,"uttar pradesh",61,4
+"1212",1998,"uttar pradesh",63,1
+"1213",1998,"uttar pradesh",66,1
+"1214",1998,"uttar pradesh",67,2
+"1215",1998,"uttar pradesh",69,3
+"1216",1998,"uttar pradesh",70,2
+"1217",1998,"uttar pradesh",71,1
+"1218",1998,"uttar pradesh",72,1
+"1219",1998,"uttar pradesh",73,4
+"1220",1998,"uttar pradesh",74,1
+"1221",1998,"uttar pradesh",75,4
+"1222",1998,"uttar pradesh",76,4
+"1223",1998,"uttar pradesh",77,1
+"1224",1998,"uttar pradesh",78,2
+"1225",1998,"uttar pradesh",79,1
+"1226",1998,"uttarakhand",1,1
+"1227",1998,"uttarakhand",4,1
+"1228",1998,"uttarakhand",5,1
+"1229",1998,"west bengal",4,2
+"1230",1998,"west bengal",8,1
+"1231",1998,"west bengal",9,1
+"1232",1998,"west bengal",10,1
+"1233",1998,"west bengal",16,1
+"1234",1998,"west bengal",23,1
+"1235",1998,"west bengal",26,1
+"1236",1998,"west bengal",30,1
+"1237",1998,"west bengal",36,1
+"1238",1998,"west bengal",38,2
+"1239",1999,"arunachal pradesh",1,6
+"1240",1999,"arunachal pradesh",2,3
+"1241",1999,"assam",5,3
+"1242",1999,"assam",6,1
+"1243",1999,"assam",7,4
+"1244",1999,"assam",8,4
+"1245",1999,"assam",9,1
+"1246",1999,"assam",10,1
+"1247",1999,"assam",11,2
+"1248",1999,"assam",14,2
+"1249",1999,"bihar",10,1
+"1250",1999,"bihar",24,1
+"1251",1999,"bihar",32,2
+"1252",1999,"bihar",34,1
+"1253",1999,"bihar",35,2
+"1254",1999,"chandigarh",1,2
+"1255",1999,"chhattisgarh",1,4
+"1256",1999,"chhattisgarh",2,5
+"1257",1999,"chhattisgarh",3,11
+"1258",1999,"chhattisgarh",4,6
+"1259",1999,"chhattisgarh",5,2
+"1260",1999,"chhattisgarh",6,14
+"1261",1999,"chhattisgarh",7,7
+"1262",1999,"chhattisgarh",9,3
+"1263",1999,"chhattisgarh",10,22
+"1264",1999,"chhattisgarh",11,4
+"1265",1999,"daman and diu",1,1
+"1266",1999,"delhi",1,1
+"1267",1999,"delhi",2,14
+"1268",1999,"delhi",3,21
+"1269",1999,"delhi",4,7
+"1270",1999,"delhi",73,1
+"1271",1999,"goa",1,1
+"1272",1999,"goa",2,1
+"1273",1999,"gujarat",1,1
+"1274",1999,"gujarat",2,6
+"1275",1999,"gujarat",3,6
+"1276",1999,"gujarat",4,17
+"1277",1999,"gujarat",5,3
+"1278",1999,"gujarat",6,15
+"1279",1999,"gujarat",7,6
+"1280",1999,"gujarat",8,6
+"1281",1999,"gujarat",9,1
+"1282",1999,"gujarat",10,7
+"1283",1999,"gujarat",11,30
+"1284",1999,"gujarat",12,25
+"1285",1999,"gujarat",13,2
+"1286",1999,"gujarat",14,4
+"1287",1999,"gujarat",15,8
+"1288",1999,"gujarat",16,7
+"1289",1999,"gujarat",17,5
+"1290",1999,"gujarat",18,4
+"1291",1999,"gujarat",19,2
+"1292",1999,"gujarat",20,16
+"1293",1999,"gujarat",22,10
+"1294",1999,"gujarat",23,7
+"1295",1999,"gujarat",24,17
+"1296",1999,"gujarat",25,5
+"1297",1999,"gujarat",26,12
+"1298",1999,"haryana",1,9
+"1299",1999,"haryana",2,3
+"1300",1999,"haryana",3,6
+"1301",1999,"haryana",4,7
+"1302",1999,"haryana",5,3
+"1303",1999,"haryana",6,4
+"1304",1999,"haryana",7,5
+"1305",1999,"haryana",8,5
+"1306",1999,"haryana",9,2
+"1307",1999,"haryana",10,10
+"1308",1999,"himachal pradesh",1,14
+"1309",1999,"himachal pradesh",2,9
+"1310",1999,"himachal pradesh",3,8
+"1311",1999,"himachal pradesh",4,12
+"1312",1999,"jammu and kashmir",1,9
+"1313",1999,"jammu and kashmir",2,12
+"1314",1999,"jammu and kashmir",3,3
+"1315",1999,"jammu and kashmir",5,14
+"1316",1999,"jammu and kashmir",6,34
+"1317",1999,"jharkhand",3,2
+"1318",1999,"jharkhand",5,1
+"1319",1999,"jharkhand",8,4
+"1320",1999,"karnataka",1,12
+"1321",1999,"karnataka",2,20
+"1322",1999,"karnataka",3,10
+"1323",1999,"karnataka",4,4
+"1324",1999,"karnataka",5,11
+"1325",1999,"karnataka",6,22
+"1326",1999,"karnataka",7,7
+"1327",1999,"karnataka",8,14
+"1328",1999,"karnataka",9,17
+"1329",1999,"karnataka",10,8
+"1330",1999,"karnataka",11,100
+"1331",1999,"karnataka",12,88
+"1332",1999,"karnataka",13,83
+"1333",1999,"karnataka",14,4
+"1334",1999,"karnataka",15,2
+"1335",1999,"karnataka",16,9
+"1336",1999,"karnataka",17,8
+"1337",1999,"karnataka",18,39
+"1338",1999,"karnataka",19,10
+"1339",1999,"karnataka",20,6
+"1340",1999,"karnataka",21,4
+"1341",1999,"karnataka",22,10
+"1342",1999,"karnataka",23,1
+"1343",1999,"karnataka",24,17
+"1344",1999,"karnataka",25,10
+"1345",1999,"karnataka",26,5
+"1346",1999,"karnataka",27,7
+"1347",1999,"karnataka",28,9
+"1348",1999,"kerala",1,23
+"1349",1999,"kerala",2,15
+"1350",1999,"kerala",3,10
+"1351",1999,"kerala",4,11
+"1352",1999,"kerala",5,14
+"1353",1999,"kerala",6,11
+"1354",1999,"kerala",7,10
+"1355",1999,"kerala",8,12
+"1356",1999,"kerala",9,12
+"1357",1999,"kerala",10,8
+"1358",1999,"kerala",11,27
+"1359",1999,"kerala",12,18
+"1360",1999,"kerala",13,16
+"1361",1999,"kerala",14,19
+"1362",1999,"kerala",15,9
+"1363",1999,"kerala",16,11
+"1364",1999,"kerala",17,4
+"1365",1999,"kerala",18,14
+"1366",1999,"kerala",19,5
+"1367",1999,"kerala",20,16
+"1368",1999,"kerala",21,1
+"1369",1999,"kerala",39,1
+"1370",1999,"kerala",61,1
+"1371",1999,"madhya pradesh",1,3
+"1372",1999,"madhya pradesh",2,11
+"1373",1999,"madhya pradesh",3,24
+"1374",1999,"madhya pradesh",4,4
+"1375",1999,"madhya pradesh",5,11
+"1376",1999,"madhya pradesh",6,6
+"1377",1999,"madhya pradesh",7,2
+"1378",1999,"madhya pradesh",8,8
+"1379",1999,"madhya pradesh",9,7
+"1380",1999,"madhya pradesh",10,3
+"1381",1999,"madhya pradesh",11,6
+"1382",1999,"madhya pradesh",12,4
+"1383",1999,"madhya pradesh",14,27
+"1384",1999,"madhya pradesh",15,5
+"1385",1999,"madhya pradesh",16,5
+"1386",1999,"madhya pradesh",17,12
+"1387",1999,"madhya pradesh",18,77
+"1388",1999,"madhya pradesh",19,13
+"1389",1999,"madhya pradesh",20,9
+"1390",1999,"madhya pradesh",21,1
+"1391",1999,"madhya pradesh",22,5
+"1392",1999,"madhya pradesh",23,3
+"1393",1999,"madhya pradesh",24,3
+"1394",1999,"madhya pradesh",25,2
+"1395",1999,"madhya pradesh",26,28
+"1396",1999,"madhya pradesh",27,5
+"1397",1999,"madhya pradesh",28,2
+"1398",1999,"madhya pradesh",29,7
+"1399",1999,"madhya pradesh",37,1
+"1400",1999,"maharashtra",1,4
+"1401",1999,"maharashtra",2,6
+"1402",1999,"maharashtra",3,13
+"1403",1999,"maharashtra",5,2
+"1404",1999,"maharashtra",6,12
+"1405",1999,"maharashtra",7,6
+"1406",1999,"maharashtra",8,16
+"1407",1999,"maharashtra",9,11
+"1408",1999,"maharashtra",10,36
+"1409",1999,"maharashtra",11,3
+"1410",1999,"maharashtra",12,24
+"1411",1999,"maharashtra",13,5
+"1412",1999,"maharashtra",14,3
+"1413",1999,"maharashtra",15,10
+"1414",1999,"maharashtra",16,9
+"1415",1999,"maharashtra",17,15
+"1416",1999,"maharashtra",18,9
+"1417",1999,"maharashtra",19,10
+"1418",1999,"maharashtra",20,8
+"1419",1999,"maharashtra",21,10
+"1420",1999,"maharashtra",22,2
+"1421",1999,"maharashtra",23,38
+"1422",1999,"maharashtra",24,8
+"1423",1999,"maharashtra",25,11
+"1424",1999,"maharashtra",26,9
+"1425",1999,"maharashtra",27,6
+"1426",1999,"maharashtra",28,16
+"1427",1999,"maharashtra",29,4
+"1428",1999,"maharashtra",30,12
+"1429",1999,"maharashtra",31,9
+"1430",1999,"maharashtra",32,11
+"1431",1999,"maharashtra",33,34
+"1432",1999,"maharashtra",34,20
+"1433",1999,"maharashtra",35,18
+"1434",1999,"maharashtra",36,9
+"1435",1999,"maharashtra",37,6
+"1436",1999,"maharashtra",38,7
+"1437",1999,"maharashtra",39,12
+"1438",1999,"maharashtra",40,11
+"1439",1999,"maharashtra",41,18
+"1440",1999,"maharashtra",42,38
+"1441",1999,"maharashtra",43,37
+"1442",1999,"maharashtra",44,9
+"1443",1999,"maharashtra",45,8
+"1444",1999,"maharashtra",46,5
+"1445",1999,"maharashtra",47,5
+"1446",1999,"maharashtra",48,7
+"1447",1999,"manipur",1,3
+"1448",1999,"manipur",2,6
+"1449",1999,"meghalaya",1,9
+"1450",1999,"meghalaya",2,5
+"1451",1999,"mizoram",1,1
+"1452",1999,"nagaland",1,3
+"1453",1999,"nagaland",21,1
+"1454",1999,"odisha",1,2
+"1455",1999,"odisha",2,7
+"1456",1999,"odisha",3,2
+"1457",1999,"odisha",4,3
+"1458",1999,"odisha",5,2
+"1459",1999,"odisha",6,8
+"1460",1999,"odisha",7,2
+"1461",1999,"odisha",8,3
+"1462",1999,"odisha",9,25
+"1463",1999,"odisha",11,6
+"1464",1999,"odisha",12,11
+"1465",1999,"odisha",13,1
+"1466",1999,"odisha",14,2
+"1467",1999,"odisha",15,3
+"1468",1999,"odisha",16,4
+"1469",1999,"odisha",17,2
+"1470",1999,"odisha",18,3
+"1471",1999,"odisha",19,2
+"1472",1999,"odisha",20,5
+"1473",1999,"odisha",21,3
+"1474",1999,"odisha",44,1
+"1475",1999,"puducherry",1,8
+"1476",1999,"puducherry",9,1
+"1477",1999,"puducherry",10,2
+"1478",1999,"punjab",1,5
+"1479",1999,"punjab",2,9
+"1480",1999,"punjab",3,4
+"1481",1999,"punjab",4,11
+"1482",1999,"punjab",5,7
+"1483",1999,"punjab",6,7
+"1484",1999,"punjab",7,15
+"1485",1999,"punjab",8,10
+"1486",1999,"punjab",9,13
+"1487",1999,"punjab",10,5
+"1488",1999,"punjab",11,4
+"1489",1999,"punjab",12,10
+"1490",1999,"punjab",13,3
+"1491",1999,"punjab",16,1
+"1492",1999,"punjab",43,1
+"1493",1999,"rajasthan",1,17
+"1494",1999,"rajasthan",2,9
+"1495",1999,"rajasthan",3,3
+"1496",1999,"rajasthan",4,28
+"1497",1999,"rajasthan",5,15
+"1498",1999,"rajasthan",6,54
+"1499",1999,"rajasthan",7,10
+"1500",1999,"rajasthan",8,9
+"1501",1999,"rajasthan",9,11
+"1502",1999,"rajasthan",10,9
+"1503",1999,"rajasthan",11,8
+"1504",1999,"rajasthan",12,8
+"1505",1999,"rajasthan",13,4
+"1506",1999,"rajasthan",14,1
+"1507",1999,"rajasthan",15,3
+"1508",1999,"rajasthan",16,2
+"1509",1999,"rajasthan",17,2
+"1510",1999,"rajasthan",18,11
+"1511",1999,"rajasthan",19,14
+"1512",1999,"rajasthan",20,5
+"1513",1999,"rajasthan",21,2
+"1514",1999,"rajasthan",22,3
+"1515",1999,"rajasthan",23,1
+"1516",1999,"rajasthan",24,14
+"1517",1999,"rajasthan",25,2
+"1518",1999,"rajasthan",29,1
+"1519",1999,"rajasthan",69,1
+"1520",1999,"sikkim",1,5
+"1521",1999,"tamil nadu",1,13
+"1522",1999,"tamil nadu",2,17
+"1523",1999,"tamil nadu",3,14
+"1524",1999,"tamil nadu",4,23
+"1525",1999,"tamil nadu",5,13
+"1526",1999,"tamil nadu",6,4
+"1527",1999,"tamil nadu",7,10
+"1528",1999,"tamil nadu",8,2
+"1529",1999,"tamil nadu",9,4
+"1530",1999,"tamil nadu",10,4
+"1531",1999,"tamil nadu",11,4
+"1532",1999,"tamil nadu",12,2
+"1533",1999,"tamil nadu",13,2
+"1534",1999,"tamil nadu",14,1
+"1535",1999,"tamil nadu",15,7
+"1536",1999,"tamil nadu",16,4
+"1537",1999,"tamil nadu",17,9
+"1538",1999,"tamil nadu",18,5
+"1539",1999,"tamil nadu",19,5
+"1540",1999,"tamil nadu",20,18
+"1541",1999,"tamil nadu",21,1
+"1542",1999,"tamil nadu",22,2
+"1543",1999,"tamil nadu",23,3
+"1544",1999,"tamil nadu",24,5
+"1545",1999,"tamil nadu",25,1
+"1546",1999,"tamil nadu",26,3
+"1547",1999,"tamil nadu",27,10
+"1548",1999,"tamil nadu",28,5
+"1549",1999,"tamil nadu",29,2
+"1550",1999,"tamil nadu",30,8
+"1551",1999,"tamil nadu",31,7
+"1552",1999,"tamil nadu",32,6
+"1553",1999,"tamil nadu",33,4
+"1554",1999,"tamil nadu",34,3
+"1555",1999,"tamil nadu",35,5
+"1556",1999,"tamil nadu",36,8
+"1557",1999,"tamil nadu",38,4
+"1558",1999,"tamil nadu",39,12
+"1559",1999,"telangana",5,2
+"1560",1999,"telangana",23,2
+"1561",1999,"telangana",28,7
+"1562",1999,"telangana",29,27
+"1563",1999,"telangana",30,64
+"1564",1999,"telangana",31,75
+"1565",1999,"telangana",32,18
+"1566",1999,"telangana",33,13
+"1567",1999,"telangana",34,16
+"1568",1999,"telangana",35,8
+"1569",1999,"telangana",36,17
+"1570",1999,"telangana",37,28
+"1571",1999,"telangana",38,31
+"1572",1999,"telangana",39,10
+"1573",1999,"telangana",40,32
+"1574",1999,"telangana",41,46
+"1575",1999,"telangana",42,15
+"1576",1999,"tripura",1,2
+"1577",1999,"uttar pradesh",1,7
+"1578",1999,"uttar pradesh",2,7
+"1579",1999,"uttar pradesh",3,6
+"1580",1999,"uttar pradesh",4,2
+"1581",1999,"uttar pradesh",6,1
+"1582",1999,"uttar pradesh",7,8
+"1583",1999,"uttar pradesh",8,4
+"1584",1999,"uttar pradesh",9,1
+"1585",1999,"uttar pradesh",10,2
+"1586",1999,"uttar pradesh",11,3
+"1587",1999,"uttar pradesh",12,2
+"1588",1999,"uttar pradesh",13,5
+"1589",1999,"uttar pradesh",14,2
+"1590",1999,"uttar pradesh",15,10
+"1591",1999,"uttar pradesh",16,18
+"1592",1999,"uttar pradesh",17,7
+"1593",1999,"uttar pradesh",18,4
+"1594",1999,"uttar pradesh",19,1
+"1595",1999,"uttar pradesh",20,5
+"1596",1999,"uttar pradesh",21,6
+"1597",1999,"uttar pradesh",22,5
+"1598",1999,"uttar pradesh",23,5
+"1599",1999,"uttar pradesh",24,6
+"1600",1999,"uttar pradesh",25,3
+"1601",1999,"uttar pradesh",26,1
+"1602",1999,"uttar pradesh",27,2
+"1603",1999,"uttar pradesh",28,2
+"1604",1999,"uttar pradesh",29,6
+"1605",1999,"uttar pradesh",30,1
+"1606",1999,"uttar pradesh",31,2
+"1607",1999,"uttar pradesh",32,4
+"1608",1999,"uttar pradesh",33,1
+"1609",1999,"uttar pradesh",34,15
+"1610",1999,"uttar pradesh",35,3
+"1611",1999,"uttar pradesh",36,2
+"1612",1999,"uttar pradesh",37,1
+"1613",1999,"uttar pradesh",38,9
+"1614",1999,"uttar pradesh",39,9
+"1615",1999,"uttar pradesh",40,7
+"1616",1999,"uttar pradesh",41,9
+"1617",1999,"uttar pradesh",42,1
+"1618",1999,"uttar pradesh",43,4
+"1619",1999,"uttar pradesh",44,12
+"1620",1999,"uttar pradesh",45,9
+"1621",1999,"uttar pradesh",46,7
+"1622",1999,"uttar pradesh",47,8
+"1623",1999,"uttar pradesh",48,19
+"1624",1999,"uttar pradesh",49,2
+"1625",1999,"uttar pradesh",50,5
+"1626",1999,"uttar pradesh",51,8
+"1627",1999,"uttar pradesh",52,18
+"1628",1999,"uttar pradesh",53,7
+"1629",1999,"uttar pradesh",54,5
+"1630",1999,"uttar pradesh",55,6
+"1631",1999,"uttar pradesh",56,2
+"1632",1999,"uttar pradesh",57,7
+"1633",1999,"uttar pradesh",58,3
+"1634",1999,"uttar pradesh",59,8
+"1635",1999,"uttar pradesh",60,7
+"1636",1999,"uttar pradesh",61,25
+"1637",1999,"uttar pradesh",62,2
+"1638",1999,"uttar pradesh",63,4
+"1639",1999,"uttar pradesh",64,6
+"1640",1999,"uttar pradesh",65,3
+"1641",1999,"uttar pradesh",66,15
+"1642",1999,"uttar pradesh",67,7
+"1643",1999,"uttar pradesh",68,3
+"1644",1999,"uttar pradesh",69,17
+"1645",1999,"uttar pradesh",70,12
+"1646",1999,"uttar pradesh",71,5
+"1647",1999,"uttar pradesh",72,10
+"1648",1999,"uttar pradesh",73,35
+"1649",1999,"uttar pradesh",74,5
+"1650",1999,"uttar pradesh",75,25
+"1651",1999,"uttar pradesh",76,35
+"1652",1999,"uttar pradesh",77,21
+"1653",1999,"uttar pradesh",78,16
+"1654",1999,"uttar pradesh",79,3
+"1655",1999,"uttar pradesh",80,12
+"1656",1999,"uttarakhand",1,19
+"1657",1999,"uttarakhand",2,3
+"1658",1999,"uttarakhand",3,3
+"1659",1999,"uttarakhand",4,7
+"1660",1999,"uttarakhand",5,5
+"1661",1999,"west bengal",1,1
+"1662",1999,"west bengal",2,1
+"1663",1999,"west bengal",3,2
+"1664",1999,"west bengal",4,4
+"1665",1999,"west bengal",5,1
+"1666",1999,"west bengal",6,1
+"1667",1999,"west bengal",7,1
+"1668",1999,"west bengal",8,1
+"1669",1999,"west bengal",9,5
+"1670",1999,"west bengal",10,5
+"1671",1999,"west bengal",11,1
+"1672",1999,"west bengal",12,7
+"1673",1999,"west bengal",13,1
+"1674",1999,"west bengal",14,1
+"1675",1999,"west bengal",17,1
+"1676",1999,"west bengal",18,9
+"1677",1999,"west bengal",19,3
+"1678",1999,"west bengal",20,21
+"1679",1999,"west bengal",21,1
+"1680",1999,"west bengal",22,6
+"1681",1999,"west bengal",23,14
+"1682",1999,"west bengal",24,1
+"1683",1999,"west bengal",25,2
+"1684",1999,"west bengal",27,5
+"1685",1999,"west bengal",29,2
+"1686",1999,"west bengal",30,6
+"1687",1999,"west bengal",31,3
+"1688",1999,"west bengal",32,3
+"1689",1999,"west bengal",34,2
+"1690",1999,"west bengal",35,4
+"1691",1999,"west bengal",36,2
+"1692",1999,"west bengal",37,15
+"1693",1999,"west bengal",38,4
+"1694",1999,"west bengal",39,5
+"1695",1999,"west bengal",40,3
+"1696",1999,"west bengal",41,2
+"1697",1999,"west bengal",42,1
+"1698",2004,"arunachal pradesh",1,6
+"1699",2004,"arunachal pradesh",2,1
+"1700",2004,"arunachal pradesh",48,1
+"1701",2004,"assam",2,3
+"1702",2004,"assam",3,1
+"1703",2004,"assam",5,3
+"1704",2004,"assam",6,3
+"1705",2004,"assam",7,19
+"1706",2004,"assam",8,3
+"1707",2004,"assam",12,2
+"1708",2004,"assam",13,1
+"1709",2004,"assam",22,1
+"1710",2004,"bihar",2,1
+"1711",2004,"bihar",5,1
+"1712",2004,"bihar",6,1
+"1713",2004,"bihar",7,3
+"1714",2004,"bihar",8,1
+"1715",2004,"bihar",9,1
+"1716",2004,"bihar",13,2
+"1717",2004,"bihar",14,1
+"1718",2004,"bihar",15,4
+"1719",2004,"bihar",17,2
+"1720",2004,"bihar",18,1
+"1721",2004,"bihar",20,1
+"1722",2004,"bihar",23,1
+"1723",2004,"bihar",24,1
+"1724",2004,"bihar",26,2
+"1725",2004,"bihar",27,1
+"1726",2004,"bihar",31,4
+"1727",2004,"bihar",32,8
+"1728",2004,"bihar",33,1
+"1729",2004,"bihar",35,1
+"1730",2004,"bihar",37,1
+"1731",2004,"bihar",38,4
+"1732",2004,"bihar",39,1
+"1733",2004,"bihar",40,7
+"1734",2004,"chandigarh",1,1
+"1735",2004,"chandigarh",22,1
+"1736",2004,"chhattisgarh",1,15
+"1737",2004,"chhattisgarh",2,9
+"1738",2004,"chhattisgarh",3,17
+"1739",2004,"chhattisgarh",4,16
+"1740",2004,"chhattisgarh",5,8
+"1741",2004,"chhattisgarh",6,38
+"1742",2004,"chhattisgarh",7,11
+"1743",2004,"chhattisgarh",8,7
+"1744",2004,"chhattisgarh",9,8
+"1745",2004,"chhattisgarh",10,35
+"1746",2004,"chhattisgarh",11,12
+"1747",2004,"chhattisgarh",14,1
+"1748",2004,"dadra and nagar haveli",1,5
+"1749",2004,"daman and diu",1,1
+"1750",2004,"delhi",1,4
+"1751",2004,"delhi",2,5
+"1752",2004,"delhi",3,21
+"1753",2004,"delhi",4,6
+"1754",2004,"delhi",7,2
+"1755",2004,"goa",1,2
+"1756",2004,"goa",2,2
+"1757",2004,"gujarat",1,22
+"1758",2004,"gujarat",2,24
+"1759",2004,"gujarat",3,9
+"1760",2004,"gujarat",4,48
+"1761",2004,"gujarat",5,7
+"1762",2004,"gujarat",6,34
+"1763",2004,"gujarat",7,19
+"1764",2004,"gujarat",8,12
+"1765",2004,"gujarat",9,5
+"1766",2004,"gujarat",10,20
+"1767",2004,"gujarat",11,75
+"1768",2004,"gujarat",12,53
+"1769",2004,"gujarat",13,15
+"1770",2004,"gujarat",14,14
+"1771",2004,"gujarat",15,31
+"1772",2004,"gujarat",16,18
+"1773",2004,"gujarat",17,8
+"1774",2004,"gujarat",18,16
+"1775",2004,"gujarat",19,6
+"1776",2004,"gujarat",20,27
+"1777",2004,"gujarat",21,5
+"1778",2004,"gujarat",22,30
+"1779",2004,"gujarat",23,8
+"1780",2004,"gujarat",24,29
+"1781",2004,"gujarat",25,6
+"1782",2004,"gujarat",26,4
+"1783",2004,"gujarat",41,1
+"1784",2004,"haryana",1,59
+"1785",2004,"haryana",2,49
+"1786",2004,"haryana",3,40
+"1787",2004,"haryana",4,64
+"1788",2004,"haryana",5,83
+"1789",2004,"haryana",6,47
+"1790",2004,"haryana",7,94
+"1791",2004,"haryana",8,48
+"1792",2004,"haryana",9,41
+"1793",2004,"haryana",10,38
+"1794",2004,"haryana",24,1
+"1795",2004,"haryana",36,1
+"1796",2004,"himachal pradesh",1,27
+"1797",2004,"himachal pradesh",2,26
+"1798",2004,"himachal pradesh",3,22
+"1799",2004,"himachal pradesh",4,18
+"1800",2004,"himachal pradesh",18,1
+"1801",2004,"jammu and kashmir",1,26
+"1802",2004,"jammu and kashmir",2,18
+"1803",2004,"jammu and kashmir",3,15
+"1804",2004,"jammu and kashmir",5,18
+"1805",2004,"jammu and kashmir",6,26
+"1806",2004,"jharkhand",5,3
+"1807",2004,"jharkhand",6,1
+"1808",2004,"jharkhand",7,1
+"1809",2004,"jharkhand",8,5
+"1810",2004,"jharkhand",9,4
+"1811",2004,"jharkhand",10,1
+"1812",2004,"jharkhand",11,1
+"1813",2004,"jharkhand",12,1
+"1814",2004,"jharkhand",13,7
+"1815",2004,"jharkhand",14,2
+"1816",2004,"karnataka",1,73
+"1817",2004,"karnataka",2,69
+"1818",2004,"karnataka",3,54
+"1819",2004,"karnataka",4,24
+"1820",2004,"karnataka",5,39
+"1821",2004,"karnataka",6,51
+"1822",2004,"karnataka",7,20
+"1823",2004,"karnataka",8,36
+"1824",2004,"karnataka",9,30
+"1825",2004,"karnataka",10,53
+"1826",2004,"karnataka",11,155
+"1827",2004,"karnataka",12,98
+"1828",2004,"karnataka",13,87
+"1829",2004,"karnataka",14,29
+"1830",2004,"karnataka",15,18
+"1831",2004,"karnataka",16,36
+"1832",2004,"karnataka",17,21
+"1833",2004,"karnataka",18,69
+"1834",2004,"karnataka",19,38
+"1835",2004,"karnataka",20,23
+"1836",2004,"karnataka",21,33
+"1837",2004,"karnataka",22,26
+"1838",2004,"karnataka",23,23
+"1839",2004,"karnataka",24,79
+"1840",2004,"karnataka",25,64
+"1841",2004,"karnataka",26,46
+"1842",2004,"karnataka",27,31
+"1843",2004,"karnataka",28,52
+"1844",2004,"karnataka",29,1
+"1845",2004,"karnataka",30,1
+"1846",2004,"kerala",1,17
+"1847",2004,"kerala",2,18
+"1848",2004,"kerala",3,11
+"1849",2004,"kerala",4,31
+"1850",2004,"kerala",5,32
+"1851",2004,"kerala",6,31
+"1852",2004,"kerala",7,17
+"1853",2004,"kerala",8,11
+"1854",2004,"kerala",9,15
+"1855",2004,"kerala",10,11
+"1856",2004,"kerala",11,19
+"1857",2004,"kerala",12,17
+"1858",2004,"kerala",13,15
+"1859",2004,"kerala",14,12
+"1860",2004,"kerala",15,11
+"1861",2004,"kerala",16,12
+"1862",2004,"kerala",17,10
+"1863",2004,"kerala",18,22
+"1864",2004,"kerala",19,12
+"1865",2004,"kerala",20,35
+"1866",2004,"ladakh",4,2
+"1867",2004,"madhya pradesh",1,27
+"1868",2004,"madhya pradesh",2,31
+"1869",2004,"madhya pradesh",3,72
+"1870",2004,"madhya pradesh",4,13
+"1871",2004,"madhya pradesh",5,32
+"1872",2004,"madhya pradesh",6,15
+"1873",2004,"madhya pradesh",7,18
+"1874",2004,"madhya pradesh",8,19
+"1875",2004,"madhya pradesh",9,13
+"1876",2004,"madhya pradesh",10,9
+"1877",2004,"madhya pradesh",11,9
+"1878",2004,"madhya pradesh",12,9
+"1879",2004,"madhya pradesh",13,4
+"1880",2004,"madhya pradesh",14,43
+"1881",2004,"madhya pradesh",15,10
+"1882",2004,"madhya pradesh",16,9
+"1883",2004,"madhya pradesh",17,11
+"1884",2004,"madhya pradesh",18,122
+"1885",2004,"madhya pradesh",19,15
+"1886",2004,"madhya pradesh",20,10
+"1887",2004,"madhya pradesh",21,9
+"1888",2004,"madhya pradesh",22,13
+"1889",2004,"madhya pradesh",23,9
+"1890",2004,"madhya pradesh",24,9
+"1891",2004,"madhya pradesh",25,11
+"1892",2004,"madhya pradesh",26,97
+"1893",2004,"madhya pradesh",27,18
+"1894",2004,"madhya pradesh",28,6
+"1895",2004,"madhya pradesh",29,12
+"1896",2004,"madhya pradesh",57,1
+"1897",2004,"madhya pradesh",61,1
+"1898",2004,"madhya pradesh",69,1
+"1899",2004,"madhya pradesh",77,1
+"1900",2004,"maharashtra",1,13
+"1901",2004,"maharashtra",2,16
+"1902",2004,"maharashtra",3,27
+"1903",2004,"maharashtra",4,2
+"1904",2004,"maharashtra",5,6
+"1905",2004,"maharashtra",6,12
+"1906",2004,"maharashtra",7,13
+"1907",2004,"maharashtra",8,18
+"1908",2004,"maharashtra",9,25
+"1909",2004,"maharashtra",10,77
+"1910",2004,"maharashtra",11,18
+"1911",2004,"maharashtra",12,69
+"1912",2004,"maharashtra",13,13
+"1913",2004,"maharashtra",14,25
+"1914",2004,"maharashtra",15,34
+"1915",2004,"maharashtra",16,18
+"1916",2004,"maharashtra",17,26
+"1917",2004,"maharashtra",18,29
+"1918",2004,"maharashtra",19,22
+"1919",2004,"maharashtra",20,15
+"1920",2004,"maharashtra",21,24
+"1921",2004,"maharashtra",22,23
+"1922",2004,"maharashtra",23,117
+"1923",2004,"maharashtra",24,26
+"1924",2004,"maharashtra",25,36
+"1925",2004,"maharashtra",26,46
+"1926",2004,"maharashtra",27,26
+"1927",2004,"maharashtra",28,22
+"1928",2004,"maharashtra",29,16
+"1929",2004,"maharashtra",30,47
+"1930",2004,"maharashtra",31,28
+"1931",2004,"maharashtra",32,15
+"1932",2004,"maharashtra",33,78
+"1933",2004,"maharashtra",34,51
+"1934",2004,"maharashtra",35,40
+"1935",2004,"maharashtra",36,27
+"1936",2004,"maharashtra",37,27
+"1937",2004,"maharashtra",38,29
+"1938",2004,"maharashtra",39,40
+"1939",2004,"maharashtra",40,22
+"1940",2004,"maharashtra",41,77
+"1941",2004,"maharashtra",42,75
+"1942",2004,"maharashtra",43,78
+"1943",2004,"maharashtra",44,13
+"1944",2004,"maharashtra",45,29
+"1945",2004,"maharashtra",46,21
+"1946",2004,"maharashtra",47,24
+"1947",2004,"maharashtra",48,25
+"1948",2004,"manipur",1,4
+"1949",2004,"manipur",2,1
+"1950",2004,"meghalaya",1,6
+"1951",2004,"meghalaya",2,4
+"1952",2004,"meghalaya",3,2
+"1953",2004,"mizoram",1,8
+"1954",2004,"nagaland",1,11
+"1955",2004,"odisha",1,6
+"1956",2004,"odisha",2,8
+"1957",2004,"odisha",3,1
+"1958",2004,"odisha",4,7
+"1959",2004,"odisha",5,6
+"1960",2004,"odisha",6,8
+"1961",2004,"odisha",7,5
+"1962",2004,"odisha",8,7
+"1963",2004,"odisha",9,84
+"1964",2004,"odisha",10,2
+"1965",2004,"odisha",11,9
+"1966",2004,"odisha",12,10
+"1967",2004,"odisha",14,2
+"1968",2004,"odisha",15,2
+"1969",2004,"odisha",16,4
+"1970",2004,"odisha",17,3
+"1971",2004,"odisha",18,3
+"1972",2004,"odisha",19,6
+"1973",2004,"odisha",20,4
+"1974",2004,"odisha",21,2
+"1975",2004,"puducherry",1,27
+"1976",2004,"puducherry",3,2
+"1977",2004,"puducherry",9,1
+"1978",2004,"puducherry",10,2
+"1979",2004,"punjab",1,31
+"1980",2004,"punjab",2,23
+"1981",2004,"punjab",3,7
+"1982",2004,"punjab",4,30
+"1983",2004,"punjab",5,22
+"1984",2004,"punjab",6,16
+"1985",2004,"punjab",7,26
+"1986",2004,"punjab",8,40
+"1987",2004,"punjab",9,24
+"1988",2004,"punjab",10,30
+"1989",2004,"punjab",11,34
+"1990",2004,"punjab",12,32
+"1991",2004,"punjab",13,20
+"1992",2004,"punjab",41,1
+"1993",2004,"punjab",42,2
+"1994",2004,"punjab",43,1
+"1995",2004,"rajasthan",1,87
+"1996",2004,"rajasthan",2,58
+"1997",2004,"rajasthan",3,41
+"1998",2004,"rajasthan",4,115
+"1999",2004,"rajasthan",5,143
+"2000",2004,"rajasthan",6,182
+"2001",2004,"rajasthan",7,64
+"2002",2004,"rajasthan",8,71
+"2003",2004,"rajasthan",9,66
+"2004",2004,"rajasthan",10,35
+"2005",2004,"rajasthan",11,35
+"2006",2004,"rajasthan",12,22
+"2007",2004,"rajasthan",13,36
+"2008",2004,"rajasthan",14,22
+"2009",2004,"rajasthan",15,19
+"2010",2004,"rajasthan",16,23
+"2011",2004,"rajasthan",17,10
+"2012",2004,"rajasthan",18,74
+"2013",2004,"rajasthan",19,69
+"2014",2004,"rajasthan",20,19
+"2015",2004,"rajasthan",21,22
+"2016",2004,"rajasthan",22,17
+"2017",2004,"rajasthan",23,10
+"2018",2004,"rajasthan",24,66
+"2019",2004,"rajasthan",25,46
+"2020",2004,"rajasthan",29,1
+"2021",2004,"sikkim",1,2
+"2022",2004,"tamil nadu",1,23
+"2023",2004,"tamil nadu",2,20
+"2024",2004,"tamil nadu",3,12
+"2025",2004,"tamil nadu",4,41
+"2026",2004,"tamil nadu",5,33
+"2027",2004,"tamil nadu",6,8
+"2028",2004,"tamil nadu",7,34
+"2029",2004,"tamil nadu",8,10
+"2030",2004,"tamil nadu",9,36
+"2031",2004,"tamil nadu",10,12
+"2032",2004,"tamil nadu",11,21
+"2033",2004,"tamil nadu",12,24
+"2034",2004,"tamil nadu",13,35
+"2035",2004,"tamil nadu",14,16
+"2036",2004,"tamil nadu",15,48
+"2037",2004,"tamil nadu",16,38
+"2038",2004,"tamil nadu",17,49
+"2039",2004,"tamil nadu",18,17
+"2040",2004,"tamil nadu",19,23
+"2041",2004,"tamil nadu",20,77
+"2042",2004,"tamil nadu",21,13
+"2043",2004,"tamil nadu",22,25
+"2044",2004,"tamil nadu",23,23
+"2045",2004,"tamil nadu",24,36
+"2046",2004,"tamil nadu",25,15
+"2047",2004,"tamil nadu",26,22
+"2048",2004,"tamil nadu",27,45
+"2049",2004,"tamil nadu",28,38
+"2050",2004,"tamil nadu",29,13
+"2051",2004,"tamil nadu",30,32
+"2052",2004,"tamil nadu",31,30
+"2053",2004,"tamil nadu",32,54
+"2054",2004,"tamil nadu",33,28
+"2055",2004,"tamil nadu",34,11
+"2056",2004,"tamil nadu",35,23
+"2057",2004,"tamil nadu",36,39
+"2058",2004,"tamil nadu",37,7
+"2059",2004,"tamil nadu",38,16
+"2060",2004,"tamil nadu",39,53
+"2061",2004,"telangana",4,1
+"2062",2004,"telangana",5,4
+"2063",2004,"telangana",11,2
+"2064",2004,"telangana",13,1
+"2065",2004,"telangana",16,1
+"2066",2004,"telangana",22,1
+"2067",2004,"telangana",28,18
+"2068",2004,"telangana",29,28
+"2069",2004,"telangana",30,116
+"2070",2004,"telangana",31,100
+"2071",2004,"telangana",32,33
+"2072",2004,"telangana",33,15
+"2073",2004,"telangana",34,22
+"2074",2004,"telangana",35,25
+"2075",2004,"telangana",36,21
+"2076",2004,"telangana",37,53
+"2077",2004,"telangana",38,49
+"2078",2004,"telangana",39,23
+"2079",2004,"telangana",40,44
+"2080",2004,"telangana",41,78
+"2081",2004,"telangana",42,29
+"2082",2004,"tripura",1,7
+"2083",2004,"tripura",2,3
+"2084",2004,"uttar pradesh",1,12
+"2085",2004,"uttar pradesh",2,10
+"2086",2004,"uttar pradesh",3,19
+"2087",2004,"uttar pradesh",4,8
+"2088",2004,"uttar pradesh",5,3
+"2089",2004,"uttar pradesh",6,5
+"2090",2004,"uttar pradesh",7,13
+"2091",2004,"uttar pradesh",8,6
+"2092",2004,"uttar pradesh",9,7
+"2093",2004,"uttar pradesh",10,5
+"2094",2004,"uttar pradesh",11,5
+"2095",2004,"uttar pradesh",12,3
+"2096",2004,"uttar pradesh",13,11
+"2097",2004,"uttar pradesh",14,9
+"2098",2004,"uttar pradesh",15,15
+"2099",2004,"uttar pradesh",16,65
+"2100",2004,"uttar pradesh",17,18
+"2101",2004,"uttar pradesh",18,10
+"2102",2004,"uttar pradesh",19,16
+"2103",2004,"uttar pradesh",20,35
+"2104",2004,"uttar pradesh",21,11
+"2105",2004,"uttar pradesh",22,24
+"2106",2004,"uttar pradesh",23,19
+"2107",2004,"uttar pradesh",24,20
+"2108",2004,"uttar pradesh",25,18
+"2109",2004,"uttar pradesh",26,5
+"2110",2004,"uttar pradesh",27,2
+"2111",2004,"uttar pradesh",28,6
+"2112",2004,"uttar pradesh",29,10
+"2113",2004,"uttar pradesh",30,8
+"2114",2004,"uttar pradesh",31,2
+"2115",2004,"uttar pradesh",32,20
+"2116",2004,"uttar pradesh",33,7
+"2117",2004,"uttar pradesh",34,31
+"2118",2004,"uttar pradesh",35,13
+"2119",2004,"uttar pradesh",36,8
+"2120",2004,"uttar pradesh",37,22
+"2121",2004,"uttar pradesh",38,28
+"2122",2004,"uttar pradesh",39,17
+"2123",2004,"uttar pradesh",40,11
+"2124",2004,"uttar pradesh",41,28
+"2125",2004,"uttar pradesh",42,7
+"2126",2004,"uttar pradesh",43,9
+"2127",2004,"uttar pradesh",44,18
+"2128",2004,"uttar pradesh",45,9
+"2129",2004,"uttar pradesh",46,10
+"2130",2004,"uttar pradesh",47,14
+"2131",2004,"uttar pradesh",48,32
+"2132",2004,"uttar pradesh",49,16
+"2133",2004,"uttar pradesh",50,15
+"2134",2004,"uttar pradesh",51,24
+"2135",2004,"uttar pradesh",52,48
+"2136",2004,"uttar pradesh",53,20
+"2137",2004,"uttar pradesh",54,15
+"2138",2004,"uttar pradesh",55,14
+"2139",2004,"uttar pradesh",56,9
+"2140",2004,"uttar pradesh",57,11
+"2141",2004,"uttar pradesh",58,17
+"2142",2004,"uttar pradesh",59,13
+"2143",2004,"uttar pradesh",60,13
+"2144",2004,"uttar pradesh",61,43
+"2145",2004,"uttar pradesh",62,18
+"2146",2004,"uttar pradesh",63,19
+"2147",2004,"uttar pradesh",64,14
+"2148",2004,"uttar pradesh",65,16
+"2149",2004,"uttar pradesh",66,36
+"2150",2004,"uttar pradesh",67,14
+"2151",2004,"uttar pradesh",68,12
+"2152",2004,"uttar pradesh",69,40
+"2153",2004,"uttar pradesh",70,29
+"2154",2004,"uttar pradesh",71,11
+"2155",2004,"uttar pradesh",72,28
+"2156",2004,"uttar pradesh",73,44
+"2157",2004,"uttar pradesh",74,7
+"2158",2004,"uttar pradesh",75,65
+"2159",2004,"uttar pradesh",76,63
+"2160",2004,"uttar pradesh",77,45
+"2161",2004,"uttar pradesh",78,24
+"2162",2004,"uttar pradesh",79,3
+"2163",2004,"uttar pradesh",80,14
+"2164",2004,"uttarakhand",1,46
+"2165",2004,"uttarakhand",2,11
+"2166",2004,"uttarakhand",3,15
+"2167",2004,"uttarakhand",4,22
+"2168",2004,"uttarakhand",5,30
+"2169",2004,"uttarakhand",11,2
+"2170",2004,"uttarakhand",35,1
+"2171",2004,"west bengal",1,2
+"2172",2004,"west bengal",2,6
+"2173",2004,"west bengal",3,4
+"2174",2004,"west bengal",4,8
+"2175",2004,"west bengal",5,2
+"2176",2004,"west bengal",6,6
+"2177",2004,"west bengal",7,5
+"2178",2004,"west bengal",8,5
+"2179",2004,"west bengal",9,9
+"2180",2004,"west bengal",10,5
+"2181",2004,"west bengal",11,6
+"2182",2004,"west bengal",12,4
+"2183",2004,"west bengal",13,10
+"2184",2004,"west bengal",16,5
+"2185",2004,"west bengal",17,3
+"2186",2004,"west bengal",18,19
+"2187",2004,"west bengal",19,8
+"2188",2004,"west bengal",20,16
+"2189",2004,"west bengal",21,5
+"2190",2004,"west bengal",22,7
+"2191",2004,"west bengal",23,14
+"2192",2004,"west bengal",24,4
+"2193",2004,"west bengal",25,4
+"2194",2004,"west bengal",26,6
+"2195",2004,"west bengal",27,7
+"2196",2004,"west bengal",28,5
+"2197",2004,"west bengal",29,7
+"2198",2004,"west bengal",30,10
+"2199",2004,"west bengal",31,3
+"2200",2004,"west bengal",32,4
+"2201",2004,"west bengal",33,2
+"2202",2004,"west bengal",34,5
+"2203",2004,"west bengal",35,9
+"2204",2004,"west bengal",36,4
+"2205",2004,"west bengal",37,14
+"2206",2004,"west bengal",38,2
+"2207",2004,"west bengal",39,8
+"2208",2004,"west bengal",40,2
+"2209",2004,"west bengal",41,4
+"2210",2004,"west bengal",42,2
+"2211",2009,"arunachal pradesh",1,5
+"2212",2009,"arunachal pradesh",2,2
+"2213",2009,"assam",1,1
+"2214",2009,"assam",2,2
+"2215",2009,"assam",3,1
+"2216",2009,"assam",5,4
+"2217",2009,"assam",6,1
+"2218",2009,"assam",7,13
+"2219",2009,"assam",9,1
+"2220",2009,"assam",10,6
+"2221",2009,"assam",11,1
+"2222",2009,"assam",12,1
+"2223",2009,"assam",13,1
+"2224",2009,"bihar",1,1
+"2225",2009,"bihar",2,1
+"2226",2009,"bihar",3,1
+"2227",2009,"bihar",5,1
+"2228",2009,"bihar",6,3
+"2229",2009,"bihar",7,1
+"2230",2009,"bihar",10,6
+"2231",2009,"bihar",11,5
+"2232",2009,"bihar",12,2
+"2233",2009,"bihar",13,1
+"2234",2009,"bihar",14,3
+"2235",2009,"bihar",15,7
+"2236",2009,"bihar",16,6
+"2237",2009,"bihar",17,1
+"2238",2009,"bihar",18,1
+"2239",2009,"bihar",19,2
+"2240",2009,"bihar",20,3
+"2241",2009,"bihar",21,9
+"2242",2009,"bihar",22,2
+"2243",2009,"bihar",23,3
+"2244",2009,"bihar",25,2
+"2245",2009,"bihar",26,2
+"2246",2009,"bihar",28,1
+"2247",2009,"bihar",29,12
+"2248",2009,"bihar",30,18
+"2249",2009,"bihar",31,7
+"2250",2009,"bihar",32,4
+"2251",2009,"bihar",33,1
+"2252",2009,"bihar",34,5
+"2253",2009,"bihar",35,2
+"2254",2009,"bihar",36,3
+"2255",2009,"bihar",37,3
+"2256",2009,"bihar",38,11
+"2257",2009,"bihar",39,4
+"2258",2009,"bihar",40,2
+"2259",2009,"chhattisgarh",1,20
+"2260",2009,"chhattisgarh",2,16
+"2261",2009,"chhattisgarh",3,13
+"2262",2009,"chhattisgarh",4,11
+"2263",2009,"chhattisgarh",5,21
+"2264",2009,"chhattisgarh",6,12
+"2265",2009,"chhattisgarh",7,27
+"2266",2009,"chhattisgarh",8,41
+"2267",2009,"chhattisgarh",9,12
+"2268",2009,"chhattisgarh",10,13
+"2269",2009,"chhattisgarh",11,8
+"2270",2009,"chhattisgarh",12,1
+"2271",2009,"delhi",1,1
+"2272",2009,"delhi",2,2
+"2273",2009,"delhi",3,2
+"2274",2009,"delhi",5,4
+"2275",2009,"delhi",6,6
+"2276",2009,"delhi",7,1
+"2277",2009,"goa",1,3
+"2278",2009,"goa",2,4
+"2279",2009,"gujarat",1,13
+"2280",2009,"gujarat",2,13
+"2281",2009,"gujarat",3,20
+"2282",2009,"gujarat",4,38
+"2283",2009,"gujarat",5,51
+"2284",2009,"gujarat",6,32
+"2285",2009,"gujarat",7,7
+"2286",2009,"gujarat",8,26
+"2287",2009,"gujarat",9,10
+"2288",2009,"gujarat",10,41
+"2289",2009,"gujarat",11,6
+"2290",2009,"gujarat",12,12
+"2291",2009,"gujarat",13,26
+"2292",2009,"gujarat",14,9
+"2293",2009,"gujarat",15,40
+"2294",2009,"gujarat",16,31
+"2295",2009,"gujarat",17,10
+"2296",2009,"gujarat",18,9
+"2297",2009,"gujarat",19,5
+"2298",2009,"gujarat",20,25
+"2299",2009,"gujarat",21,3
+"2300",2009,"gujarat",22,11
+"2301",2009,"gujarat",23,16
+"2302",2009,"gujarat",24,26
+"2303",2009,"gujarat",25,14
+"2304",2009,"gujarat",26,9
+"2305",2009,"haryana",1,16
+"2306",2009,"haryana",2,4
+"2307",2009,"haryana",3,9
+"2308",2009,"haryana",4,11
+"2309",2009,"haryana",5,18
+"2310",2009,"haryana",6,18
+"2311",2009,"haryana",7,35
+"2312",2009,"haryana",8,29
+"2313",2009,"haryana",9,16
+"2314",2009,"haryana",10,13
+"2315",2009,"himachal pradesh",1,15
+"2316",2009,"himachal pradesh",2,12
+"2317",2009,"himachal pradesh",3,18
+"2318",2009,"himachal pradesh",4,23
+"2319",2009,"himachal pradesh",19,1
+"2320",2009,"jammu and kashmir",1,14
+"2321",2009,"jammu and kashmir",2,13
+"2322",2009,"jammu and kashmir",3,10
+"2323",2009,"jammu and kashmir",5,14
+"2324",2009,"jammu and kashmir",6,14
+"2325",2009,"jammu and kashmir",8,1
+"2326",2009,"jharkhand",1,1
+"2327",2009,"jharkhand",2,1
+"2328",2009,"jharkhand",3,4
+"2329",2009,"jharkhand",4,3
+"2330",2009,"jharkhand",5,8
+"2331",2009,"jharkhand",6,3
+"2332",2009,"jharkhand",7,12
+"2333",2009,"jharkhand",8,31
+"2334",2009,"jharkhand",9,6
+"2335",2009,"jharkhand",10,3
+"2336",2009,"jharkhand",11,1
+"2337",2009,"jharkhand",12,1
+"2338",2009,"jharkhand",13,11
+"2339",2009,"jharkhand",14,10
+"2340",2009,"jharkhand",23,1
+"2341",2009,"karnataka",1,14
+"2342",2009,"karnataka",2,29
+"2343",2009,"karnataka",3,19
+"2344",2009,"karnataka",4,20
+"2345",2009,"karnataka",5,58
+"2346",2009,"karnataka",6,28
+"2347",2009,"karnataka",7,30
+"2348",2009,"karnataka",8,24
+"2349",2009,"karnataka",9,13
+"2350",2009,"karnataka",10,19
+"2351",2009,"karnataka",11,29
+"2352",2009,"karnataka",12,13
+"2353",2009,"karnataka",13,10
+"2354",2009,"karnataka",14,13
+"2355",2009,"karnataka",15,13
+"2356",2009,"karnataka",16,14
+"2357",2009,"karnataka",17,31
+"2358",2009,"karnataka",18,6
+"2359",2009,"karnataka",19,21
+"2360",2009,"karnataka",20,5
+"2361",2009,"karnataka",21,25
+"2362",2009,"karnataka",22,5
+"2363",2009,"karnataka",23,32
+"2364",2009,"karnataka",24,42
+"2365",2009,"karnataka",25,34
+"2366",2009,"karnataka",26,29
+"2367",2009,"karnataka",27,28
+"2368",2009,"karnataka",28,12
+"2369",2009,"kerala",1,16
+"2370",2009,"kerala",2,9
+"2371",2009,"kerala",3,7
+"2372",2009,"kerala",4,10
+"2373",2009,"kerala",5,29
+"2374",2009,"kerala",6,29
+"2375",2009,"kerala",7,18
+"2376",2009,"kerala",8,21
+"2377",2009,"kerala",9,6
+"2378",2009,"kerala",10,19
+"2379",2009,"kerala",11,18
+"2380",2009,"kerala",12,18
+"2381",2009,"kerala",13,23
+"2382",2009,"kerala",14,16
+"2383",2009,"kerala",15,11
+"2384",2009,"kerala",16,5
+"2385",2009,"kerala",17,14
+"2386",2009,"kerala",18,13
+"2387",2009,"kerala",19,2
+"2388",2009,"kerala",20,33
+"2389",2009,"ladakh",4,2
+"2390",2009,"madhya pradesh",1,38
+"2391",2009,"madhya pradesh",2,49
+"2392",2009,"madhya pradesh",3,60
+"2393",2009,"madhya pradesh",4,35
+"2394",2009,"madhya pradesh",5,23
+"2395",2009,"madhya pradesh",6,15
+"2396",2009,"madhya pradesh",7,14
+"2397",2009,"madhya pradesh",8,31
+"2398",2009,"madhya pradesh",9,21
+"2399",2009,"madhya pradesh",10,19
+"2400",2009,"madhya pradesh",11,21
+"2401",2009,"madhya pradesh",12,18
+"2402",2009,"madhya pradesh",13,38
+"2403",2009,"madhya pradesh",14,20
+"2404",2009,"madhya pradesh",15,30
+"2405",2009,"madhya pradesh",16,25
+"2406",2009,"madhya pradesh",17,30
+"2407",2009,"madhya pradesh",18,29
+"2408",2009,"madhya pradesh",19,96
+"2409",2009,"madhya pradesh",20,13
+"2410",2009,"madhya pradesh",21,14
+"2411",2009,"madhya pradesh",22,15
+"2412",2009,"madhya pradesh",23,29
+"2413",2009,"madhya pradesh",24,14
+"2414",2009,"madhya pradesh",25,13
+"2415",2009,"madhya pradesh",26,49
+"2416",2009,"madhya pradesh",27,9
+"2417",2009,"madhya pradesh",28,13
+"2418",2009,"madhya pradesh",29,19
+"2419",2009,"madhya pradesh",44,2
+"2420",2009,"madhya pradesh",48,1
+"2421",2009,"madhya pradesh",50,1
+"2422",2009,"madhya pradesh",51,2
+"2423",2009,"madhya pradesh",72,1
+"2424",2009,"maharashtra",0,5
+"2425",2009,"maharashtra",1,12
+"2426",2009,"maharashtra",2,25
+"2427",2009,"maharashtra",3,16
+"2428",2009,"maharashtra",4,6
+"2429",2009,"maharashtra",5,19
+"2430",2009,"maharashtra",6,12
+"2431",2009,"maharashtra",7,14
+"2432",2009,"maharashtra",8,27
+"2433",2009,"maharashtra",9,37
+"2434",2009,"maharashtra",10,39
+"2435",2009,"maharashtra",11,43
+"2436",2009,"maharashtra",12,44
+"2437",2009,"maharashtra",13,32
+"2438",2009,"maharashtra",14,26
+"2439",2009,"maharashtra",15,25
+"2440",2009,"maharashtra",16,36
+"2441",2009,"maharashtra",17,32
+"2442",2009,"maharashtra",18,20
+"2443",2009,"maharashtra",19,58
+"2444",2009,"maharashtra",20,8
+"2445",2009,"maharashtra",21,53
+"2446",2009,"maharashtra",22,17
+"2447",2009,"maharashtra",23,23
+"2448",2009,"maharashtra",24,20
+"2449",2009,"maharashtra",25,18
+"2450",2009,"maharashtra",26,19
+"2451",2009,"maharashtra",27,8
+"2452",2009,"maharashtra",28,11
+"2453",2009,"maharashtra",29,13
+"2454",2009,"maharashtra",30,8
+"2455",2009,"maharashtra",31,5
+"2456",2009,"maharashtra",32,15
+"2457",2009,"maharashtra",33,46
+"2458",2009,"maharashtra",34,33
+"2459",2009,"maharashtra",35,42
+"2460",2009,"maharashtra",36,28
+"2461",2009,"maharashtra",37,41
+"2462",2009,"maharashtra",38,33
+"2463",2009,"maharashtra",39,23
+"2464",2009,"maharashtra",40,29
+"2465",2009,"maharashtra",41,48
+"2466",2009,"maharashtra",42,24
+"2467",2009,"maharashtra",43,9
+"2468",2009,"maharashtra",44,24
+"2469",2009,"maharashtra",45,22
+"2470",2009,"maharashtra",46,32
+"2471",2009,"maharashtra",47,28
+"2472",2009,"maharashtra",48,15
+"2473",2009,"manipur",1,7
+"2474",2009,"manipur",2,5
+"2475",2009,"meghalaya",1,3
+"2476",2009,"nagaland",1,11
+"2477",2009,"odisha",1,11
+"2478",2009,"odisha",2,9
+"2479",2009,"odisha",3,8
+"2480",2009,"odisha",4,4
+"2481",2009,"odisha",5,7
+"2482",2009,"odisha",6,17
+"2483",2009,"odisha",7,6
+"2484",2009,"odisha",8,5
+"2485",2009,"odisha",9,7
+"2486",2009,"odisha",10,6
+"2487",2009,"odisha",11,8
+"2488",2009,"odisha",12,5
+"2489",2009,"odisha",13,5
+"2490",2009,"odisha",14,9
+"2491",2009,"odisha",15,4
+"2492",2009,"odisha",16,6
+"2493",2009,"odisha",17,12
+"2494",2009,"odisha",18,49
+"2495",2009,"odisha",20,10
+"2496",2009,"odisha",21,5
+"2497",2009,"odisha",33,1
+"2498",2009,"odisha",42,1
+"2499",2009,"puducherry",1,16
+"2500",2009,"punjab",1,22
+"2501",2009,"punjab",2,27
+"2502",2009,"punjab",3,9
+"2503",2009,"punjab",4,15
+"2504",2009,"punjab",5,14
+"2505",2009,"punjab",6,25
+"2506",2009,"punjab",7,21
+"2507",2009,"punjab",8,16
+"2508",2009,"punjab",9,21
+"2509",2009,"punjab",10,21
+"2510",2009,"punjab",11,52
+"2511",2009,"punjab",12,19
+"2512",2009,"punjab",13,44
+"2513",2009,"punjab",19,1
+"2514",2009,"punjab",24,1
+"2515",2009,"punjab",34,2
+"2516",2009,"punjab",35,1
+"2517",2009,"punjab",77,1
+"2518",2009,"rajasthan",1,51
+"2519",2009,"rajasthan",2,13
+"2520",2009,"rajasthan",3,52
+"2521",2009,"rajasthan",4,53
+"2522",2009,"rajasthan",5,67
+"2523",2009,"rajasthan",6,54
+"2524",2009,"rajasthan",7,100
+"2525",2009,"rajasthan",8,21
+"2526",2009,"rajasthan",9,46
+"2527",2009,"rajasthan",10,15
+"2528",2009,"rajasthan",11,30
+"2529",2009,"rajasthan",12,24
+"2530",2009,"rajasthan",13,17
+"2531",2009,"rajasthan",14,27
+"2532",2009,"rajasthan",15,17
+"2533",2009,"rajasthan",16,30
+"2534",2009,"rajasthan",17,12
+"2535",2009,"rajasthan",18,14
+"2536",2009,"rajasthan",19,28
+"2537",2009,"rajasthan",20,23
+"2538",2009,"rajasthan",21,15
+"2539",2009,"rajasthan",22,14
+"2540",2009,"rajasthan",23,9
+"2541",2009,"rajasthan",24,19
+"2542",2009,"rajasthan",25,17
+"2543",2009,"sikkim",1,3
+"2544",2009,"sikkim",4,1
+"2545",2009,"tamil nadu",1,21
+"2546",2009,"tamil nadu",2,3
+"2547",2009,"tamil nadu",3,12
+"2548",2009,"tamil nadu",4,6
+"2549",2009,"tamil nadu",5,18
+"2550",2009,"tamil nadu",6,23
+"2551",2009,"tamil nadu",7,6
+"2552",2009,"tamil nadu",8,23
+"2553",2009,"tamil nadu",9,16
+"2554",2009,"tamil nadu",10,27
+"2555",2009,"tamil nadu",11,26
+"2556",2009,"tamil nadu",12,11
+"2557",2009,"tamil nadu",13,14
+"2558",2009,"tamil nadu",14,16
+"2559",2009,"tamil nadu",15,16
+"2560",2009,"tamil nadu",16,22
+"2561",2009,"tamil nadu",17,11
+"2562",2009,"tamil nadu",18,13
+"2563",2009,"tamil nadu",19,3
+"2564",2009,"tamil nadu",20,33
+"2565",2009,"tamil nadu",21,27
+"2566",2009,"tamil nadu",22,24
+"2567",2009,"tamil nadu",23,17
+"2568",2009,"tamil nadu",24,42
+"2569",2009,"tamil nadu",25,22
+"2570",2009,"tamil nadu",26,13
+"2571",2009,"tamil nadu",27,15
+"2572",2009,"tamil nadu",28,7
+"2573",2009,"tamil nadu",29,15
+"2574",2009,"tamil nadu",30,13
+"2575",2009,"tamil nadu",31,19
+"2576",2009,"tamil nadu",32,15
+"2577",2009,"tamil nadu",33,16
+"2578",2009,"tamil nadu",34,19
+"2579",2009,"tamil nadu",35,11
+"2580",2009,"tamil nadu",36,10
+"2581",2009,"tamil nadu",37,10
+"2582",2009,"tamil nadu",38,18
+"2583",2009,"tamil nadu",39,33
+"2584",2009,"telangana",1,19
+"2585",2009,"telangana",2,7
+"2586",2009,"telangana",3,34
+"2587",2009,"telangana",4,18
+"2588",2009,"telangana",5,15
+"2589",2009,"telangana",6,28
+"2590",2009,"telangana",7,80
+"2591",2009,"telangana",8,22
+"2592",2009,"telangana",9,15
+"2593",2009,"telangana",10,35
+"2594",2009,"telangana",11,17
+"2595",2009,"telangana",12,9
+"2596",2009,"telangana",13,38
+"2597",2009,"telangana",14,29
+"2598",2009,"telangana",15,35
+"2599",2009,"telangana",16,14
+"2600",2009,"telangana",17,21
+"2601",2009,"telangana",20,1
+"2602",2009,"telangana",23,1
+"2603",2009,"tripura",1,13
+"2604",2009,"tripura",2,5
+"2605",2009,"uttar pradesh",1,40
+"2606",2009,"uttar pradesh",2,13
+"2607",2009,"uttar pradesh",3,21
+"2608",2009,"uttar pradesh",4,27
+"2609",2009,"uttar pradesh",5,22
+"2610",2009,"uttar pradesh",6,30
+"2611",2009,"uttar pradesh",7,12
+"2612",2009,"uttar pradesh",8,14
+"2613",2009,"uttar pradesh",9,17
+"2614",2009,"uttar pradesh",10,73
+"2615",2009,"uttar pradesh",11,39
+"2616",2009,"uttar pradesh",12,31
+"2617",2009,"uttar pradesh",13,45
+"2618",2009,"uttar pradesh",14,22
+"2619",2009,"uttar pradesh",15,22
+"2620",2009,"uttar pradesh",16,21
+"2621",2009,"uttar pradesh",17,73
+"2622",2009,"uttar pradesh",18,54
+"2623",2009,"uttar pradesh",19,23
+"2624",2009,"uttar pradesh",20,44
+"2625",2009,"uttar pradesh",21,44
+"2626",2009,"uttar pradesh",22,18
+"2627",2009,"uttar pradesh",23,6
+"2628",2009,"uttar pradesh",24,10
+"2629",2009,"uttar pradesh",25,39
+"2630",2009,"uttar pradesh",26,9
+"2631",2009,"uttar pradesh",27,11
+"2632",2009,"uttar pradesh",28,9
+"2633",2009,"uttar pradesh",29,7
+"2634",2009,"uttar pradesh",30,16
+"2635",2009,"uttar pradesh",31,18
+"2636",2009,"uttar pradesh",32,25
+"2637",2009,"uttar pradesh",33,22
+"2638",2009,"uttar pradesh",34,94
+"2639",2009,"uttar pradesh",35,41
+"2640",2009,"uttar pradesh",36,24
+"2641",2009,"uttar pradesh",37,9
+"2642",2009,"uttar pradesh",38,33
+"2643",2009,"uttar pradesh",39,20
+"2644",2009,"uttar pradesh",40,16
+"2645",2009,"uttar pradesh",41,38
+"2646",2009,"uttar pradesh",42,27
+"2647",2009,"uttar pradesh",43,19
+"2648",2009,"uttar pradesh",44,55
+"2649",2009,"uttar pradesh",45,35
+"2650",2009,"uttar pradesh",46,23
+"2651",2009,"uttar pradesh",47,16
+"2652",2009,"uttar pradesh",48,13
+"2653",2009,"uttar pradesh",49,19
+"2654",2009,"uttar pradesh",50,35
+"2655",2009,"uttar pradesh",51,34
+"2656",2009,"uttar pradesh",52,50
+"2657",2009,"uttar pradesh",53,26
+"2658",2009,"uttar pradesh",54,36
+"2659",2009,"uttar pradesh",55,25
+"2660",2009,"uttar pradesh",56,7
+"2661",2009,"uttar pradesh",57,5
+"2662",2009,"uttar pradesh",58,6
+"2663",2009,"uttar pradesh",59,16
+"2664",2009,"uttar pradesh",60,5
+"2665",2009,"uttar pradesh",61,16
+"2666",2009,"uttar pradesh",62,14
+"2667",2009,"uttar pradesh",63,23
+"2668",2009,"uttar pradesh",64,40
+"2669",2009,"uttar pradesh",65,11
+"2670",2009,"uttar pradesh",66,21
+"2671",2009,"uttar pradesh",67,10
+"2672",2009,"uttar pradesh",68,6
+"2673",2009,"uttar pradesh",69,35
+"2674",2009,"uttar pradesh",70,13
+"2675",2009,"uttar pradesh",71,25
+"2676",2009,"uttar pradesh",72,7
+"2677",2009,"uttar pradesh",73,20
+"2678",2009,"uttar pradesh",74,6
+"2679",2009,"uttar pradesh",75,21
+"2680",2009,"uttar pradesh",76,20
+"2681",2009,"uttar pradesh",77,27
+"2682",2009,"uttar pradesh",78,20
+"2683",2009,"uttar pradesh",79,15
+"2684",2009,"uttar pradesh",80,10
+"2685",2009,"uttarakhand",1,31
+"2686",2009,"uttarakhand",2,8
+"2687",2009,"uttarakhand",3,6
+"2688",2009,"uttarakhand",4,32
+"2689",2009,"uttarakhand",5,32
+"2690",2009,"uttarakhand",6,1
+"2691",2009,"uttarakhand",7,1
+"2692",2009,"uttarakhand",21,1
+"2693",2009,"uttarakhand",24,1
+"2694",2009,"uttarakhand",34,1
+"2695",2009,"uttarakhand",47,1
+"2696",2009,"west bengal",1,7
+"2697",2009,"west bengal",2,1
+"2698",2009,"west bengal",3,5
+"2699",2009,"west bengal",4,10
+"2700",2009,"west bengal",5,5
+"2701",2009,"west bengal",6,10
+"2702",2009,"west bengal",7,12
+"2703",2009,"west bengal",8,3
+"2704",2009,"west bengal",9,15
+"2705",2009,"west bengal",10,15
+"2706",2009,"west bengal",11,36
+"2707",2009,"west bengal",12,8
+"2708",2009,"west bengal",13,10
+"2709",2009,"west bengal",14,6
+"2710",2009,"west bengal",15,2
+"2711",2009,"west bengal",16,16
+"2712",2009,"west bengal",17,13
+"2713",2009,"west bengal",18,1
+"2714",2009,"west bengal",20,4
+"2715",2009,"west bengal",21,7
+"2716",2009,"west bengal",22,9
+"2717",2009,"west bengal",23,21
+"2718",2009,"west bengal",24,12
+"2719",2009,"west bengal",25,5
+"2720",2009,"west bengal",26,2
+"2721",2009,"west bengal",27,5
+"2722",2009,"west bengal",28,16
+"2723",2009,"west bengal",29,5
+"2724",2009,"west bengal",30,10
+"2725",2009,"west bengal",31,8
+"2726",2009,"west bengal",32,4
+"2727",2009,"west bengal",33,4
+"2728",2009,"west bengal",34,9
+"2729",2009,"west bengal",35,9
+"2730",2009,"west bengal",36,11
+"2731",2009,"west bengal",37,5
+"2732",2009,"west bengal",38,6
+"2733",2009,"west bengal",39,27
+"2734",2009,"west bengal",40,4
+"2735",2009,"west bengal",41,15
+"2736",2009,"west bengal",42,14
+"2737",2014,"arunachal pradesh",1,8
+"2738",2014,"arunachal pradesh",2,7
+"2739",2014,"arunachal pradesh",4,1
+"2740",2014,"assam",1,4
+"2741",2014,"assam",2,1
+"2742",2014,"assam",4,1
+"2743",2014,"assam",5,4
+"2744",2014,"assam",6,2
+"2745",2014,"assam",7,12
+"2746",2014,"assam",8,3
+"2747",2014,"assam",9,2
+"2748",2014,"assam",10,2
+"2749",2014,"assam",11,2
+"2750",2014,"assam",12,1
+"2751",2014,"assam",14,2
+"2752",2014,"bihar",2,1
+"2753",2014,"bihar",3,4
+"2754",2014,"bihar",4,2
+"2755",2014,"bihar",5,6
+"2756",2014,"bihar",6,2
+"2757",2014,"bihar",7,3
+"2758",2014,"bihar",8,6
+"2759",2014,"bihar",9,1
+"2760",2014,"bihar",11,1
+"2761",2014,"bihar",12,1
+"2762",2014,"bihar",13,3
+"2763",2014,"bihar",14,3
+"2764",2014,"bihar",15,9
+"2765",2014,"bihar",16,3
+"2766",2014,"bihar",17,1
+"2767",2014,"bihar",18,4
+"2768",2014,"bihar",19,3
+"2769",2014,"bihar",20,3
+"2770",2014,"bihar",21,4
+"2771",2014,"bihar",22,2
+"2772",2014,"bihar",23,3
+"2773",2014,"bihar",24,7
+"2774",2014,"bihar",25,1
+"2775",2014,"bihar",26,3
+"2776",2014,"bihar",27,2
+"2777",2014,"bihar",28,2
+"2778",2014,"bihar",29,12
+"2779",2014,"bihar",30,17
+"2780",2014,"bihar",31,11
+"2781",2014,"bihar",32,2
+"2782",2014,"bihar",33,2
+"2783",2014,"bihar",34,6
+"2784",2014,"bihar",35,4
+"2785",2014,"bihar",36,2
+"2786",2014,"bihar",37,6
+"2787",2014,"bihar",38,7
+"2788",2014,"bihar",39,3
+"2789",2014,"bihar",40,4
+"2790",2014,"bihar",51,1
+"2791",2014,"chhattisgarh",1,8
+"2792",2014,"chhattisgarh",2,14
+"2793",2014,"chhattisgarh",3,10
+"2794",2014,"chhattisgarh",4,7
+"2795",2014,"chhattisgarh",5,20
+"2796",2014,"chhattisgarh",6,7
+"2797",2014,"chhattisgarh",7,16
+"2798",2014,"chhattisgarh",8,31
+"2799",2014,"chhattisgarh",9,6
+"2800",2014,"chhattisgarh",10,8
+"2801",2014,"chhattisgarh",11,1
+"2802",2014,"delhi",1,1
+"2803",2014,"delhi",2,1
+"2804",2014,"delhi",4,3
+"2805",2014,"delhi",5,4
+"2806",2014,"delhi",6,3
+"2807",2014,"delhi",7,2
+"2808",2014,"goa",1,2
+"2809",2014,"goa",2,4
+"2810",2014,"gujarat",0,1
+"2811",2014,"gujarat",1,7
+"2812",2014,"gujarat",2,19
+"2813",2014,"gujarat",3,13
+"2814",2014,"gujarat",4,39
+"2815",2014,"gujarat",5,40
+"2816",2014,"gujarat",6,55
+"2817",2014,"gujarat",7,9
+"2818",2014,"gujarat",8,41
+"2819",2014,"gujarat",9,10
+"2820",2014,"gujarat",10,27
+"2821",2014,"gujarat",11,13
+"2822",2014,"gujarat",12,12
+"2823",2014,"gujarat",13,46
+"2824",2014,"gujarat",14,15
+"2825",2014,"gujarat",15,20
+"2826",2014,"gujarat",16,14
+"2827",2014,"gujarat",17,13
+"2828",2014,"gujarat",18,13
+"2829",2014,"gujarat",19,8
+"2830",2014,"gujarat",20,20
+"2831",2014,"gujarat",21,8
+"2832",2014,"gujarat",22,5
+"2833",2014,"gujarat",23,10
+"2834",2014,"gujarat",24,23
+"2835",2014,"gujarat",25,8
+"2836",2014,"gujarat",26,7
+"2837",2014,"haryana",1,8
+"2838",2014,"haryana",2,14
+"2839",2014,"haryana",3,14
+"2840",2014,"haryana",4,12
+"2841",2014,"haryana",5,12
+"2842",2014,"haryana",6,18
+"2843",2014,"haryana",7,19
+"2844",2014,"haryana",8,23
+"2845",2014,"haryana",9,23
+"2846",2014,"haryana",10,18
+"2847",2014,"haryana",35,1
+"2848",2014,"himachal pradesh",1,21
+"2849",2014,"himachal pradesh",2,16
+"2850",2014,"himachal pradesh",3,16
+"2851",2014,"himachal pradesh",4,31
+"2852",2014,"himachal pradesh",10,1
+"2853",2014,"jammu and kashmir",1,4
+"2854",2014,"jammu and kashmir",2,4
+"2855",2014,"jammu and kashmir",3,9
+"2856",2014,"jammu and kashmir",5,6
+"2857",2014,"jammu and kashmir",6,8
+"2858",2014,"jharkhand",1,1
+"2859",2014,"jharkhand",2,3
+"2860",2014,"jharkhand",3,8
+"2861",2014,"jharkhand",4,1
+"2862",2014,"jharkhand",5,5
+"2863",2014,"jharkhand",6,1
+"2864",2014,"jharkhand",7,3
+"2865",2014,"jharkhand",8,13
+"2866",2014,"jharkhand",9,7
+"2867",2014,"jharkhand",10,4
+"2868",2014,"jharkhand",11,3
+"2869",2014,"jharkhand",13,8
+"2870",2014,"jharkhand",14,6
+"2871",2014,"karnataka",0,1
+"2872",2014,"karnataka",1,9
+"2873",2014,"karnataka",2,28
+"2874",2014,"karnataka",3,10
+"2875",2014,"karnataka",4,25
+"2876",2014,"karnataka",5,89
+"2877",2014,"karnataka",6,71
+"2878",2014,"karnataka",7,46
+"2879",2014,"karnataka",8,16
+"2880",2014,"karnataka",9,20
+"2881",2014,"karnataka",10,13
+"2882",2014,"karnataka",11,22
+"2883",2014,"karnataka",12,8
+"2884",2014,"karnataka",13,11
+"2885",2014,"karnataka",14,8
+"2886",2014,"karnataka",15,12
+"2887",2014,"karnataka",16,8
+"2888",2014,"karnataka",17,31
+"2889",2014,"karnataka",18,10
+"2890",2014,"karnataka",19,15
+"2891",2014,"karnataka",20,9
+"2892",2014,"karnataka",21,30
+"2893",2014,"karnataka",22,7
+"2894",2014,"karnataka",23,40
+"2895",2014,"karnataka",24,58
+"2896",2014,"karnataka",25,37
+"2897",2014,"karnataka",26,51
+"2898",2014,"karnataka",27,46
+"2899",2014,"karnataka",28,19
+"2900",2014,"kerala",1,8
+"2901",2014,"kerala",2,1
+"2902",2014,"kerala",3,7
+"2903",2014,"kerala",4,5
+"2904",2014,"kerala",5,9
+"2905",2014,"kerala",6,9
+"2906",2014,"kerala",7,10
+"2907",2014,"kerala",8,14
+"2908",2014,"kerala",9,3
+"2909",2014,"kerala",10,14
+"2910",2014,"kerala",11,7
+"2911",2014,"kerala",12,9
+"2912",2014,"kerala",13,16
+"2913",2014,"kerala",14,9
+"2914",2014,"kerala",15,10
+"2915",2014,"kerala",16,6
+"2916",2014,"kerala",17,13
+"2917",2014,"kerala",18,6
+"2918",2014,"kerala",19,7
+"2919",2014,"kerala",20,12
+"2920",2014,"kerala",23,1
+"2921",2014,"kerala",24,1
+"2922",2014,"ladakh",4,1
+"2923",2014,"madhya pradesh",1,11
+"2924",2014,"madhya pradesh",2,14
+"2925",2014,"madhya pradesh",3,38
+"2926",2014,"madhya pradesh",4,9
+"2927",2014,"madhya pradesh",5,9
+"2928",2014,"madhya pradesh",6,11
+"2929",2014,"madhya pradesh",7,3
+"2930",2014,"madhya pradesh",8,7
+"2931",2014,"madhya pradesh",9,20
+"2932",2014,"madhya pradesh",10,18
+"2933",2014,"madhya pradesh",11,10
+"2934",2014,"madhya pradesh",12,5
+"2935",2014,"madhya pradesh",13,13
+"2936",2014,"madhya pradesh",14,8
+"2937",2014,"madhya pradesh",15,6
+"2938",2014,"madhya pradesh",16,10
+"2939",2014,"madhya pradesh",17,11
+"2940",2014,"madhya pradesh",18,10
+"2941",2014,"madhya pradesh",19,31
+"2942",2014,"madhya pradesh",20,8
+"2943",2014,"madhya pradesh",21,13
+"2944",2014,"madhya pradesh",22,15
+"2945",2014,"madhya pradesh",23,14
+"2946",2014,"madhya pradesh",24,9
+"2947",2014,"madhya pradesh",25,5
+"2948",2014,"madhya pradesh",26,27
+"2949",2014,"madhya pradesh",27,5
+"2950",2014,"madhya pradesh",28,9
+"2951",2014,"madhya pradesh",29,8
+"2952",2014,"madhya pradesh",43,1
+"2953",2014,"madhya pradesh",66,1
+"2954",2014,"madhya pradesh",73,1
+"2955",2014,"maharashtra",0,1
+"2956",2014,"maharashtra",1,2
+"2957",2014,"maharashtra",2,7
+"2958",2014,"maharashtra",3,9
+"2959",2014,"maharashtra",4,2
+"2960",2014,"maharashtra",5,10
+"2961",2014,"maharashtra",6,2
+"2962",2014,"maharashtra",7,10
+"2963",2014,"maharashtra",8,11
+"2964",2014,"maharashtra",9,13
+"2965",2014,"maharashtra",10,11
+"2966",2014,"maharashtra",11,8
+"2967",2014,"maharashtra",12,9
+"2968",2014,"maharashtra",13,7
+"2969",2014,"maharashtra",14,6
+"2970",2014,"maharashtra",15,5
+"2971",2014,"maharashtra",16,10
+"2972",2014,"maharashtra",17,7
+"2973",2014,"maharashtra",18,15
+"2974",2014,"maharashtra",19,40
+"2975",2014,"maharashtra",20,3
+"2976",2014,"maharashtra",21,19
+"2977",2014,"maharashtra",22,9
+"2978",2014,"maharashtra",23,11
+"2979",2014,"maharashtra",24,4
+"2980",2014,"maharashtra",25,10
+"2981",2014,"maharashtra",26,8
+"2982",2014,"maharashtra",27,4
+"2983",2014,"maharashtra",28,2
+"2984",2014,"maharashtra",29,4
+"2985",2014,"maharashtra",30,3
+"2986",2014,"maharashtra",31,3
+"2987",2014,"maharashtra",32,4
+"2988",2014,"maharashtra",33,25
+"2989",2014,"maharashtra",34,9
+"2990",2014,"maharashtra",35,9
+"2991",2014,"maharashtra",36,17
+"2992",2014,"maharashtra",37,20
+"2993",2014,"maharashtra",38,14
+"2994",2014,"maharashtra",39,12
+"2995",2014,"maharashtra",40,9
+"2996",2014,"maharashtra",41,15
+"2997",2014,"maharashtra",42,5
+"2998",2014,"maharashtra",43,5
+"2999",2014,"maharashtra",44,12
+"3000",2014,"maharashtra",45,7
+"3001",2014,"maharashtra",46,14
+"3002",2014,"maharashtra",47,17
+"3003",2014,"maharashtra",48,9
+"3004",2014,"manipur",1,12
+"3005",2014,"manipur",2,5
+"3006",2014,"manipur",6,1
+"3007",2014,"meghalaya",1,1
+"3008",2014,"mizoram",1,6
+"3009",2014,"nagaland",1,8
+"3010",2014,"nagaland",2,1
+"3011",2014,"nagaland",8,1
+"3012",2014,"odisha",1,3
+"3013",2014,"odisha",2,5
+"3014",2014,"odisha",3,3
+"3015",2014,"odisha",4,2
+"3016",2014,"odisha",5,11
+"3017",2014,"odisha",6,6
+"3018",2014,"odisha",7,9
+"3019",2014,"odisha",8,2
+"3020",2014,"odisha",9,2
+"3021",2014,"odisha",10,2
+"3022",2014,"odisha",11,6
+"3023",2014,"odisha",12,2
+"3024",2014,"odisha",13,4
+"3025",2014,"odisha",14,7
+"3026",2014,"odisha",15,3
+"3027",2014,"odisha",16,1
+"3028",2014,"odisha",17,7
+"3029",2014,"odisha",18,17
+"3030",2014,"odisha",20,1
+"3031",2014,"odisha",21,5
+"3032",2014,"odisha",32,1
+"3033",2014,"odisha",42,1
+"3034",2014,"odisha",44,1
+"3035",2014,"odisha",75,1
+"3036",2014,"puducherry",1,5
+"3037",2014,"punjab",1,7
+"3038",2014,"punjab",2,10
+"3039",2014,"punjab",3,3
+"3040",2014,"punjab",4,14
+"3041",2014,"punjab",5,12
+"3042",2014,"punjab",6,11
+"3043",2014,"punjab",7,5
+"3044",2014,"punjab",8,6
+"3045",2014,"punjab",9,13
+"3046",2014,"punjab",10,15
+"3047",2014,"punjab",11,21
+"3048",2014,"punjab",12,9
+"3049",2014,"punjab",13,20
+"3050",2014,"punjab",28,1
+"3051",2014,"punjab",30,1
+"3052",2014,"punjab",35,1
+"3053",2014,"rajasthan",1,34
+"3054",2014,"rajasthan",2,14
+"3055",2014,"rajasthan",3,29
+"3056",2014,"rajasthan",4,38
+"3057",2014,"rajasthan",5,47
+"3058",2014,"rajasthan",6,20
+"3059",2014,"rajasthan",7,55
+"3060",2014,"rajasthan",8,9
+"3061",2014,"rajasthan",9,40
+"3062",2014,"rajasthan",10,17
+"3063",2014,"rajasthan",11,23
+"3064",2014,"rajasthan",12,26
+"3065",2014,"rajasthan",13,10
+"3066",2014,"rajasthan",14,30
+"3067",2014,"rajasthan",15,25
+"3068",2014,"rajasthan",16,23
+"3069",2014,"rajasthan",17,31
+"3070",2014,"rajasthan",18,22
+"3071",2014,"rajasthan",19,30
+"3072",2014,"rajasthan",20,28
+"3073",2014,"rajasthan",21,24
+"3074",2014,"rajasthan",22,15
+"3075",2014,"rajasthan",23,7
+"3076",2014,"rajasthan",24,16
+"3077",2014,"rajasthan",25,19
+"3078",2014,"rajasthan",30,1
+"3079",2014,"sikkim",1,5
+"3080",2014,"tamil nadu",1,11
+"3081",2014,"tamil nadu",2,2
+"3082",2014,"tamil nadu",3,3
+"3083",2014,"tamil nadu",4,3
+"3084",2014,"tamil nadu",5,4
+"3085",2014,"tamil nadu",6,6
+"3086",2014,"tamil nadu",7,3
+"3087",2014,"tamil nadu",8,10
+"3088",2014,"tamil nadu",9,7
+"3089",2014,"tamil nadu",10,18
+"3090",2014,"tamil nadu",11,2
+"3091",2014,"tamil nadu",12,2
+"3092",2014,"tamil nadu",13,3
+"3093",2014,"tamil nadu",14,2
+"3094",2014,"tamil nadu",15,16
+"3095",2014,"tamil nadu",16,15
+"3096",2014,"tamil nadu",17,7
+"3097",2014,"tamil nadu",18,7
+"3098",2014,"tamil nadu",19,4
+"3099",2014,"tamil nadu",20,14
+"3100",2014,"tamil nadu",21,11
+"3101",2014,"tamil nadu",22,9
+"3102",2014,"tamil nadu",23,4
+"3103",2014,"tamil nadu",24,11
+"3104",2014,"tamil nadu",25,7
+"3105",2014,"tamil nadu",26,5
+"3106",2014,"tamil nadu",27,1
+"3107",2014,"tamil nadu",28,3
+"3108",2014,"tamil nadu",29,10
+"3109",2014,"tamil nadu",30,4
+"3110",2014,"tamil nadu",31,2
+"3111",2014,"tamil nadu",32,7
+"3112",2014,"tamil nadu",33,4
+"3113",2014,"tamil nadu",34,5
+"3114",2014,"tamil nadu",35,7
+"3115",2014,"tamil nadu",36,3
+"3116",2014,"tamil nadu",37,5
+"3117",2014,"tamil nadu",38,4
+"3118",2014,"tamil nadu",39,7
+"3119",2014,"telangana",1,24
+"3120",2014,"telangana",2,10
+"3121",2014,"telangana",3,22
+"3122",2014,"telangana",4,12
+"3123",2014,"telangana",5,3
+"3124",2014,"telangana",6,25
+"3125",2014,"telangana",7,40
+"3126",2014,"telangana",8,17
+"3127",2014,"telangana",9,6
+"3128",2014,"telangana",10,16
+"3129",2014,"telangana",11,12
+"3130",2014,"telangana",12,7
+"3131",2014,"telangana",13,19
+"3132",2014,"telangana",14,12
+"3133",2014,"telangana",15,14
+"3134",2014,"telangana",16,8
+"3135",2014,"telangana",17,12
+"3136",2014,"telangana",47,1
+"3137",2014,"tripura",1,3
+"3138",2014,"tripura",2,1
+"3139",2014,"tripura",24,1
+"3140",2014,"uttar pradesh",1,32
+"3141",2014,"uttar pradesh",2,13
+"3142",2014,"uttar pradesh",3,15
+"3143",2014,"uttar pradesh",4,32
+"3144",2014,"uttar pradesh",5,16
+"3145",2014,"uttar pradesh",6,31
+"3146",2014,"uttar pradesh",7,19
+"3147",2014,"uttar pradesh",8,15
+"3148",2014,"uttar pradesh",9,24
+"3149",2014,"uttar pradesh",10,47
+"3150",2014,"uttar pradesh",11,31
+"3151",2014,"uttar pradesh",12,21
+"3152",2014,"uttar pradesh",13,45
+"3153",2014,"uttar pradesh",14,12
+"3154",2014,"uttar pradesh",15,38
+"3155",2014,"uttar pradesh",16,36
+"3156",2014,"uttar pradesh",17,41
+"3157",2014,"uttar pradesh",18,56
+"3158",2014,"uttar pradesh",19,19
+"3159",2014,"uttar pradesh",20,43
+"3160",2014,"uttar pradesh",21,35
+"3161",2014,"uttar pradesh",22,31
+"3162",2014,"uttar pradesh",23,9
+"3163",2014,"uttar pradesh",24,7
+"3164",2014,"uttar pradesh",25,24
+"3165",2014,"uttar pradesh",26,19
+"3166",2014,"uttar pradesh",27,18
+"3167",2014,"uttar pradesh",28,29
+"3168",2014,"uttar pradesh",29,8
+"3169",2014,"uttar pradesh",30,21
+"3170",2014,"uttar pradesh",31,23
+"3171",2014,"uttar pradesh",32,13
+"3172",2014,"uttar pradesh",33,30
+"3173",2014,"uttar pradesh",34,40
+"3174",2014,"uttar pradesh",35,23
+"3175",2014,"uttar pradesh",36,25
+"3176",2014,"uttar pradesh",37,16
+"3177",2014,"uttar pradesh",38,41
+"3178",2014,"uttar pradesh",39,35
+"3179",2014,"uttar pradesh",40,36
+"3180",2014,"uttar pradesh",41,39
+"3181",2014,"uttar pradesh",42,42
+"3182",2014,"uttar pradesh",43,35
+"3183",2014,"uttar pradesh",44,47
+"3184",2014,"uttar pradesh",45,24
+"3185",2014,"uttar pradesh",46,32
+"3186",2014,"uttar pradesh",47,40
+"3187",2014,"uttar pradesh",48,24
+"3188",2014,"uttar pradesh",49,21
+"3189",2014,"uttar pradesh",50,42
+"3190",2014,"uttar pradesh",51,27
+"3191",2014,"uttar pradesh",52,42
+"3192",2014,"uttar pradesh",53,24
+"3193",2014,"uttar pradesh",54,41
+"3194",2014,"uttar pradesh",55,39
+"3195",2014,"uttar pradesh",56,16
+"3196",2014,"uttar pradesh",57,4
+"3197",2014,"uttar pradesh",58,5
+"3198",2014,"uttar pradesh",59,17
+"3199",2014,"uttar pradesh",60,9
+"3200",2014,"uttar pradesh",61,11
+"3201",2014,"uttar pradesh",62,16
+"3202",2014,"uttar pradesh",63,23
+"3203",2014,"uttar pradesh",64,28
+"3204",2014,"uttar pradesh",65,20
+"3205",2014,"uttar pradesh",66,26
+"3206",2014,"uttar pradesh",67,2
+"3207",2014,"uttar pradesh",69,23
+"3208",2014,"uttar pradesh",70,6
+"3209",2014,"uttar pradesh",71,15
+"3210",2014,"uttar pradesh",72,21
+"3211",2014,"uttar pradesh",73,22
+"3212",2014,"uttar pradesh",74,3
+"3213",2014,"uttar pradesh",75,18
+"3214",2014,"uttar pradesh",76,23
+"3215",2014,"uttar pradesh",77,23
+"3216",2014,"uttar pradesh",78,26
+"3217",2014,"uttar pradesh",79,24
+"3218",2014,"uttar pradesh",80,20
+"3219",2014,"uttarakhand",1,17
+"3220",2014,"uttarakhand",2,15
+"3221",2014,"uttarakhand",3,19
+"3222",2014,"uttarakhand",4,26
+"3223",2014,"uttarakhand",5,42
+"3224",2014,"uttarakhand",7,1
+"3225",2014,"uttarakhand",8,1
+"3226",2014,"uttarakhand",9,1
+"3227",2014,"uttarakhand",17,1
+"3228",2014,"west bengal",1,5
+"3229",2014,"west bengal",2,7
+"3230",2014,"west bengal",3,6
+"3231",2014,"west bengal",4,11
+"3232",2014,"west bengal",5,14
+"3233",2014,"west bengal",6,13
+"3234",2014,"west bengal",7,12
+"3235",2014,"west bengal",8,8
+"3236",2014,"west bengal",9,29
+"3237",2014,"west bengal",10,12
+"3238",2014,"west bengal",11,29
+"3239",2014,"west bengal",12,22
+"3240",2014,"west bengal",13,16
+"3241",2014,"west bengal",14,6
+"3242",2014,"west bengal",15,3
+"3243",2014,"west bengal",16,12
+"3244",2014,"west bengal",17,18
+"3245",2014,"west bengal",18,7
+"3246",2014,"west bengal",20,3
+"3247",2014,"west bengal",21,10
+"3248",2014,"west bengal",22,9
+"3249",2014,"west bengal",23,17
+"3250",2014,"west bengal",24,2
+"3251",2014,"west bengal",25,6
+"3252",2014,"west bengal",26,4
+"3253",2014,"west bengal",27,9
+"3254",2014,"west bengal",28,8
+"3255",2014,"west bengal",29,6
+"3256",2014,"west bengal",30,14
+"3257",2014,"west bengal",31,9
+"3258",2014,"west bengal",32,12
+"3259",2014,"west bengal",33,10
+"3260",2014,"west bengal",34,28
+"3261",2014,"west bengal",35,6
+"3262",2014,"west bengal",36,12
+"3263",2014,"west bengal",37,12
+"3264",2014,"west bengal",38,6
+"3265",2014,"west bengal",39,27
+"3266",2014,"west bengal",40,6
+"3267",2014,"west bengal",41,13
+"3268",2014,"west bengal",42,22
+"3269",2019,"assam",8,1
+"3270",2019,"bihar",2,1
+"3271",2019,"bihar",6,1
+"3272",2019,"bihar",8,1
+"3273",2019,"bihar",9,1
+"3274",2019,"bihar",16,1
+"3275",2019,"bihar",19,1
+"3276",2019,"bihar",20,1
+"3277",2019,"bihar",23,1
+"3278",2019,"bihar",29,2
+"3279",2019,"bihar",30,2
+"3280",2019,"bihar",34,1
+"3281",2019,"bihar",37,1
+"3282",2019,"bihar",40,2
+"3283",2019,"chhattisgarh",2,3
+"3284",2019,"chhattisgarh",3,6
+"3285",2019,"chhattisgarh",5,1
+"3286",2019,"chhattisgarh",6,2
+"3287",2019,"chhattisgarh",7,7
+"3288",2019,"chhattisgarh",8,2
+"3289",2019,"chhattisgarh",10,2
+"3290",2019,"gujarat",1,1
+"3291",2019,"gujarat",2,2
+"3292",2019,"gujarat",3,1
+"3293",2019,"gujarat",4,4
+"3294",2019,"gujarat",5,4
+"3295",2019,"gujarat",6,10
+"3296",2019,"gujarat",7,2
+"3297",2019,"gujarat",8,8
+"3298",2019,"gujarat",10,2
+"3299",2019,"gujarat",12,1
+"3300",2019,"gujarat",13,1
+"3301",2019,"gujarat",14,1
+"3302",2019,"gujarat",15,1
+"3303",2019,"gujarat",18,3
+"3304",2019,"gujarat",21,1
+"3305",2019,"gujarat",22,1
+"3306",2019,"gujarat",24,1
+"3307",2019,"haryana",1,2
+"3308",2019,"haryana",3,1
+"3309",2019,"haryana",4,1
+"3310",2019,"haryana",5,2
+"3311",2019,"haryana",6,2
+"3312",2019,"haryana",8,2
+"3313",2019,"haryana",9,2
+"3314",2019,"haryana",10,2
+"3315",2019,"haryana",45,1
+"3316",2019,"himachal pradesh",1,1
+"3317",2019,"himachal pradesh",2,4
+"3318",2019,"himachal pradesh",3,2
+"3319",2019,"himachal pradesh",4,2
+"3320",2019,"himachal pradesh",19,1
+"3321",2019,"jammu and kashmir",1,1
+"3322",2019,"jammu and kashmir",3,1
+"3323",2019,"jammu and kashmir",5,8
+"3324",2019,"jammu and kashmir",6,12
+"3325",2019,"jharkhand",7,1
+"3326",2019,"jharkhand",8,3
+"3327",2019,"jharkhand",12,1
+"3328",2019,"jharkhand",13,1
+"3329",2019,"jharkhand",14,1
+"3330",2019,"karnataka",1,3
+"3331",2019,"karnataka",2,3
+"3332",2019,"karnataka",3,5
+"3333",2019,"karnataka",4,8
+"3334",2019,"karnataka",5,24
+"3335",2019,"karnataka",6,18
+"3336",2019,"karnataka",7,17
+"3337",2019,"karnataka",8,5
+"3338",2019,"karnataka",9,5
+"3339",2019,"karnataka",10,2
+"3340",2019,"karnataka",11,2
+"3341",2019,"karnataka",14,5
+"3342",2019,"karnataka",15,3
+"3343",2019,"karnataka",16,4
+"3344",2019,"karnataka",17,15
+"3345",2019,"karnataka",18,1
+"3346",2019,"karnataka",19,5
+"3347",2019,"karnataka",20,5
+"3348",2019,"karnataka",21,3
+"3349",2019,"karnataka",23,14
+"3350",2019,"karnataka",24,20
+"3351",2019,"karnataka",25,18
+"3352",2019,"karnataka",26,17
+"3353",2019,"karnataka",27,21
+"3354",2019,"karnataka",28,6
+"3355",2019,"kerala",11,3
+"3356",2019,"kerala",20,1
+"3357",2019,"madhya pradesh",1,1
+"3358",2019,"madhya pradesh",2,2
+"3359",2019,"madhya pradesh",3,5
+"3360",2019,"madhya pradesh",5,3
+"3361",2019,"madhya pradesh",6,1
+"3362",2019,"madhya pradesh",9,1
+"3363",2019,"madhya pradesh",13,1
+"3364",2019,"madhya pradesh",15,1
+"3365",2019,"madhya pradesh",18,2
+"3366",2019,"madhya pradesh",19,8
+"3367",2019,"madhya pradesh",21,1
+"3368",2019,"madhya pradesh",23,1
+"3369",2019,"madhya pradesh",24,1
+"3370",2019,"madhya pradesh",26,3
+"3371",2019,"madhya pradesh",27,1
+"3372",2019,"maharashtra",1,1
+"3373",2019,"maharashtra",2,2
+"3374",2019,"maharashtra",3,2
+"3375",2019,"maharashtra",5,3
+"3376",2019,"maharashtra",6,2
+"3377",2019,"maharashtra",7,2
+"3378",2019,"maharashtra",8,5
+"3379",2019,"maharashtra",9,4
+"3380",2019,"maharashtra",10,7
+"3381",2019,"maharashtra",11,9
+"3382",2019,"maharashtra",12,2
+"3383",2019,"maharashtra",13,1
+"3384",2019,"maharashtra",14,4
+"3385",2019,"maharashtra",15,4
+"3386",2019,"maharashtra",16,2
+"3387",2019,"maharashtra",17,3
+"3388",2019,"maharashtra",18,11
+"3389",2019,"maharashtra",19,11
+"3390",2019,"maharashtra",20,2
+"3391",2019,"maharashtra",21,6
+"3392",2019,"maharashtra",22,2
+"3393",2019,"maharashtra",23,2
+"3394",2019,"maharashtra",24,9
+"3395",2019,"maharashtra",27,2
+"3396",2019,"maharashtra",30,1
+"3397",2019,"maharashtra",31,1
+"3398",2019,"maharashtra",32,3
+"3399",2019,"maharashtra",33,4
+"3400",2019,"maharashtra",34,11
+"3401",2019,"maharashtra",35,5
+"3402",2019,"maharashtra",36,7
+"3403",2019,"maharashtra",37,6
+"3404",2019,"maharashtra",38,13
+"3405",2019,"maharashtra",39,5
+"3406",2019,"maharashtra",40,2
+"3407",2019,"maharashtra",41,5
+"3408",2019,"maharashtra",42,4
+"3409",2019,"maharashtra",43,4
+"3410",2019,"maharashtra",44,1
+"3411",2019,"maharashtra",45,1
+"3412",2019,"maharashtra",46,5
+"3413",2019,"maharashtra",47,8
+"3414",2019,"maharashtra",48,2
+"3415",2019,"manipur",1,2
+"3416",2019,"manipur",2,3
+"3417",2019,"odisha",5,1
+"3418",2019,"odisha",8,2
+"3419",2019,"odisha",12,1
+"3420",2019,"odisha",16,1
+"3421",2019,"odisha",18,1
+"3422",2019,"punjab",1,2
+"3423",2019,"punjab",7,2
+"3424",2019,"punjab",10,3
+"3425",2019,"punjab",12,1
+"3426",2019,"punjab",13,3
+"3427",2019,"rajasthan",1,12
+"3428",2019,"rajasthan",2,5
+"3429",2019,"rajasthan",3,4
+"3430",2019,"rajasthan",4,7
+"3431",2019,"rajasthan",5,11
+"3432",2019,"rajasthan",6,7
+"3433",2019,"rajasthan",7,3
+"3434",2019,"rajasthan",8,4
+"3435",2019,"rajasthan",9,7
+"3436",2019,"rajasthan",10,4
+"3437",2019,"rajasthan",11,8
+"3438",2019,"rajasthan",12,4
+"3439",2019,"rajasthan",13,4
+"3440",2019,"rajasthan",14,7
+"3441",2019,"rajasthan",15,2
+"3442",2019,"rajasthan",16,3
+"3443",2019,"rajasthan",17,3
+"3444",2019,"rajasthan",18,3
+"3445",2019,"rajasthan",19,4
+"3446",2019,"rajasthan",20,2
+"3447",2019,"rajasthan",21,2
+"3448",2019,"rajasthan",22,3
+"3449",2019,"rajasthan",23,3
+"3450",2019,"rajasthan",24,3
+"3451",2019,"rajasthan",25,3
+"3452",2019,"tamil nadu",1,2
+"3453",2019,"tamil nadu",2,1
+"3454",2019,"tamil nadu",3,1
+"3455",2019,"tamil nadu",5,1
+"3456",2019,"tamil nadu",6,1
+"3457",2019,"tamil nadu",10,1
+"3458",2019,"tamil nadu",11,2
+"3459",2019,"tamil nadu",12,2
+"3460",2019,"tamil nadu",13,1
+"3461",2019,"tamil nadu",15,2
+"3462",2019,"tamil nadu",16,2
+"3463",2019,"tamil nadu",17,3
+"3464",2019,"tamil nadu",18,1
+"3465",2019,"tamil nadu",19,1
+"3466",2019,"tamil nadu",20,5
+"3467",2019,"tamil nadu",22,1
+"3468",2019,"tamil nadu",23,1
+"3469",2019,"tamil nadu",24,2
+"3470",2019,"tamil nadu",25,1
+"3471",2019,"tamil nadu",31,1
+"3472",2019,"tamil nadu",32,1
+"3473",2019,"tamil nadu",33,1
+"3474",2019,"tamil nadu",34,1
+"3475",2019,"tamil nadu",35,2
+"3476",2019,"tamil nadu",37,1
+"3477",2019,"tamil nadu",38,1
+"3478",2019,"telangana",1,1
+"3479",2019,"telangana",3,1
+"3480",2019,"telangana",4,1
+"3481",2019,"telangana",7,2
+"3482",2019,"telangana",8,2
+"3483",2019,"telangana",13,1
+"3484",2019,"telangana",14,1
+"3485",2019,"tripura",1,2
+"3486",2019,"uttar pradesh",1,4
+"3487",2019,"uttar pradesh",2,2
+"3488",2019,"uttar pradesh",3,2
+"3489",2019,"uttar pradesh",4,2
+"3490",2019,"uttar pradesh",6,4
+"3491",2019,"uttar pradesh",7,2
+"3492",2019,"uttar pradesh",8,1
+"3493",2019,"uttar pradesh",9,1
+"3494",2019,"uttar pradesh",10,4
+"3495",2019,"uttar pradesh",11,6
+"3496",2019,"uttar pradesh",12,3
+"3497",2019,"uttar pradesh",13,7
+"3498",2019,"uttar pradesh",14,1
+"3499",2019,"uttar pradesh",15,1
+"3500",2019,"uttar pradesh",18,3
+"3501",2019,"uttar pradesh",19,2
+"3502",2019,"uttar pradesh",20,3
+"3503",2019,"uttar pradesh",21,2
+"3504",2019,"uttar pradesh",23,2
+"3505",2019,"uttar pradesh",24,3
+"3506",2019,"uttar pradesh",25,3
+"3507",2019,"uttar pradesh",26,2
+"3508",2019,"uttar pradesh",27,1
+"3509",2019,"uttar pradesh",28,3
+"3510",2019,"uttar pradesh",29,1
+"3511",2019,"uttar pradesh",30,1
+"3512",2019,"uttar pradesh",31,3
+"3513",2019,"uttar pradesh",32,4
+"3514",2019,"uttar pradesh",33,2
+"3515",2019,"uttar pradesh",34,4
+"3516",2019,"uttar pradesh",35,3
+"3517",2019,"uttar pradesh",36,3
+"3518",2019,"uttar pradesh",37,2
+"3519",2019,"uttar pradesh",38,3
+"3520",2019,"uttar pradesh",39,2
+"3521",2019,"uttar pradesh",40,10
+"3522",2019,"uttar pradesh",42,1
+"3523",2019,"uttar pradesh",43,3
+"3524",2019,"uttar pradesh",44,5
+"3525",2019,"uttar pradesh",45,1
+"3526",2019,"uttar pradesh",46,1
+"3527",2019,"uttar pradesh",49,2
+"3528",2019,"uttar pradesh",50,2
+"3529",2019,"uttar pradesh",53,5
+"3530",2019,"uttar pradesh",54,2
+"3531",2019,"uttar pradesh",55,6
+"3532",2019,"uttar pradesh",58,1
+"3533",2019,"uttar pradesh",59,3
+"3534",2019,"uttar pradesh",63,1
+"3535",2019,"uttar pradesh",64,4
+"3536",2019,"uttar pradesh",65,2
+"3537",2019,"uttar pradesh",66,2
+"3538",2019,"uttar pradesh",67,2
+"3539",2019,"uttar pradesh",69,2
+"3540",2019,"uttar pradesh",70,1
+"3541",2019,"uttar pradesh",71,1
+"3542",2019,"uttar pradesh",73,1
+"3543",2019,"uttar pradesh",74,2
+"3544",2019,"uttar pradesh",76,3
+"3545",2019,"uttar pradesh",77,1
+"3546",2019,"uttar pradesh",78,1
+"3547",2019,"uttar pradesh",80,1
+"3548",2019,"uttarakhand",1,2
+"3549",2019,"uttarakhand",3,1
+"3550",2019,"uttarakhand",4,1
+"3551",2019,"uttarakhand",5,3
+"3552",2019,"west bengal",1,1
+"3553",2019,"west bengal",5,1
+"3554",2019,"west bengal",6,2
+"3555",2019,"west bengal",8,1
+"3556",2019,"west bengal",12,2
+"3557",2019,"west bengal",17,1
+"3558",2019,"west bengal",18,1
+"3559",2019,"west bengal",23,1
+"3560",2019,"west bengal",24,1
+"3561",2019,"west bengal",25,1
+"3562",2019,"west bengal",28,1
+"3563",2019,"west bengal",29,1
+"3564",2019,"west bengal",32,1
+"3565",2019,"west bengal",38,1
+"3566",2019,"west bengal",39,2
+"3567",2019,"west bengal",42,3
