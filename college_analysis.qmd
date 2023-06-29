@@ -3,31 +3,46 @@ title: "College - All India"
 format: html
 ---
 
+## Data Processing
+
 ```{r}
+#reading the libraries
+
 library(dplyr)
 library(stringr)
 library(stargazer)
+```
 
 
- 
+```{r}
 
+#reading the college data
 college_pc= read.csv("/Users/najah/work/cpr/data/college_pc_ag.csv")
+
+#reading the all india dynast data
+
 tcdp_dyn = read.csv("/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv")
 ##head(tcpd_dyn)
 ```
 
 
 ```{r}
+
+#cleanining the names in the tcpd data to merge with the college data
+
 tcpd_dyn = tcpd_dyn %>%
+  #replaces & with and
   mutate(state_name = str_replace(state_name,  "&", "and")
+         #transforms to lowercase
          ,state_name = tolower(state_name),
-
-
+          #removes the white space
          state_name= str_trim(state_name))
 
 
+#filter to winner to keep observation per constituency
 dyn_1 = tcpd_dyn %>% filter(position==1)
 
+#merging the dataset 
 
 dyn_college<- left_join( dyn_1,college_pc, by = c( "state_name"="state",   "year"="year_el",
                                                      "constituency_no"="pc_no"))
@@ -41,12 +56,21 @@ dyn_college$n_college = ifelse(is.na(dyn_college$n_college),0,dyn_college$n_coll
 
 ```
 
-This df contains number of colleges established in each year for every constituency from 1989-2019 along with the information about the winner of the constituency
 
-### distribution of the number of colleges
+## merged data
+
+This df contains number of colleges established in each year for every constituency from 1989-2019 along with the information about the winner of the constituency
 
 
 ```{r}
+summary(dyn_college$n_college)
+```
+
+
+
+
+```{r}
+# distribution of the number of colleges
 hist(dyn_college$n_college)
 
 ```
@@ -55,41 +79,58 @@ hist(dyn_college$n_college)
 - not normal distribution
 
 
-### unserstanding the dynast data
+
 
 
 ```{r}
-
+## understanding the dynast data
 table(dyn_college$dyn)
+```
 
+
+```{r}
 # recoding empty ones and recheck as dyn
 
 dyn_college$dynast = ifelse(dyn_college$dyn==1,1,0)
+
 table(dyn_college$dynast)
 
 
 ```
 
-### average number of colleges for dynast constituenices
+```{r}
+### average number of colleges 
+print(mean(dyn_college$n_college))
+
+print(median(dyn_college$n_college))
+```
+
 
 
 ```{r}
-mean(dyn_college$n_college)
+
+# mean and median number of colleges by dynast
 
 dyn_college %>% group_by(dynast) %>% 
-  summarise(mean(n_college))
+  summarise(mean_colleges = mean(n_college),
+            meadian_colleges = median(n_college))
 
 ```
 
 ```{r}
-dyn_college %>% group_by(year,dynast) %>% 
-  summarise(mean(n_college))
+yearwise_college = dyn_college %>% group_by(year,dynast) %>% 
+  summarise(mean_college = mean(n_college)) %>% 
+  pivot_wider(names_from = dynast, values_from = mean_college) %>% 
+  rename( "dynast"= `1`, "non-dynast" = `0`)
+
+yearwise_college
 ```
 
 
 
 ## running a simple poisson regression
 
+- please suggest the covariates to be added
 
 ```{r}
 
@@ -103,4 +144,6 @@ stargazer::stargazer(model,type = "text",keep = c("dynast", "(Intercept)"), add.
 
 ```
 
+## RDD 
 
+- Really need to brush up the concept (out of touch)
