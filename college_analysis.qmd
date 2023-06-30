@@ -13,18 +13,62 @@ library(stringr)
 library(stargazer)
 ```
 
+### College data
+
+```{r}
+#reading the college data'
+path = "/Users/najah/work/cpr/data/"
+college_pc= read.csv(paste0(path,"college_pc_ag.csv"))
+colleges = read.csv(paste0(path, "college_clean.csv"))
+
+```
+
+```{r}
+print(paste("Number of colleges that are mapped on the constituencies:", nrow(colleges)))
+
+```
+
+```{r}
+print(names(colleges))
+```
+
+-   respective constituencies where extracted using the post and pre-delim shape files.
+-   this cleaned file doesn't have the ones established before 1989. they have been removed
+
+```{r}
+table(colleges$del)
+
+```
 
 ```{r}
 
-#reading the college data
-college_pc= read.csv("/Users/najah/work/cpr/data/college_pc_ag.csv")
+n_col_yr = as.data.frame(table(colleges$year_estd))
 
+barplot( n_col_yr$Freq, names.arg = n_col_yr$Var1, main = "Number of colleges established by year")
+
+```
+
+```{r}
+# colleges by type
+
+table(colleges$management)
+```
+
+```{r}
+# government colleges
+gov_college =ifelse(grepl("\\bprivate\\b", colleges$management, ignore.case = TRUE),0,1)
+
+
+table(gov_college)
+
+```
+
+```{r}
 #reading the all india dynast data
 
 tcdp_dyn = read.csv("/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv")
 ##head(tcpd_dyn)
 ```
-
 
 ```{r}
 
@@ -51,42 +95,38 @@ dyn_college<- left_join( dyn_1,college_pc, by = c( "state_name"="state",   "year
 
 dyn_college$n_college = ifelse(is.na(dyn_college$n_college),0,dyn_college$n_college)
 
+dyn_college$n_gov = ifelse(is.na(dyn_college$n_gov),0,dyn_college$n_gov)
 
+
+# creating a variable with number of private colleges
+
+dyn_college$n_priv = abs(dyn_college$n_college-dyn_college$n_gov)
 
 
 ```
-
 
 ## merged data
 
 This df contains number of colleges established in each year for every constituency from 1989-2019 along with the information about the winner of the constituency
 
-
 ```{r}
 summary(dyn_college$n_college)
 ```
 
-
-
-
 ```{r}
 # distribution of the number of colleges
-hist(dyn_college$n_college)
+hist(dyn_college$n_college, main= "distribution of all colleges")
+hist(dyn_college$n_gov, main = "distribution of government colleges")
 
 ```
 
-- a huge number of constituencies have zero number of constituncies established for some of the years
-- not normal distribution
-
-
-
-
+-   a huge number of constituencies have zero number of constituncies established for some of the years
+-   not normal distribution
 
 ```{r}
 ## understanding the dynast data
 table(dyn_college$dyn)
 ```
-
 
 ```{r}
 # recoding empty ones and recheck as dyn
@@ -104,8 +144,6 @@ print(mean(dyn_college$n_college))
 
 print(median(dyn_college$n_college))
 ```
-
-
 
 ```{r}
 
@@ -126,24 +164,36 @@ yearwise_college = dyn_college %>% group_by(year,dynast) %>%
 yearwise_college
 ```
 
-
-
 ## running a simple poisson regression
 
-- please suggest the covariates to be added
+-   please suggest the covariates to be added
+- added 3 different models: all colleges, government, private
+- controls needed for existing level fo development and education, hilly areas ( construction is difficult)
+- for education : number of schools - is historic data available?
+- for dev - night light (1993-2013)
+- what data is available from 1989 for control
+- adding constituency type as a control 
 
 ```{r}
 
-model <- glm(n_college~dynast+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+# all  colleges  model  
+fit_all <- glm(n_college~dynast+ constituency_type+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+
+
+# govt colleges only model    
+fit_gov = glm(n_gov~dynast+constituency_type+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+
+# private colleges only model  
+fit_priv = glm(n_priv~dynast+constituency_type+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
 #summary(model)
 
 
-addlines <- list(c('Fixed effects - Year' ,"TRUE" ), c("Fixed Effects - State", "TRUE"))
-stargazer::stargazer(model,type = "text",keep = c("dynast", "(Intercept)"), add.lines = addlines)
+addlines <- list(c('Fixed effects - Year' ,"TRUE", "TRUE", "TRUE" ), c("Fixed Effects - State", "TRUE", "TRUE", "TRUE"))
+stargazer::stargazer(fit_all, fit_gov,fit_priv,type = "text",keep = c("dynast", "(Intercept)", "n_gov", "constituency_type"), add.lines = addlines)
 
 
 ```
 
-## RDD 
+## RDD
 
-- Really need to brush up the concept (out of touch)
+-   Really need to brush up the concept (out of touch)
