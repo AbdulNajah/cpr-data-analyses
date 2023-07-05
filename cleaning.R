@@ -52,8 +52,14 @@ college <- college %>% filter(year_estd>=1989  &!is.na(pc_no)) %>%
 ### ,merging with college data
 #=====================
 
+
+college_clean = write.csv(college, "./data/college_clean.csv")
+# government colleges
+college$gov_college =ifelse(grepl("\\bprivate\\b", college$management, ignore.case = TRUE),0,1)
+
+
 college_pc <- college %>% group_by(year_el,state, pc_no) %>% 
-  summarise(n_college = n()) %>% ungroup()
+  summarise(n_college = n(), n_gov = sum(gov_college)) %>% ungroup()
 
 write.csv(college_pc, "./data/college_pc_ag.csv")
 

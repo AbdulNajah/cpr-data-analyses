@@ -7,6 +7,7 @@ format: html
 
 ```{r}
 #reading the libraries
+knitr::opts_chunk$set(cache = FALSE,echo = TRUE, message=FALSE, warning = FALSE)
 
 library(dplyr)
 library(stringr)
@@ -66,12 +67,14 @@ table(gov_college)
 ```{r}
 #reading the all india dynast data
 
-tcdp_dyn = read.csv("/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv")
+tcpd_dyn = read.csv("/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv")
 ##head(tcpd_dyn)
+
+# ordering the data
+tcpd_dyn = tcpd_dyn %>% arrange(state_name, year, constituency_no, position)
 ```
 
 ```{r}
-
 #cleanining the names in the tcpd data to merge with the college data
 
 tcpd_dyn = tcpd_dyn %>%
@@ -83,8 +86,49 @@ tcpd_dyn = tcpd_dyn %>%
          state_name= str_trim(state_name))
 
 
+# recoding empty ones and recheck as dyn
+
+tcpd_dyn$dyn = as.numeric(tcpd_dyn$dyn)
+
+tcpd_dyn$dynast = ifelse(is.na(tcpd_dyn$dyn) | tcpd_dyn$dyn==0,0,1)
+
+
+
+
+```
+
+
+
+```{r}
+# add a col that indicates the second position familty type
+
+
+tcpd_dyn = tcpd_dyn %>% group_by(state_name, year, constituency_no) %>% 
+  mutate(second_position_dyn = sum(dynast[position==2]) )%>% 
+  ungroup()
+
+
+#tcpd_dyn[,c("position","dynast", "second_position_dyn")]
+
 #filter to winner to keep observation per constituency
 dyn_1 = tcpd_dyn %>% filter(position==1)
+
+# creating the contest variable
+
+position = dyn_1$position
+second_position = dyn_1$second_position_dyn
+winner = dyn_1$dynast
+
+
+dyn_1$dyn_type = ifelse(winner==1 & second_position==0, "dyn vs non-dyn",ifelse(winner==0 &second_position==1, "non-dyn vs dyn", "others"))
+
+dyn_1[,c("dynast", "second_position_dyn", "dyn_type")][10:15,]
+
+```
+
+
+
+```{r}
 
 #merging the dataset 
 
@@ -125,18 +169,10 @@ hist(dyn_college$n_gov, main = "distribution of government colleges")
 
 ```{r}
 ## understanding the dynast data
-table(dyn_college$dyn)
-```
-
-```{r}
-# recoding empty ones and recheck as dyn
-
-dyn_college$dynast = ifelse(dyn_college$dyn==1,1,0)
-
 table(dyn_college$dynast)
-
-
 ```
+
+
 
 ```{r}
 ### average number of colleges 
@@ -163,6 +199,21 @@ yearwise_college = dyn_college %>% group_by(year,dynast) %>%
 
 yearwise_college
 ```
+```{r}
+## need to noramlise college
+
+#per million electors
+
+# dyn_college$n_college_million = dyn_college$n_college/(dyn_college$electors/1000000)
+
+dyn_college$n_college_million = dyn_college$n_college*1000000/dyn_college$electors
+
+dyn_college$n_gov_million = dyn_college$n_gov*1000000/dyn_college$electors
+
+dyn_college$n_priv_million = dyn_college$n_priv*1000000/dyn_college$electors
+
+```
+
 
 ## running a simple poisson regression
 
@@ -174,26 +225,113 @@ yearwise_college
 - what data is available from 1989 for control
 - adding constituency type as a control 
 
-```{r}
+```{r warning=FALSE}
 
 # all  colleges  model  
-fit_all <- glm(n_college~dynast+ constituency_type+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+fit_all <- glm(n_college_million~dynast+ constituency_type+enop+turnout_percentage +factor(year)+factor(state_name), family = "poisson", data = dyn_college)
 
 
 # govt colleges only model    
-fit_gov = glm(n_gov~dynast+constituency_type+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+fit_gov = glm(n_gov_million~dynast+constituency_type+enop+turnout_percentage+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
 
 # private colleges only model  
-fit_priv = glm(n_priv~dynast+constituency_type+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
+fit_priv = glm(n_priv_million~dynast+constituency_type+enop+turnout_percentage+factor(year)+factor(state_name), family = "poisson", data = dyn_college)
 #summary(model)
 
 
 addlines <- list(c('Fixed effects - Year' ,"TRUE", "TRUE", "TRUE" ), c("Fixed Effects - State", "TRUE", "TRUE", "TRUE"))
-stargazer::stargazer(fit_all, fit_gov,fit_priv,type = "text",keep = c("dynast", "(Intercept)", "n_gov", "constituency_type"), add.lines = addlines)
+stargazer::stargazer(fit_all, fit_gov,fit_priv,type = "text",keep = c("dynast", "(Intercept)", "n_gov", "constituency_type", "enop", "turnout_percentage"), add.lines = addlines)
 
 
 ```
 
+
+
 ## RDD
 
 -   Really need to brush up the concept (out of touch)
+
+
+
+```{r}
+# prepping the data
+
+
+dyn_college = dyn_college %>% 
+  mutate(margin_5pc = ifelse(margin_percentage<=5,1,0),
+        margin_2.5pc =ifelse(margin_percentage<=2.5,1,0),
+        margin_10pc =ifelse(margin_percentage<=10,1,0))
+
+
+dyn_college[, c("margin_percentage", "margin_2.5pc", "margin_5pc", "margin_10pc")][1:5,]
+```
+
+
+```{r}
+# breakup of all constituencies wrt margin
+
+margin_table= dyn_college %>% summarise_at(c("margin_2.5pc", "margin_5pc", "margin_10pc"), sum, na.rm =TRUE)
+
+margin_table
+
+
+```
+
+
+```{r}
+
+# break-up for contest types
+
+margin_table= dyn_college %>% group_by(dyn_type)%>% summarise_at(c("margin_2.5pc", "margin_5pc", "margin_10pc"), sum, na.rm =TRUE)
+margin_table
+```
+
+
+
+```{r}
+
+dyn_college_rdd = dyn_college %>% filter(dyn_type!= "others")
+
+dyn_college_rdd = dyn_college_rdd%>% filter(margin_percentage<=10 ) %>% 
+  mutate(mv_rdd = ifelse(dyn_type=="non-dyn vs dyn", -margin_percentage, margin_percentage))
+```
+
+
+
+```{r warning=FALSE}
+
+## rdd graph
+library(ggplot2)
+ggplot(dyn_college_rdd,  aes(mv_rdd,n_college , color = dyn_type))+
+  geom_point()+
+   ylim(0,10)+
+    geom_smooth(method="glm", se= FALSE)+
+  geom_vline(xintercept = 0)+
+    # scale_color_grey(labels = c("non-family winner", "family winner"))+
+   labs(x = "Margin of victory", y = "n collegs per million population",
+        caption = "note: collegesbuilt in year in a parliamentary constituency")+
+   theme_bw()+
+  theme(legend.position = "bottom", legend.title = element_blank())
+  #ylim(0,10)
+
+```
+
+
+
+```{r warning=FALSE}
+## rdd regression
+fit2.5 <- glm(n_college_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_2.5pc ==1)),family = "poisson")
+
+fit5 <- glm(n_college_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_5pc ==1)), family = "poisson")
+
+fit10 <- glm(n_college_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_10pc ==1)),family = "poisson")
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+
+```
+
+
+
