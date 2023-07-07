@@ -375,18 +375,12 @@ colleges = read.csv(paste0(path, &quot;college_clean.csv&quot;))</code></pre>
 <pre class="r"><code>print(paste(&quot;Number of colleges that are mapped on the constituencies:&quot;, nrow(colleges)))</code></pre>
 <pre><code>## [1] &quot;Number of colleges that are mapped on the constituencies: 36857&quot;</code></pre>
 <pre class="r"><code>print(names(colleges))</code></pre>
-<pre><code>##  [1] &quot;X&quot;              &quot;country&quot;       
-##  [3] &quot;state&quot;          &quot;district&quot;      
-##  [5] &quot;univ_type&quot;      &quot;univ_name&quot;     
-##  [7] &quot;inst_name&quot;      &quot;inst_type&quot;     
-##  [9] &quot;address&quot;        &quot;website&quot;       
-## [11] &quot;management&quot;     &quot;year_estd&quot;     
-## [13] &quot;specialisation&quot; &quot;location&quot;      
-## [15] &quot;year_upload&quot;    &quot;lat&quot;           
-## [17] &quot;long&quot;           &quot;delim&quot;         
-## [19] &quot;st_code&quot;        &quot;st_name&quot;       
-## [21] &quot;pc_no&quot;          &quot;pc_name&quot;       
-## [23] &quot;year_el&quot;</code></pre>
+<pre><code>##  [1] &quot;X&quot;              &quot;country&quot;        &quot;state&quot;          &quot;district&quot;      
+##  [5] &quot;univ_type&quot;      &quot;univ_name&quot;      &quot;inst_name&quot;      &quot;inst_type&quot;     
+##  [9] &quot;address&quot;        &quot;website&quot;        &quot;management&quot;     &quot;year_estd&quot;     
+## [13] &quot;specialisation&quot; &quot;location&quot;       &quot;year_upload&quot;    &quot;lat&quot;           
+## [17] &quot;long&quot;           &quot;delim&quot;          &quot;st_code&quot;        &quot;st_name&quot;       
+## [21] &quot;pc_no&quot;          &quot;pc_name&quot;        &quot;year_el&quot;</code></pre>
 <ul>
 <li>respective constituencies where extracted using the post and
 pre-delim shape files.</li>
@@ -405,10 +399,8 @@ barplot( n_col_yr$Freq, names.arg = n_col_yr$Var1, main = &quot;Number of colleg
 
 table(colleges$management)</code></pre>
 <pre><code>## 
-## Central Government         Local Body 
-##                144               1708 
-##      Private Aided   Private Un-Aided 
-##               2720              28449 
+## Central Government         Local Body      Private Aided   Private Un-Aided 
+##                144               1708               2720              28449 
 ##   State Government 
 ##               3836</code></pre>
 <pre class="r"><code># government colleges
@@ -531,7 +523,8 @@ dyn_college %&gt;% group_by(dynast) %&gt;%
 ## 2      1          4.69                0</code></pre>
 <pre class="r"><code>yearwise_college = dyn_college %&gt;% group_by(year,dynast) %&gt;% 
   summarise(mean_college = mean(n_college)) %&gt;% 
-  pivot_wider(names_from = dynast, values_from = mean_college) %&gt;% 
+  
+  tidyr::pivot_wider(names_from = dynast, values_from = mean_college) %&gt;% 
   rename( &quot;dynast&quot;= `1`, &quot;non-dynast&quot; = `0`)
 
 yearwise_college</code></pre>
@@ -633,14 +626,13 @@ dyn_college = dyn_college %&gt;%
 
 dyn_college[, c(&quot;margin_percentage&quot;, &quot;margin_2.5pc&quot;, &quot;margin_5pc&quot;, &quot;margin_10pc&quot;)][1:5,]</code></pre>
 <pre><code>## # A tibble: 5 × 4
-##   margin_percentage margin_2.5pc margin_5pc
-##               &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;
-## 1             16.7             0          0
-## 2              6.24            0          0
-## 3             34.0             0          0
-## 4              0.37            1          1
-## 5              9.57            0          0
-## # ℹ 1 more variable: margin_10pc &lt;dbl&gt;</code></pre>
+##   margin_percentage margin_2.5pc margin_5pc margin_10pc
+##               &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+## 1             16.7             0          0           0
+## 2              6.24            0          0           1
+## 3             34.0             0          0           0
+## 4              0.37            1          1           1
+## 5              9.57            0          0           1</code></pre>
 <pre class="r"><code># breakup of all constituencies wrt margin
 
 margin_table= dyn_college %&gt;% summarise_at(c(&quot;margin_2.5pc&quot;, &quot;margin_5pc&quot;, &quot;margin_10pc&quot;), sum, na.rm =TRUE)
@@ -698,6 +690,62 @@ stargazer::stargazer(fit2.5,fit5, fit10, type = &quot;text&quot;, omit = &quot;C
 ## -----------------------------------------------
 ## dynast winner      0.175**  0.158***  0.129*** 
 ##                    (0.070)   (0.049)   (0.037) 
+##                                                
+## -----------------------------------------------
+## Observations         230       457       837   
+## Log Likelihood    -Inf.000  -Inf.000  -Inf.000 
+## Akaike Inf. Crit.  Inf.000   Inf.000   Inf.000 
+## ===============================================
+## Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<pre class="r"><code>## rdd regression private colleges
+
+fit2.5 &lt;- glm(n_priv_million~relevel(as.factor(dyn_type), ref = &quot;non-dyn vs dyn&quot;), data = subset(dyn_college_rdd %&gt;% filter(margin_2.5pc ==1)),family = &quot;poisson&quot;)
+
+fit5 &lt;- glm(n_priv_million~relevel(as.factor(dyn_type), ref = &quot;non-dyn vs dyn&quot;), data = subset(dyn_college_rdd %&gt;% filter(margin_5pc ==1)), family = &quot;poisson&quot;)
+
+fit10 &lt;- glm(n_priv_million~relevel(as.factor(dyn_type), ref = &quot;non-dyn vs dyn&quot;), data = subset(dyn_college_rdd %&gt;% filter(margin_10pc ==1)),family = &quot;poisson&quot;)
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = &quot;text&quot;, omit = &quot;Constant&quot;, column.labels = c(&quot;2,5&quot;,&quot;5&quot;,&quot;10&quot;), covariate.labels = c(&quot;dynast winner&quot;) )</code></pre>
+<pre><code>## 
+## ===============================================
+##                        Dependent variable:     
+##                   -----------------------------
+##                          n_priv_million        
+##                      2,5        5        10    
+##                      (1)       (2)       (3)   
+## -----------------------------------------------
+## dynast winner     0.218***  0.182***  0.169*** 
+##                    (0.076)   (0.053)   (0.040) 
+##                                                
+## -----------------------------------------------
+## Observations         230       457       837   
+## Log Likelihood    -Inf.000  -Inf.000  -Inf.000 
+## Akaike Inf. Crit.  Inf.000   Inf.000   Inf.000 
+## ===============================================
+## Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<pre class="r"><code>## rdd regression govt. colleges
+
+fit2.5 &lt;- glm(n_gov_million~relevel(as.factor(dyn_type), ref = &quot;non-dyn vs dyn&quot;), data = subset(dyn_college_rdd %&gt;% filter(margin_2.5pc ==1)),family = &quot;poisson&quot;)
+
+fit5 &lt;- glm(n_gov_million~relevel(as.factor(dyn_type), ref = &quot;non-dyn vs dyn&quot;), data = subset(dyn_college_rdd %&gt;% filter(margin_5pc ==1)), family = &quot;poisson&quot;)
+
+fit10 &lt;- glm(n_gov_million~relevel(as.factor(dyn_type), ref = &quot;non-dyn vs dyn&quot;), data = subset(dyn_college_rdd %&gt;% filter(margin_10pc ==1)),family = &quot;poisson&quot;)
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = &quot;text&quot;, omit = &quot;Constant&quot;, column.labels = c(&quot;2,5&quot;,&quot;5&quot;,&quot;10&quot;), covariate.labels = c(&quot;dynast winner&quot;) )</code></pre>
+<pre><code>## 
+## ===============================================
+##                        Dependent variable:     
+##                   -----------------------------
+##                           n_gov_million        
+##                      2,5        5        10    
+##                      (1)       (2)       (3)   
+## -----------------------------------------------
+## dynast winner      -0.047     0.024    -0.092  
+##                    (0.173)   (0.125)   (0.094) 
 ##                                                
 ## -----------------------------------------------
 ## Observations         230       457       837   

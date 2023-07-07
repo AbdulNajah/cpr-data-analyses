@@ -12,6 +12,7 @@ knitr::opts_chunk$set(cache = FALSE,echo = TRUE, message=FALSE, warning = FALSE)
 library(dplyr)
 library(stringr)
 library(stargazer)
+
 ```
 
 ### College data
@@ -194,7 +195,8 @@ dyn_college %>% group_by(dynast) %>%
 ```{r}
 yearwise_college = dyn_college %>% group_by(year,dynast) %>% 
   summarise(mean_college = mean(n_college)) %>% 
-  pivot_wider(names_from = dynast, values_from = mean_college) %>% 
+  
+  tidyr::pivot_wider(names_from = dynast, values_from = mean_college) %>% 
   rename( "dynast"= `1`, "non-dynast" = `0`)
 
 yearwise_college
@@ -333,5 +335,37 @@ stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", colum
 
 ```
 
+```{r warning=FALSE}
+## rdd regression private colleges
+
+fit2.5 <- glm(n_priv_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_2.5pc ==1)),family = "poisson")
+
+fit5 <- glm(n_priv_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_5pc ==1)), family = "poisson")
+
+fit10 <- glm(n_priv_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_10pc ==1)),family = "poisson")
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+
+```
+
+
+```{r warning=FALSE}
+## rdd regression govt. colleges
+
+fit2.5 <- glm(n_gov_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_2.5pc ==1)),family = "poisson")
+
+fit5 <- glm(n_gov_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_5pc ==1)), family = "poisson")
+
+fit10 <- glm(n_gov_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_10pc ==1)),family = "poisson")
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+
+```
 
 
