@@ -1,6 +1,12 @@
 ---
 title: "College - All India"
-format: html
+format:
+  html:
+    toc: true
+    code-fold: show
+execute: 
+  error: true
+  warning: true
 ---
 
 ## Data Processing
@@ -98,8 +104,6 @@ tcpd_dyn$dynast = ifelse(is.na(tcpd_dyn$dyn) | tcpd_dyn$dyn==0,0,1)
 
 ```
 
-
-
 ```{r}
 # add a col that indicates the second position familty type
 
@@ -126,8 +130,6 @@ dyn_1$dyn_type = ifelse(winner==1 & second_position==0, "dyn vs non-dyn",ifelse(
 dyn_1[,c("dynast", "second_position_dyn", "dyn_type")][10:15,]
 
 ```
-
-
 
 ```{r}
 
@@ -173,8 +175,6 @@ hist(dyn_college$n_gov, main = "distribution of government colleges")
 table(dyn_college$dynast)
 ```
 
-
-
 ```{r}
 ### average number of colleges 
 print(mean(dyn_college$n_college))
@@ -201,6 +201,7 @@ yearwise_college = dyn_college %>% group_by(year,dynast) %>%
 
 yearwise_college
 ```
+
 ```{r}
 ## need to noramlise college
 
@@ -217,15 +218,22 @@ dyn_college$n_priv_million = dyn_college$n_priv*1000000/dyn_college$electors
 ```
 
 
-## running a simple poisson regression
+
+
+
+## General regression 
+
+::: {.panel-tabset}
+
+### Poisson
 
 -   please suggest the covariates to be added
-- added 3 different models: all colleges, government, private
-- controls needed for existing level fo development and education, hilly areas ( construction is difficult)
-- for education : number of schools - is historic data available?
-- for dev - night light (1993-2013)
-- what data is available from 1989 for control
-- adding constituency type as a control 
+-   added 3 different models: all colleges, government, private
+-   controls needed for existing level fo development and education, hilly areas ( construction is difficult)
+-   for education : number of schools - is historic data available?
+-   for dev - night light (1993-2013)
+-   what data is available from 1989 for control
+-   adding constituency type as a control
 
 ```{r warning=FALSE}
 
@@ -247,13 +255,35 @@ stargazer::stargazer(fit_all, fit_gov,fit_priv,type = "text",keep = c("dynast", 
 
 ```
 
+### OLS
+
+```{r warning=FALSE}
+
+# all  colleges  model  
+fit_all <- lm(n_college_million~dynast+ constituency_type+enop+turnout_percentage +factor(year)+factor(state_name),  data = dyn_college)
+
+
+# govt colleges only model    
+fit_gov = lm(n_gov_million~dynast+constituency_type+enop+turnout_percentage+factor(year)+factor(state_name),  data = dyn_college)
+
+# private colleges only model  
+fit_priv = lm(n_priv_million~dynast+constituency_type+enop+turnout_percentage+factor(year)+factor(state_name), data = dyn_college)
+#summary(model)
+
+
+addlines <- list(c('Fixed effects - Year' ,"TRUE", "TRUE", "TRUE" ), c("Fixed Effects - State", "TRUE", "TRUE", "TRUE"))
+stargazer::stargazer(fit_all, fit_gov,fit_priv,type = "text",keep = c("dynast", "(Intercept)", "n_gov", "constituency_type", "enop", "turnout_percentage"), add.lines = addlines)
+
+
+```
+
+
+:::
 
 
 ## RDD
 
 -   Really need to brush up the concept (out of touch)
-
-
 
 ```{r}
 # prepping the data
@@ -268,7 +298,6 @@ dyn_college = dyn_college %>%
 dyn_college[, c("margin_percentage", "margin_2.5pc", "margin_5pc", "margin_10pc")][1:5,]
 ```
 
-
 ```{r}
 # breakup of all constituencies wrt margin
 
@@ -279,7 +308,6 @@ margin_table
 
 ```
 
-
 ```{r}
 
 # break-up for contest types
@@ -288,8 +316,6 @@ margin_table= dyn_college %>% group_by(dyn_type)%>% summarise_at(c("margin_2.5pc
 margin_table
 ```
 
-
-
 ```{r}
 
 dyn_college_rdd = dyn_college %>% filter(dyn_type!= "others")
@@ -297,8 +323,6 @@ dyn_college_rdd = dyn_college %>% filter(dyn_type!= "others")
 dyn_college_rdd = dyn_college_rdd%>% filter(margin_percentage<=10 ) %>% 
   mutate(mv_rdd = ifelse(dyn_type=="non-dyn vs dyn", -margin_percentage, margin_percentage))
 ```
-
-
 
 ```{r warning=FALSE}
 
@@ -319,6 +343,20 @@ ggplot(dyn_college_rdd,  aes(mv_rdd,n_college , color = dyn_type))+
 ```
 
 
+
+
+
+
+
+
+
+## RDD Models 
+
+
+::: {.panel-tabset}
+
+
+### Poisson
 
 ```{r warning=FALSE}
 ## rdd regression
@@ -351,7 +389,6 @@ stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", colum
 
 ```
 
-
 ```{r warning=FALSE}
 ## rdd regression govt. colleges
 
@@ -369,3 +406,52 @@ stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", colum
 ```
 
 
+### OLS
+
+```{r warning=FALSE}
+## rdd regression
+fit2.5 <- lm(n_college_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_2.5pc ==1)))
+
+fit5 <- lm(n_college_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_5pc ==1)))
+
+fit10 <- lm(n_college_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_10pc ==1)))
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+
+```
+
+```{r warning=FALSE}
+## rdd regression private colleges
+
+fit2.5 <- lm(n_priv_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_2.5pc ==1)))
+
+fit5 <- lm(n_priv_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_5pc ==1)))
+
+fit10 <- lm(n_priv_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_10pc ==1)))
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+
+```
+
+```{r warning=FALSE}
+## rdd regression govt. colleges
+
+fit2.5 <- lm(n_gov_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_2.5pc ==1)))
+
+fit5 <- lm(n_gov_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_5pc ==1)))
+
+fit10 <- lm(n_gov_million~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_college_rdd %>% filter(margin_10pc ==1)))
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+
+```
+:::
