@@ -1,0 +1,158 @@
+---
+title: "night-lights"
+format:
+  html:
+    toc: true
+    code-fold: show
+execute: 
+  error: true
+  warning: true
+---
+
+
+
+**STEPS**
+
+- reading the shrug nl data for pre-delimitation shapefiles -  `con_shrug_2007_nl_wide.csv`
+- aggregate the night light for election period
+- aggregate at pc level given the data is at the ac level
+  - is there key for ac_07 id in shrug. couldn't find one myself
+  - reading the shrug state keys to extract the state names
+  - get the state names and ac_id's from thee ac07_id
+  - reading the ac-pc connector file so that I can aggregate at the PC level.
+- merge with the dynasty data
+
+
+
+```{r}
+
+library(dplyr)
+## reading the nl
+
+
+nl = read.csv("//Users/najah/work/cpr/data/shrug/shrug-v1.5.samosa-con-shrug-csv/con_shrug_2007_nl_wide.csv")
+
+head(nl[,1:5],5)
+
+names(nl)
+
+
+
+
+
+
+```
+
+- aggregating for the election periods - average night light of total night light during the election period
+- first we convert the wide data to long data (we will need this later we merge this with dyn data since it is long)
+
+```{r}
+# keeping only total night lights
+
+pattern = '^total'
+
+nl = cbind(nl[,1:2],nl[,c(grepl(pattern, names(nl)))])
+
+## nl
+
+## converting to long dataset
+
+nl = tidyr::pivot_longer(nl, cols = -c(ac07_id, num_cells), 
+                      names_to= 'year',
+                    values_to = 'total_light')
+
+## extracting the year
+
+
+nl$year = as.numeric(gsub("[^0-9]", "",nl$year))
+
+head(nl)
+```
+
+
+```{r}
+## aggregating for election years
+
+# Define the breaks and labels for the categories
+labels <- c(1994, 1996, 1998, 1999, 2004,2009)
+breaks <- c( 1994,1996, 1998, 1999, 2004, 2009, 2014)
+
+nl$year_el = cut(nl$year, breaks = breaks, labels = labels, include.lowest = TRUE)
+table(nl$year_el)
+
+# night light average variable
+#adds up the light during the years under the election regime and averages per pixel then normalises for per year
+
+nl_el = nl %>% group_by(ac07_id,year_el) %>% 
+  # creating a variable that counts for the years under each election regime
+  summarise(years_under = max(year)-min(year)+1,
+            total_lights_avg = (sum(total_light)/mean(num_cells))/years_under )
+
+head(nl_el, 5)
+
+```
+
+```{r}
+# shrug state key
+
+skey = read.csv("/Users/najah/work/cpr/data/shrug/shrug/shrug-v1.5.samosa-keys-csv/shrug_pc01_state_key.csv")
+# getting the state code
+
+state_id = unique(skey[, 1:2], drop = TRUE)
+
+#removing the index
+rownames(state_id) = NULL
+
+
+# mergin with the nl data
+
+
+nl_el$state_id = as.numeric(gsub(".*-(\\d+)-.*", "\\1", nl_el$ac07_id))
+
+nl_el = left_join(nl_el, state_id, by = c("state_id" = "pc01_state_id"))
+
+# now extracting the ac-id from the ac_id
+
+nl_el$ac_id  = gsub(".*-(\\d{3})$", "\\1", nl_el$ac07_id)
+
+# now i can use the ac-pc mapping 
+
+ac_pc = read.csv("/Users/najah/work/cpr/data/RerunDta.csv")
+
+
+ac_pc = ac_pc[, c("State_number_2001","State_name_2001","AC_no_2001", "AC_name_2001" )]
+
+unique(ac_pc$State_name_2001)
+
+```
+
+```{r}
+unique(nl_el$pc11_state_name)
+```
+
+
+
+- The ac pc mapping I received from melvin only has 23 states while the nightlights data has around 29 states. 
+- Is there any other way that I should approach this problem?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
