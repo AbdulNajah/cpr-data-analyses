@@ -15,9 +15,9 @@ execute:
 #reading the libraries
 knitr::opts_chunk$set(cache = FALSE,echo = TRUE, message=FALSE, warning = FALSE)
 
-library(dplyr)
+suppressMessages(library(dplyr))
 library(stringr)
-library(stargazer)
+suppressMessages(library(stargazer))
 
 ```
 
@@ -74,8 +74,8 @@ table(gov_college)
 ```{r}
 #reading the all india dynast data
 
-tcpd_dyn = read.csv("/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv")
-##head(tcpd_dyn)
+tcpd_dyn = read.csv(paste0(path,"tcpd_ge_dyn_23.csv"))
+
 
 # ordering the data
 tcpd_dyn = tcpd_dyn %>% arrange(state_name, year, constituency_no, position)
