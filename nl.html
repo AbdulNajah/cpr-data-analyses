@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -46,6 +80,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#data-prep" id="toc-data-prep" class="nav-link active" data-scroll-target="#data-prep">Data Prep</a></li>
+  <li><a href="#basic-analysis" id="toc-basic-analysis" class="nav-link" data-scroll-target="#basic-analysis">Basic analysis</a></li>
   </ul>
 </nav>
 </div>
@@ -73,6 +108,104 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Data prep script can be found <a href="./nl_data_prep.R">here</a></li>
 </ul>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(dplyr))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">=</span> <span class="st">"/Users/najah/work/cpr/data/"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#reading the all india dynast data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>tcpd_dyn <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(path,<span class="st">"tcpd_ge_dyn_23.csv"</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>tcpd_dyn<span class="sc">$</span>dyn <span class="ot">=</span> <span class="fu">as.numeric</span>(tcpd_dyn<span class="sc">$</span>dyn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: NAs introduced by coercion</code></pre>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># recoding empty ones and recheck as dyn</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tcpd_dyn<span class="sc">$</span>dynast <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(tcpd_dyn<span class="sc">$</span>dyn) <span class="sc">|</span> tcpd_dyn<span class="sc">$</span>dyn<span class="sc">==</span><span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># merging the data with dynasty data</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># filter to winner</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># removing "_&amp;_|_"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>tcpd_dyn<span class="sc">$</span>state_name <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">"_&amp;_|_"</span>, <span class="st">" "</span>, <span class="fu">tolower</span>(tcpd_dyn<span class="sc">$</span>state_name))</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># add a col that indicates the second position familty type</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>tcpd_dyn <span class="ot">=</span> tcpd_dyn <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(state_name, year, constituency_no) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">second_position_dyn =</span> <span class="fu">sum</span>(dynast[position<span class="sc">==</span><span class="dv">2</span>]) )<span class="sc">%&gt;%</span> </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#tcpd_dyn[,c("position","dynast", "second_position_dyn")]</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#filter to winner to keep observation per constituency</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>dyn_1 <span class="ot">=</span> tcpd_dyn <span class="sc">%&gt;%</span> <span class="fu">filter</span>(position<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the contest variable</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>position <span class="ot">=</span> dyn_1<span class="sc">$</span>position</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>second_position <span class="ot">=</span> dyn_1<span class="sc">$</span>second_position_dyn</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>winner <span class="ot">=</span> dyn_1<span class="sc">$</span>dynast</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>dyn_1<span class="sc">$</span>dyn_type <span class="ot">=</span> <span class="fu">ifelse</span>(winner<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> second_position<span class="sc">==</span><span class="dv">0</span>, <span class="st">"dyn vs non-dyn"</span>,<span class="fu">ifelse</span>(winner<span class="sc">==</span><span class="dv">0</span> <span class="sc">&amp;</span>second_position<span class="sc">==</span><span class="dv">1</span>, <span class="st">"non-dyn vs dyn"</span>, <span class="st">"others"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reading nl data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nl_pc <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(path,<span class="st">'nl_pc_india.csv'</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(nl_pc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X pc01_state_name PC_no_2001 year_el avg_yearly_growth
+1 1  andhra pradesh          1    1994       0.089395210
+2 2  andhra pradesh          1    1996      -0.013278919
+3 3  andhra pradesh          1    1998      -0.007977615
+4 4  andhra pradesh          1    1999       0.029350893
+5 5  andhra pradesh          1    2004       0.012627218
+6 6  andhra pradesh          1    2009      -0.002356139</code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># merging with dyn</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>dyn_nl <span class="ot">=</span> <span class="fu">inner_join</span>(dyn_1, nl_pc, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"state_name"</span> <span class="ot">=</span> <span class="st">"pc01_state_name"</span>, <span class="st">"year"</span> <span class="ot">=</span> <span class="st">"year_el"</span>, <span class="st">"constituency_no"</span> <span class="ot">=</span> <span class="st">"PC_no_2001"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="basic-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="basic-analysis">Basic analysis</h2>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dyn_nl <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dynast) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_growth =</span> <span class="fu">mean</span>(avg_yearly_growth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  dynast avg_growth
+   &lt;dbl&gt;      &lt;dbl&gt;
+1      0     0.0215
+2      1     0.0236</code></pre>
+</div>
+</div>
 </section>
 
 </main>

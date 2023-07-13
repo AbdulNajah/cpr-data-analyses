@@ -217,8 +217,8 @@ Central Government         Local Body      Private Aided   Private Un-Aided
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#reading the all india dynast data</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>tcpd_dyn <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"/Users/najah/work/cpr/data/tcpd_ge_dyn_23.csv"</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="do">##head(tcpd_dyn)</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>tcpd_dyn <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(path,<span class="st">"tcpd_ge_dyn_23.csv"</span>))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ordering the data</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>tcpd_dyn <span class="ot">=</span> tcpd_dyn <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(state_name, year, constituency_no, position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -287,21 +287,35 @@ Central Government         Local Body      Private Aided   Private Un-Aided
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#merging the dataset </span></span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># limit analysis to 23 relevant states</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="ot">&lt;-</span> <span class="fu">left_join</span>( dyn_1,college_pc, <span class="at">by =</span> <span class="fu">c</span>( <span class="st">"state_name"</span><span class="ot">=</span><span class="st">"state"</span>,   <span class="st">"year"</span><span class="ot">=</span><span class="st">"year_el"</span>,</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">"constituency_no"</span><span class="ot">=</span><span class="st">"pc_no"</span>))</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#filling constituencies with NA vlaue to zero - since there was no college established during this time</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_college <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(dyn_college<span class="sc">$</span>n_college),<span class="dv">0</span>,dyn_college<span class="sc">$</span>n_college)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_gov <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(dyn_college<span class="sc">$</span>n_gov),<span class="dv">0</span>,dyn_college<span class="sc">$</span>n_gov)</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a variable with number of private colleges</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_priv <span class="ot">=</span> <span class="fu">abs</span>(dyn_college<span class="sc">$</span>n_college<span class="sc">-</span>dyn_college<span class="sc">$</span>n_gov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>state_list <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"./data/states_list.csv"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>states <span class="ot">=</span> state_list[,<span class="dv">2</span>]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>dyn_1<span class="sc">$</span>state_name <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">"_&amp;_|_"</span>, <span class="st">" "</span>, <span class="fu">tolower</span>(dyn_1<span class="sc">$</span>state_name))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>dyn_1 <span class="ot">=</span> dyn_1[dyn_1<span class="sc">$</span>state_name <span class="sc">%in%</span> states,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#merging the dataset </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="ot">&lt;-</span> <span class="fu">left_join</span>( dyn_1,college_pc, <span class="at">by =</span> <span class="fu">c</span>( <span class="st">"state_name"</span><span class="ot">=</span><span class="st">"state"</span>,   <span class="st">"year"</span><span class="ot">=</span><span class="st">"year_el"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                                     <span class="st">"constituency_no"</span><span class="ot">=</span><span class="st">"pc_no"</span>))</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">#filling constituencies with NA vlaue to zero - since there was no college established during this time</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_college <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(dyn_college<span class="sc">$</span>n_college),<span class="dv">0</span>,dyn_college<span class="sc">$</span>n_college)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_gov <span class="ot">=</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(dyn_college<span class="sc">$</span>n_gov),<span class="dv">0</span>,dyn_college<span class="sc">$</span>n_gov)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a variable with number of private colleges</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_priv <span class="ot">=</span> <span class="fu">abs</span>(dyn_college<span class="sc">$</span>n_college<span class="sc">-</span>dyn_college<span class="sc">$</span>n_gov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -312,28 +326,28 @@ Central Government         Local Body      Private Aided   Private Un-Aided
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dyn_college<span class="sc">$</span>n_college)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dyn_college<span class="sc">$</span>n_college)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  0.000   0.000   0.000   4.403   3.000 182.000 </code></pre>
+  0.000   0.000   2.000   7.395   9.000 182.000 </code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution of the number of colleges</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dyn_college<span class="sc">$</span>n_college, <span class="at">main=</span> <span class="st">"distribution of all colleges"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution of the number of colleges</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dyn_college<span class="sc">$</span>n_college, <span class="at">main=</span> <span class="st">"distribution of all colleges"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="college_analysis_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+<p><img src="college_analysis_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dyn_college<span class="sc">$</span>n_gov, <span class="at">main =</span> <span class="st">"distribution of government colleges"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dyn_college<span class="sc">$</span>n_gov, <span class="at">main =</span> <span class="st">"distribution of government colleges"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="college_analysis_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid" width="672"></p>
+<p><img src="college_analysis_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <ul>
@@ -343,90 +357,90 @@ Central Government         Local Body      Private Aided   Private Un-Aided
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## understanding the dynast data</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dyn_college<span class="sc">$</span>dynast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## understanding the dynast data</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dyn_college<span class="sc">$</span>dynast)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    0    1 
-3466 1383 </code></pre>
+3130 1250 </code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">### average number of colleges </span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(dyn_college<span class="sc">$</span>n_college))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">### average number of colleges </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(dyn_college<span class="sc">$</span>n_college))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.403176</code></pre>
+<pre><code>[1] 7.395434</code></pre>
 </div>
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">median</span>(dyn_college<span class="sc">$</span>n_college))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">median</span>(dyn_college<span class="sc">$</span>n_college))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] 2</code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean and median number of colleges by dynast</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>dyn_college <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dynast) <span class="sc">%&gt;%</span> </span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_colleges =</span> <span class="fu">mean</span>(n_college),</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">meadian_colleges =</span> <span class="fu">median</span>(n_college))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean and median number of colleges by dynast</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>dyn_college <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dynast) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_colleges =</span> <span class="fu">mean</span>(n_college),</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">meadian_colleges =</span> <span class="fu">median</span>(n_college))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   dynast mean_colleges meadian_colleges
    &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;
-1      0          4.29                0
-2      1          4.69                0</code></pre>
+1      0          7.16                2
+2      1          7.97                2</code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>yearwise_college <span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year,dynast) <span class="sc">%&gt;%</span> </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_college =</span> <span class="fu">mean</span>(n_college)) <span class="sc">%&gt;%</span> </span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> dynast, <span class="at">values_from =</span> mean_college) <span class="sc">%&gt;%</span> </span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>( <span class="st">"dynast"</span><span class="ot">=</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span>, <span class="st">"non-dynast"</span> <span class="ot">=</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>yearwise_college</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>yearwise_college <span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(year,dynast) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_college =</span> <span class="fu">mean</span>(n_college)) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> dynast, <span class="at">values_from =</span> mean_college) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>( <span class="st">"dynast"</span><span class="ot">=</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span>, <span class="st">"non-dynast"</span> <span class="ot">=</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>yearwise_college</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 9 × 3
 # Groups:   year [9]
    year `non-dynast` dynast
   &lt;int&gt;        &lt;dbl&gt;  &lt;dbl&gt;
-1  1989        0.875  0.937
-2  1991        2.87   2.57 
-3  1996        0.974  0.953
-4  1998        0.508  0.477
-5  1999        4.03   4.21 
-6  2004       12.4   12.8  
-7  2009        9.69   9.25 
-8  2014        7.48   5.65 
-9  2019        1.24   1.29 </code></pre>
+1  1989        0.992  1.34 
+2  1991        3.56   3.11 
+3  1996        1.57   1.66 
+4  1998        0.908  0.794
+5  1999        6.50   7.59 
+6  2004       20.6   19.6  
+7  2009       17.5   17.2  
+8  2014       14.0   12.2  
+9  2019        1.94   1.92 </code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="do">## need to noramlise college</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#per million electors</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dyn_college$n_college_million = dyn_college$n_college/(dyn_college$electors/1000000)</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_college_million <span class="ot">=</span> dyn_college<span class="sc">$</span>n_college<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>dyn_college<span class="sc">$</span>electors</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_gov_million <span class="ot">=</span> dyn_college<span class="sc">$</span>n_gov<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>dyn_college<span class="sc">$</span>electors</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_priv_million <span class="ot">=</span> dyn_college<span class="sc">$</span>n_priv<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>dyn_college<span class="sc">$</span>electors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## need to noramlise college</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">#per million electors</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dyn_college$n_college_million = dyn_college$n_college/(dyn_college$electors/1000000)</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_college_million <span class="ot">=</span> dyn_college<span class="sc">$</span>n_college<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>dyn_college<span class="sc">$</span>electors</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_gov_million <span class="ot">=</span> dyn_college<span class="sc">$</span>n_gov<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>dyn_college<span class="sc">$</span>electors</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>dyn_college<span class="sc">$</span>n_priv_million <span class="ot">=</span> dyn_college<span class="sc">$</span>n_priv<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>dyn_college<span class="sc">$</span>electors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -448,20 +462,20 @@ Central Government         Local Body      Private Aided   Private Un-Aided
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all  colleges  model  </span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fit_all <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span>dynast<span class="sc">+</span> constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage <span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> dyn_college)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># govt colleges only model    </span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>fit_gov <span class="ot">=</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> dyn_college)</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co"># private colleges only model  </span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>fit_priv <span class="ot">=</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> dyn_college)</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model)</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>addlines <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">'Fixed effects - Year'</span> ,<span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span> ), <span class="fu">c</span>(<span class="st">"Fixed Effects - State"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>))</span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit_all, fit_gov,fit_priv,<span class="at">type =</span> <span class="st">"text"</span>,<span class="at">keep =</span> <span class="fu">c</span>(<span class="st">"dynast"</span>, <span class="st">"(Intercept)"</span>, <span class="st">"n_gov"</span>, <span class="st">"constituency_type"</span>, <span class="st">"enop"</span>, <span class="st">"turnout_percentage"</span>), <span class="at">add.lines =</span> addlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all  colleges  model  </span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fit_all <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span>dynast<span class="sc">+</span> constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage <span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> dyn_college)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># govt colleges only model    </span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>fit_gov <span class="ot">=</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> dyn_college)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co"># private colleges only model  </span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>fit_priv <span class="ot">=</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">family =</span> <span class="st">"poisson"</span>, <span class="at">data =</span> dyn_college)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model)</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>addlines <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">'Fixed effects - Year'</span> ,<span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span> ), <span class="fu">c</span>(<span class="st">"Fixed Effects - State"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>))</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit_all, fit_gov,fit_priv,<span class="at">type =</span> <span class="st">"text"</span>,<span class="at">keep =</span> <span class="fu">c</span>(<span class="st">"dynast"</span>, <span class="st">"(Intercept)"</span>, <span class="st">"n_gov"</span>, <span class="st">"constituency_type"</span>, <span class="st">"enop"</span>, <span class="st">"turnout_percentage"</span>), <span class="at">add.lines =</span> addlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -471,25 +485,25 @@ Central Government         Local Body      Private Aided   Private Un-Aided
                       n_college_million n_gov_million n_priv_million
                              (1)             (2)           (3)      
 --------------------------------------------------------------------
-dynast                    -0.036**         -0.061         -0.029    
-                           (0.018)         (0.044)       (0.020)    
+dynast                     -0.003          -0.005         -0.008    
+                           (0.015)         (0.038)       (0.016)    
                                                                     
-constituency_typeSC       -0.140***        -0.075       -0.151***   
-                           (0.025)         (0.060)       (0.028)    
+constituency_typeSC       -0.129***       -0.102**      -0.132***   
+                           (0.019)         (0.049)       (0.020)    
                                                                     
-constituency_typeST       -0.390***         0.011       -0.515***   
-                           (0.034)         (0.065)       (0.040)    
+constituency_typeST       -0.501***        -0.068       -0.638***   
+                           (0.033)         (0.064)       (0.039)    
                                                                     
-enop                      0.068***        0.144***       0.035**    
-                           (0.016)         (0.033)       (0.018)    
+enop                      -0.072***       0.123***      -0.112***   
+                           (0.012)         (0.028)       (0.013)    
                                                                     
-turnout_percentage        -0.006***       0.010***      -0.010***   
-                           (0.001)         (0.003)       (0.001)    
+turnout_percentage        -0.006***       0.011***      -0.009***   
+                           (0.001)         (0.002)       (0.001)    
                                                                     
 --------------------------------------------------------------------
 Fixed effects - Year        TRUE            TRUE           TRUE     
 Fixed Effects - State       TRUE            TRUE           TRUE     
-Observations                4,849           4,849         4,849     
+Observations                4,380           4,380         4,380     
 Log Likelihood            -Inf.000        -Inf.000       -Inf.000   
 Akaike Inf. Crit.          Inf.000         Inf.000       Inf.000    
 ====================================================================
@@ -501,20 +515,20 @@ Note:                                    *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</c
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all  colleges  model  </span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>fit_all <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span>dynast<span class="sc">+</span> constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage <span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name),  <span class="at">data =</span> dyn_college)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># govt colleges only model    </span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>fit_gov <span class="ot">=</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name),  <span class="at">data =</span> dyn_college)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co"># private colleges only model  </span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>fit_priv <span class="ot">=</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">data =</span> dyn_college)</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model)</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>addlines <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">'Fixed effects - Year'</span> ,<span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span> ), <span class="fu">c</span>(<span class="st">"Fixed Effects - State"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>))</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit_all, fit_gov,fit_priv,<span class="at">type =</span> <span class="st">"text"</span>,<span class="at">keep =</span> <span class="fu">c</span>(<span class="st">"dynast"</span>, <span class="st">"(Intercept)"</span>, <span class="st">"n_gov"</span>, <span class="st">"constituency_type"</span>, <span class="st">"enop"</span>, <span class="st">"turnout_percentage"</span>), <span class="at">add.lines =</span> addlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all  colleges  model  </span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>fit_all <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span>dynast<span class="sc">+</span> constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage <span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name),  <span class="at">data =</span> dyn_college)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># govt colleges only model    </span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>fit_gov <span class="ot">=</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name),  <span class="at">data =</span> dyn_college)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co"># private colleges only model  </span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>fit_priv <span class="ot">=</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span>dynast<span class="sc">+</span>constituency_type<span class="sc">+</span>enop<span class="sc">+</span>turnout_percentage<span class="sc">+</span><span class="fu">factor</span>(year)<span class="sc">+</span><span class="fu">factor</span>(state_name), <span class="at">data =</span> dyn_college)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model)</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>addlines <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">'Fixed effects - Year'</span> ,<span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span> ), <span class="fu">c</span>(<span class="st">"Fixed Effects - State"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>, <span class="st">"TRUE"</span>))</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit_all, fit_gov,fit_priv,<span class="at">type =</span> <span class="st">"text"</span>,<span class="at">keep =</span> <span class="fu">c</span>(<span class="st">"dynast"</span>, <span class="st">"(Intercept)"</span>, <span class="st">"n_gov"</span>, <span class="st">"constituency_type"</span>, <span class="st">"enop"</span>, <span class="st">"turnout_percentage"</span>), <span class="at">add.lines =</span> addlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -524,29 +538,29 @@ Note:                                    *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</c
                                 n_college_million n_gov_million n_priv_million
                                        (1)             (2)           (3)      
 ------------------------------------------------------------------------------
-dynast                               -0.157          -0.014         -0.143    
-                                     (0.198)         (0.039)       (0.181)    
+dynast                               -0.139          -0.010         -0.129    
+                                     (0.241)         (0.046)       (0.223)    
                                                                               
-constituency_typeSC                  -0.388          -0.027         -0.361    
-                                     (0.246)         (0.048)       (0.224)    
+constituency_typeSC                 -0.713**         -0.087        -0.625**   
+                                     (0.295)         (0.056)       (0.273)    
                                                                               
-constituency_typeST                 -1.201***         0.047       -1.247***   
-                                     (0.353)         (0.069)       (0.321)    
+constituency_typeST                 -2.021***        -0.025       -1.996***   
+                                     (0.438)         (0.083)       (0.406)    
                                                                               
-enop                                 -0.064          0.059**        -0.123    
-                                     (0.146)         (0.029)       (0.133)    
+enop                                -0.529***        0.057*       -0.586***   
+                                     (0.180)         (0.034)       (0.167)    
                                                                               
-turnout_percentage                   -0.015         0.006***       -0.021**   
-                                     (0.011)         (0.002)       (0.010)    
+turnout_percentage                  -0.042***        0.006**      -0.048***   
+                                     (0.015)         (0.003)       (0.014)    
                                                                               
 ------------------------------------------------------------------------------
 Fixed effects - Year                  TRUE            TRUE           TRUE     
 Fixed Effects - State                 TRUE            TRUE           TRUE     
-Observations                          4,849           4,849         4,849     
-R2                                    0.411           0.375         0.383     
-Adjusted R2                           0.405           0.369         0.377     
-Residual Std. Error (df = 4800)       5.969           1.167         5.438     
-F Statistic (df = 48; 4800)         69.879***       60.128***     62.012***   
+Observations                          4,380           4,380         4,380     
+R2                                    0.439           0.327         0.419     
+Adjusted R2                           0.435           0.321         0.415     
+Residual Std. Error (df = 4345)       6.899           1.309         6.396     
+F Statistic (df = 34; 4345)        100.191***       62.000***     92.272***   
 ==============================================================================
 Note:                                              *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>
@@ -563,92 +577,92 @@ Note:                                              *p&lt;0.1; **p&lt;0.05; ***p&
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prepping the data</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>dyn_college <span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> </span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">margin_5pc =</span> <span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin_2.5pc =</span><span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin_10pc =</span><span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>dyn_college[, <span class="fu">c</span>(<span class="st">"margin_percentage"</span>, <span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>)][<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prepping the data</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>dyn_college <span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">margin_5pc =</span> <span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin_2.5pc =</span><span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin_10pc =</span><span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>dyn_college[, <span class="fu">c</span>(<span class="st">"margin_percentage"</span>, <span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>)][<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   margin_percentage margin_2.5pc margin_5pc margin_10pc
               &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
-1             16.7             0          0           0
-2              6.24            0          0           1
-3             34.0             0          0           0
-4              0.37            1          1           1
-5              9.57            0          0           1</code></pre>
+1              8.29            0          0           1
+2              7.73            0          0           1
+3              6.53            0          0           1
+4              3.67            0          1           1
+5              4.31            0          1           1</code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># breakup of all constituencies wrt margin</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>margin_table<span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>), sum, <span class="at">na.rm =</span><span class="cn">TRUE</span>)</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>margin_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># breakup of all constituencies wrt margin</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>margin_table<span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>), sum, <span class="at">na.rm =</span><span class="cn">TRUE</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>margin_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   margin_2.5pc margin_5pc margin_10pc
          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
-1          665       1318        2387</code></pre>
+1          586       1197        2174</code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># break-up for contest types</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>margin_table<span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dyn_type)<span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>), sum, <span class="at">na.rm =</span><span class="cn">TRUE</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>margin_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># break-up for contest types</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>margin_table<span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dyn_type)<span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>), sum, <span class="at">na.rm =</span><span class="cn">TRUE</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>margin_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   dyn_type       margin_2.5pc margin_5pc margin_10pc
   &lt;chr&gt;                 &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
-1 dyn vs non-dyn          125        241         464
-2 non-dyn vs dyn          105        216         373
-3 others                  435        861        1550</code></pre>
+1 dyn vs non-dyn          114        221         432
+2 non-dyn vs dyn           93        199         339
+3 others                  379        777        1403</code></pre>
 </div>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>dyn_college_rdd <span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dyn_type<span class="sc">!=</span> <span class="st">"others"</span>)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>dyn_college_rdd <span class="ot">=</span> dyn_college_rdd<span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">10</span> ) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mv_rdd =</span> <span class="fu">ifelse</span>(dyn_type<span class="sc">==</span><span class="st">"non-dyn vs dyn"</span>, <span class="sc">-</span>margin_percentage, margin_percentage))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>dyn_college_rdd <span class="ot">=</span> dyn_college <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dyn_type<span class="sc">!=</span> <span class="st">"others"</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>dyn_college_rdd <span class="ot">=</span> dyn_college_rdd<span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">10</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mv_rdd =</span> <span class="fu">ifelse</span>(dyn_type<span class="sc">==</span><span class="st">"non-dyn vs dyn"</span>, <span class="sc">-</span>margin_percentage, margin_percentage))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd graph</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dyn_college_rdd,  <span class="fu">aes</span>(mv_rdd,n_college , <span class="at">color =</span> dyn_type))<span class="sc">+</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">10</span>)<span class="sc">+</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"glm"</span>, <span class="at">se=</span> <span class="cn">FALSE</span>)<span class="sc">+</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scale_color_grey(labels = c("non-family winner", "family winner"))+</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Margin of victory"</span>, <span class="at">y =</span> <span class="st">"n collegs per million population"</span>,</span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"note: collegesbuilt in year in a parliamentary constituency"</span>)<span class="sc">+</span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd graph</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dyn_college_rdd,  <span class="fu">aes</span>(mv_rdd,n_college , <span class="at">color =</span> dyn_type))<span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">10</span>)<span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"glm"</span>, <span class="at">se=</span> <span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scale_color_grey(labels = c("non-family winner", "family winner"))+</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Margin of victory"</span>, <span class="at">y =</span> <span class="st">"n collegs per million population"</span>,</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"note: collegesbuilt in year in a parliamentary constituency"</span>)<span class="sc">+</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="college_analysis_files/figure-html/unnamed-chunk-52-1.png" class="img-fluid" width="672"></p>
+<p><img src="college_analysis_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid" width="672"></p>
 </div>
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#ylim(0,10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#ylim(0,10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -661,16 +675,16 @@ Note:                                              *p&lt;0.1; **p&lt;0.05; ***p&
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)), <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)), <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -681,11 +695,11 @@ Note:                                              *p&lt;0.1; **p&lt;0.05; ***p&
                      2,5        5        10    
                      (1)       (2)       (3)   
 -----------------------------------------------
-dynast winner      0.175**  0.158***  0.129*** 
-                   (0.070)   (0.049)   (0.037) 
+dynast winner     0.186***  0.242***  0.084*** 
+                   (0.056)   (0.039)   (0.030) 
                                                
 -----------------------------------------------
-Observations         230       457       837   
+Observations         207       420       771   
 Log Likelihood    -Inf.000  -Inf.000  -Inf.000 
 Akaike Inf. Crit.  Inf.000   Inf.000   Inf.000 
 ===============================================
@@ -695,17 +709,17 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression private colleges</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)), <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression private colleges</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)), <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -716,11 +730,11 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
                      2,5        5        10    
                      (1)       (2)       (3)   
 -----------------------------------------------
-dynast winner     0.218***  0.182***  0.169*** 
-                   (0.076)   (0.053)   (0.040) 
+dynast winner     0.199***  0.253***  0.090*** 
+                   (0.061)   (0.042)   (0.032) 
                                                
 -----------------------------------------------
-Observations         230       457       837   
+Observations         207       420       771   
 Log Likelihood    -Inf.000  -Inf.000  -Inf.000 
 Akaike Inf. Crit.  Inf.000   Inf.000   Inf.000 
 ===============================================
@@ -730,17 +744,17 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression govt. colleges</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)), <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression govt. colleges</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)), <span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">glm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)),<span class="at">family =</span> <span class="st">"poisson"</span>)</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -751,11 +765,11 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
                      2,5        5        10    
                      (1)       (2)       (3)   
 -----------------------------------------------
-dynast winner      -0.047     0.024    -0.092  
-                   (0.173)   (0.125)   (0.094) 
+dynast winner       0.106    0.174*     0.049  
+                   (0.147)   (0.104)   (0.079) 
                                                
 -----------------------------------------------
-Observations         230       457       837   
+Observations         207       420       771   
 Log Likelihood    -Inf.000  -Inf.000  -Inf.000 
 Akaike Inf. Crit.  Inf.000   Inf.000   Inf.000 
 ===============================================
@@ -767,16 +781,16 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_college_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -787,15 +801,15 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
                             2,5                  5                  10         
                             (1)                 (2)                 (3)        
 -------------------------------------------------------------------------------
-dynast winner              0.638               0.592               0.464       
-                          (1.055)             (0.854)             (0.616)      
+dynast winner              1.153               1.529               0.505       
+                          (1.394)             (1.035)             (0.745)      
                                                                                
 -------------------------------------------------------------------------------
-Observations                230                 457                 837        
-R2                         0.002               0.001               0.001       
-Adjusted R2               -0.003              -0.001              -0.001       
-Residual Std. Error  7.973 (df = 228)    9.114 (df = 455)    8.855 (df = 835)  
-F Statistic         0.366 (df = 1; 228) 0.480 (df = 1; 455) 0.567 (df = 1; 835)
+Observations                207                 420                 771        
+R2                         0.003               0.005               0.001       
+Adjusted R2               -0.002               0.003              -0.001       
+Residual Std. Error  9.975 (df = 205)    10.594 (df = 418)   10.262 (df = 769) 
+F Statistic         0.685 (df = 1; 205) 2.180 (df = 1; 418) 0.459 (df = 1; 769)
 ===============================================================================
 Note:                                               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>
@@ -803,17 +817,17 @@ Note:                                               *p&lt;0.1; **p&lt;0.05; ***p
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression private colleges</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression private colleges</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_priv_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -824,15 +838,15 @@ Note:                                               *p&lt;0.1; **p&lt;0.05; ***p
                             2,5                  5                  10         
                             (1)                 (2)                 (3)        
 -------------------------------------------------------------------------------
-dynast winner              0.666               0.578               0.513       
-                          (0.944)             (0.778)             (0.557)      
+dynast winner              1.056               1.374               0.463       
+                          (1.249)             (0.948)             (0.680)      
                                                                                
 -------------------------------------------------------------------------------
-Observations                230                 457                 837        
-R2                         0.002               0.001               0.001       
-Adjusted R2               -0.002              -0.001              -0.0002      
-Residual Std. Error  7.129 (df = 228)    8.304 (df = 455)    8.010 (df = 835)  
-F Statistic         0.498 (df = 1; 228) 0.552 (df = 1; 455) 0.850 (df = 1; 835)
+Observations                207                 420                 771        
+R2                         0.003               0.005               0.001       
+Adjusted R2               -0.001               0.003              -0.001       
+Residual Std. Error  8.937 (df = 205)    9.698 (df = 418)    9.365 (df = 769)  
+F Statistic         0.715 (df = 1; 205) 2.103 (df = 1; 418) 0.465 (df = 1; 769)
 ===============================================================================
 Note:                                               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>
@@ -840,17 +854,17 @@ Note:                                               *p&lt;0.1; **p&lt;0.05; ***p
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression govt. colleges</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd regression govt. colleges</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span> <span class="fu">lm</span>(n_gov_million<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_college_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -861,15 +875,15 @@ Note:                                               *p&lt;0.1; **p&lt;0.05; ***p
                             2,5                  5                  10         
                             (1)                 (2)                 (3)        
 -------------------------------------------------------------------------------
-dynast winner             -0.028               0.013              -0.050       
-                          (0.188)             (0.125)             (0.091)      
+dynast winner              0.097               0.154               0.041       
+                          (0.203)             (0.138)             (0.102)      
                                                                                
 -------------------------------------------------------------------------------
-Observations                230                 457                 837        
-R2                        0.0001              0.00002             0.0004       
-Adjusted R2               -0.004              -0.002              -0.001       
-Residual Std. Error  1.420 (df = 228)    1.338 (df = 455)    1.302 (df = 835)  
-F Statistic         0.022 (df = 1; 228) 0.011 (df = 1; 455) 0.302 (df = 1; 835)
+Observations                207                 420                 771        
+R2                         0.001               0.003              0.0002       
+Adjusted R2               -0.004               0.001              -0.001       
+Residual Std. Error  1.450 (df = 205)    1.407 (df = 418)    1.410 (df = 769)  
+F Statistic         0.230 (df = 1; 205) 1.255 (df = 1; 418) 0.164 (df = 1; 769)
 ===============================================================================
 Note:                                               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>

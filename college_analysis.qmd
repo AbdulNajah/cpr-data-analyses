@@ -132,6 +132,21 @@ dyn_1[,c("dynast", "second_position_dyn", "dyn_type")][10:15,]
 ```
 
 ```{r}
+# limit analysis to 23 relevant states
+
+state_list = read.csv("./data/states_list.csv")
+
+states = state_list[,2]
+
+dyn_1$state_name = gsub("_&_|_", " ", tolower(dyn_1$state_name))
+
+dyn_1 = dyn_1[dyn_1$state_name %in% states,]
+
+
+```
+
+
+```{r}
 
 #merging the dataset 
 

@@ -19,6 +19,7 @@ dyn_ai = read.csv("./data/df_dynast.csv") %>% select(state_name, year, constitue
 
 tcpd_dyn = left_join(dyn_ai, tcpd, by= c("state_name", "year","constituency_no", "position"))
 
+
 write.csv(tcpd_dyn, "./data/tcpd_ge_dyn_23.csv")
 
 

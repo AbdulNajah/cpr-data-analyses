@@ -15,6 +15,95 @@ execute:
 - Data prep script can be found [here](./nl_data_prep.R) 
 
 
+```{r}
+
+suppressPackageStartupMessages(library(dplyr))
+path = "/Users/najah/work/cpr/data/"
+
+#reading the all india dynast data
+
+tcpd_dyn = read.csv(paste0(path,"tcpd_ge_dyn_23.csv"))
+tcpd_dyn$dyn = as.numeric(tcpd_dyn$dyn)
+# recoding empty ones and recheck as dyn
+tcpd_dyn$dynast = ifelse(is.na(tcpd_dyn$dyn) | tcpd_dyn$dyn==0,0,1)
+
+
+# merging the data with dynasty data
+
+# filter to winner
+
+
+# removing "_&_|_"
+
+tcpd_dyn$state_name = gsub("_&_|_", " ", tolower(tcpd_dyn$state_name))
+
+# add a col that indicates the second position familty type
+
+
+tcpd_dyn = tcpd_dyn %>% group_by(state_name, year, constituency_no) %>% 
+  mutate(second_position_dyn = sum(dynast[position==2]) )%>% 
+  ungroup()
+
+
+#tcpd_dyn[,c("position","dynast", "second_position_dyn")]
+
+#filter to winner to keep observation per constituency
+dyn_1 = tcpd_dyn %>% filter(position==1)
+
+# creating the contest variable
+
+position = dyn_1$position
+second_position = dyn_1$second_position_dyn
+winner = dyn_1$dynast
+
+
+dyn_1$dyn_type = ifelse(winner==1 & second_position==0, "dyn vs non-dyn",ifelse(winner==0 &second_position==1, "non-dyn vs dyn", "others"))
+
+```
+
+
+```{r}
+# reading nl data
+
+nl_pc = read.csv(paste0(path,'nl_pc_india.csv'))
+
+
+head(nl_pc)
+```
+
+
+```{r}
+# merging with dyn
+
+dyn_nl = inner_join(dyn_1, nl_pc, by = c("state_name" = "pc01_state_name", "year" = "year_el", "constituency_no" = "PC_no_2001"))
+
+```
+
+
+
+
+## Basic analysis
+
+
+```{r}
+dyn_nl %>% 
+  group_by(dynast) %>% 
+  summarise(avg_growth = mean(avg_yearly_growth))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
