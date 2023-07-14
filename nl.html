@@ -81,6 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#data-prep" id="toc-data-prep" class="nav-link active" data-scroll-target="#data-prep">Data Prep</a></li>
   <li><a href="#basic-analysis" id="toc-basic-analysis" class="nav-link" data-scroll-target="#basic-analysis">Basic analysis</a></li>
+  <li><a href="#ols" id="toc-ols" class="nav-link" data-scroll-target="#ols">OLS</a></li>
+  <li><a href="#rdd" id="toc-rdd" class="nav-link" data-scroll-target="#rdd">RDD</a></li>
+  <li><a href="#rdd-model" id="toc-rdd-model" class="nav-link" data-scroll-target="#rdd-model">RDD Model</a></li>
   </ul>
 </nav>
 </div>
@@ -204,6 +207,130 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    &lt;dbl&gt;      &lt;dbl&gt;
 1      0     0.0215
 2      1     0.0236</code></pre>
+</div>
+</div>
+</section>
+<section id="ols" class="level2">
+<h2 class="anchored" data-anchor-id="ols">OLS</h2>
+<ul>
+<li>will add</li>
+</ul>
+</section>
+<section id="rdd" class="level2">
+<h2 class="anchored" data-anchor-id="rdd">RDD</h2>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prepping the data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dyn_nl <span class="ot">=</span> dyn_nl <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">margin_5pc =</span> <span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin_2.5pc =</span><span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="fl">2.5</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">margin_10pc =</span><span class="fu">ifelse</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># sample data</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>dyn_nl[, <span class="fu">c</span>(<span class="st">"margin_percentage"</span>, <span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>)][<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  margin_percentage margin_2.5pc margin_5pc margin_10pc
+              &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+1             14.8             0          0           0
+2              4.55            0          1           1
+3              4.93            0          1           1
+4              5.61            0          0           1
+5              5.89            0          0           1</code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># break-up for contest types</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>margin_table<span class="ot">=</span> dyn_nl <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dyn_type)<span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="fu">c</span>(<span class="st">"margin_2.5pc"</span>, <span class="st">"margin_5pc"</span>, <span class="st">"margin_10pc"</span>), sum, <span class="at">na.rm =</span><span class="cn">TRUE</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>margin_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  dyn_type       margin_2.5pc margin_5pc margin_10pc
+  &lt;chr&gt;                 &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+1 dyn vs non-dyn           73        150         279
+2 non-dyn vs dyn           64        135         225
+3 others                  258        514         889</code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filtering the data for rdd</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>dyn_nl_rdd <span class="ot">=</span> dyn_nl <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dyn_type<span class="sc">!=</span> <span class="st">"others"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>dyn_nl_rdd <span class="ot">=</span> dyn_nl_rdd<span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_percentage<span class="sc">&lt;=</span><span class="dv">10</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mv_rdd =</span> <span class="fu">ifelse</span>(dyn_type<span class="sc">==</span><span class="st">"non-dyn vs dyn"</span>, <span class="sc">-</span>margin_percentage, margin_percentage))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rdd graph</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dyn_nl_rdd,  <span class="fu">aes</span>(mv_rdd,avg_yearly_growth , <span class="at">color =</span> dyn_type))<span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"glm"</span>, <span class="at">se=</span> <span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scale_color_grey(labels = c("non-family winner", "family winner"))+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Margin of victory"</span>, <span class="at">y =</span> <span class="st">"average yearly growth"</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">""</span>)<span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="nl_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#ylim(0,10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="rdd-model" class="level2">
+<h2 class="anchored" data-anchor-id="rdd-model">RDD Model</h2>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fit2<span class="fl">.5</span> <span class="ot">&lt;-</span><span class="fu">lm</span>(avg_yearly_growth<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_nl_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_2<span class="fl">.5</span>pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">&lt;-</span><span class="fu">lm</span>(avg_yearly_growth<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_nl_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_5pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>fit10 <span class="ot">&lt;-</span><span class="fu">lm</span>(avg_yearly_growth<span class="sc">~</span><span class="fu">relevel</span>(<span class="fu">as.factor</span>(dyn_type), <span class="at">ref =</span> <span class="st">"non-dyn vs dyn"</span>), <span class="at">data =</span> <span class="fu">subset</span>(dyn_nl_rdd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(margin_10pc <span class="sc">==</span><span class="dv">1</span>)))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(fit2<span class="fl">.5</span>,fit5, fit10, <span class="at">type =</span> <span class="st">"text"</span>, <span class="at">omit =</span> <span class="st">"Constant"</span>, <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">"2,5"</span>,<span class="st">"5"</span>,<span class="st">"10"</span>), <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"dynast winner"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+================================================================================
+                                        Dependent variable:                     
+                    ------------------------------------------------------------
+                                         avg_yearly_growth                      
+                            2,5                  5                   10         
+                            (1)                 (2)                 (3)         
+--------------------------------------------------------------------------------
+dynast winner              0.001               0.001               0.0002       
+                          (0.014)             (0.011)             (0.008)       
+                                                                                
+--------------------------------------------------------------------------------
+Observations                137                 285                 504         
+R2                        0.0001              0.00001             0.00000       
+Adjusted R2               -0.007              -0.004               -0.002       
+Residual Std. Error  0.082 (df = 135)    0.093 (df = 283)     0.093 (df = 502)  
+F Statistic         0.011 (df = 1; 135) 0.002 (df = 1; 283) 0.0004 (df = 1; 502)
+================================================================================
+Note:                                                *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>
 </div>
 </section>

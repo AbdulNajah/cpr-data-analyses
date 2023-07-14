@@ -91,17 +91,82 @@ dyn_nl %>%
   summarise(avg_growth = mean(avg_yearly_growth))
 ```
 
+## OLS
+
+- will add
+
+
+## RDD
+
+```{r}
+# prepping the data
+
+dyn_nl = dyn_nl %>% 
+  mutate(margin_5pc = ifelse(margin_percentage<=5,1,0),
+        margin_2.5pc =ifelse(margin_percentage<=2.5,1,0),
+        margin_10pc =ifelse(margin_percentage<=10,1,0))
+
+# sample data
+dyn_nl[, c("margin_percentage", "margin_2.5pc", "margin_5pc", "margin_10pc")][1:5,]
+```
 
 
 
 
+```{r}
+
+# break-up for contest types
+
+margin_table= dyn_nl %>% group_by(dyn_type)%>% summarise_at(c("margin_2.5pc", "margin_5pc", "margin_10pc"), sum, na.rm =TRUE)
+margin_table
+```
 
 
 
+```{r}
+# filtering the data for rdd
+dyn_nl_rdd = dyn_nl %>% filter(dyn_type!= "others")
+
+dyn_nl_rdd = dyn_nl_rdd%>% filter(margin_percentage<=10 ) %>% 
+  mutate(mv_rdd = ifelse(dyn_type=="non-dyn vs dyn", -margin_percentage, margin_percentage))
+```
 
 
 
+```{r warning=FALSE}
 
+## rdd graph
+library(ggplot2)
+ggplot(dyn_nl_rdd,  aes(mv_rdd,avg_yearly_growth , color = dyn_type))+
+  geom_point()+
+    geom_smooth(method="glm", se= FALSE)+
+  geom_vline(xintercept = 0)+
+    # scale_color_grey(labels = c("non-family winner", "family winner"))+
+   labs(x = "Margin of victory", y = "average yearly growth",
+        caption = "")+
+   theme_bw()+
+  theme(legend.position = "bottom", legend.title = element_blank())
+  #ylim(0,10)
+
+```
+
+## RDD Model
+
+```{r}
+
+
+
+fit2.5 <-lm(avg_yearly_growth~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_nl_rdd %>% filter(margin_2.5pc ==1)))
+
+fit5 <-lm(avg_yearly_growth~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_nl_rdd %>% filter(margin_5pc ==1)))
+
+fit10 <-lm(avg_yearly_growth~relevel(as.factor(dyn_type), ref = "non-dyn vs dyn"), data = subset(dyn_nl_rdd %>% filter(margin_10pc ==1)))
+
+
+
+stargazer::stargazer(fit2.5,fit5, fit10, type = "text", omit = "Constant", column.labels = c("2,5","5","10"), covariate.labels = c("dynast winner") )
+
+```
 
 
 
